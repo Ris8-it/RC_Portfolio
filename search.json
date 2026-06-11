@@ -1,24 +1,94 @@
 [
   {
-    "objectID": "projects/index.html",
-    "href": "projects/index.html",
-    "title": "Projects",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "I optimise financial workflowsand build tools that last.",
     "section": "",
-    "text": "Each project follows the same shape: the problem as it existed, what I built, and what changed. Numbers where I have them, screenshots where they help.\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Finance · Data · Python\n  I optimise financial workflowsand build tools that last.\n  I am Riccardo, a finance data engineer based in Amsterdam. I rebuild manual Excel workflows as Python and SQL pipelines that do not break, and I work every month to be a better developer than the last.\n  \n    0saved weekly across teams\n    0inconsistencies resolved\n    0tools in production\n  \n  \n    See the case studies\n    How I work →\n  \n\n\n\n  \n    01Revenue & Expenditure Pipeline\n    02Email Pipeline & Dashboard\n    03Invoice Reconciliation\n    04Living Documentation\n  \n\n\n/ 01Selected work\n\n\n  \n    \n      \n        \n        Live\n        Revenue & Expenditure Pipeline\n        20+ manual SAP extracts rebuilt as one governed pipeline with daily refresh.\n        SAP DatasphereSQLPower BI\n        flip ↻\n      \n      \n        ~40 collective hours saved per week. 300+ inconsistencies resolved. Monthly refresh became daily, for every team.\n        Read the case study\n      \n    \n  \n\n  \n    \n      \n        \n        Live\n        Email Pipeline & Submission Dashboard\n        A legacy VBA macro replaced by Python parsing 500 submissions a week.\n        PythonRegexPower BI\n        flip ↻\n      \n      \n        57 regex patterns, a clean 120k email archive since 2019, a live dashboard. Around 5 hours saved weekly, errors gone.\n        Read the case study\n      \n    \n  \n\n  \n    \n      \n        \n        Live\n        Invoice Reconciliation Tool\n        Five SAP extracts, one click, one master file the whole team trusts.\n        PythonEXEExcel\n        flip ↻\n      \n      \n        Drop files, run, done. Validation, matching, deduplication, archive and log. ~10 hours of weekly work saved.\n        Read the case study\n      \n    \n  \n\n  \n    \n      \n        \n        Live\n        Living Documentation System\n        Word files with broken links replaced by templated HTML documentation.\n        QuartoHTMLCSS\n        flip ↻\n      \n      \n        One template, one stylesheet, identical output for every team. Cross referenced, current, and reproducible.\n        Read the case study"
+  },
+  {
+    "objectID": "projects/email-pipeline.html",
+    "href": "projects/email-pipeline.html",
+    "title": "Email Pipeline & Submission Dashboard",
+    "section": "",
+    "text": "Live in production · runs daily"
+  },
+  {
+    "objectID": "projects/email-pipeline.html#the-problem",
+    "href": "projects/email-pipeline.html#the-problem",
+    "title": "Email Pipeline & Submission Dashboard",
+    "section": "The problem",
+    "text": "The problem\nWeekly submission statistics depended on a legacy Excel VBA macro that downloaded one email per second, ran once a week, and locked the computer while it worked. Parsing email titles into fields produced wrong and missing values, so every run was followed by manual edits. The volume: around 500 submissions per week, on top of an archive of roughly 120,000 emails.\n\n  BeforeOne email per second. Weekly runs that froze the machine. Wrong parsing, manual corrections every week, statistics in a fragile Excel file.\n  AfterA background Python script feeding a clean CSV archive since 2019, with a live Power BI dashboard on top. No pivot tables, no manual refresh."
+  },
+  {
+    "objectID": "projects/email-pipeline.html#what-i-built",
+    "href": "projects/email-pipeline.html#what-i-built",
+    "title": "Email Pipeline & Submission Dashboard",
+    "section": "What I built",
+    "text": "What I built\nA Python application with a small GUI: you pick the Outlook folder, pick the mode, and run. The parser normalises dates and applies 57 regex patterns to extract the right fields from inconsistent email titles. Output is a clean CSV rather than Excel, which handles the 120,000-email archive without strain. That CSV feeds a Power BI semantic model connected through SharePoint, with dynamic graphs that automatically adapt to the latest weeks in the dataset. All documentation lives in QMD files rendered to HTML.\n\n\n\nPipeline overview\n\n\nThe script can run automatically on computer start or manually for double checks, so the data is daily by default instead of weekly by ritual."
+  },
+  {
+    "objectID": "projects/email-pipeline.html#outcome",
+    "href": "projects/email-pipeline.html#outcome",
+    "title": "Email Pipeline & Submission Dashboard",
+    "section": "Outcome",
+    "text": "Outcome\nAround 5 hours saved every week, plus the manual checks and corrections that no longer exist. The team now has consistent, clean data since 2019 and a dashboard that is always current.\n\n\n\nGUI and dashboard\n\n\nStack: Python (GUI, regex parsing), CSV, SharePoint, Power BI semantic model, Quarto documentation"
+  },
+  {
+    "objectID": "projects/sap-dashboard.html",
+    "href": "projects/sap-dashboard.html",
+    "title": "Live Revenue & Expenditure Dashboard",
+    "section": "",
+    "text": "Live in production · Expenditure model in development"
+  },
+  {
+    "objectID": "projects/sap-dashboard.html#the-problem",
+    "href": "projects/sap-dashboard.html#the-problem",
+    "title": "Live Revenue & Expenditure Dashboard",
+    "section": "The problem",
+    "text": "The problem\nRevenue and expenditure reporting at the organisation depended on more than 20 separate SAP reports, each extracted by hand as an Excel file. Filters were applied inside individual workbooks and could not be traced afterwards. Data structures differed between teams, so Finance, Procurement and others routinely produced numbers that disagreed with each other.\n\n  Before20+ manual Excel extracts. Untraceable filters. Monthly or quarterly refresh, on a different schedule per team. Hundreds of inconsistencies between reports.\n  AfterOne governed pipeline. Filters and fields defined once, at the source. Daily refresh at enterprise level. Around 10 fact tables, clean data back to 2020."
+  },
+  {
+    "objectID": "projects/sap-dashboard.html#what-i-built",
+    "href": "projects/sap-dashboard.html#what-i-built",
+    "title": "Live Revenue & Expenditure Dashboard",
+    "section": "What I built",
+    "text": "What I built\nI helped rewrite most of the data ingestion around one idea: a live connection instead of file exports. Working with SAP consultants, we moved the source layer to SAP Datasphere and rebuilt the data model there, so every filter and field lives in one place instead of inside someone’s workbook. A live gateway then feeds the Power BI dashboard directly, currently around 10 fact tables for the Revenue model with clean data since 2020. The Expenditure side is in development on the same foundation.\n\n\n\nEnd to end data flow\n\n\nThe trade off: building the model centrally was slower upfront than fixing individual reports, and it required cross-team agreement on definitions. That agreement is exactly what removed the inconsistencies."
+  },
+  {
+    "objectID": "projects/sap-dashboard.html#outcome",
+    "href": "projects/sap-dashboard.html#outcome",
+    "title": "Live Revenue & Expenditure Dashboard",
+    "section": "Outcome",
+    "text": "Outcome\nRefresh frequency went from monthly or quarterly (and different per team) to daily for the whole organisation. The change saved around 40 collective working hours per week across the teams involved in reporting, and resolved more than 300 inconsistencies between reporting mechanisms and incorrect values.\n\n\n\nData model view\n\n\nStack: SAP Datasphere, SQL, Power BI (live gateway), Python, Databricks"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "I work in financial management and budgetary reporting at the European Medicines Agency in Amsterdam. My background is finance and portfolio management (MSc, Tor Vergata), and my day to day is making financial data flow without human glue: SQL pipelines, Databricks, Python, Power BI."
+    "text": "Open to interesting problems\nI am a finance data engineer. My background is finance and portfolio management (MSc, University of Rome Tor Vergata), and my day to day is making financial data flow without human glue: SQL pipelines, Python tooling, Power BI, and lately agentic AI systems that I keep on a short leash. I currently work in financial management for a European Union agency in Amsterdam."
   },
   {
     "objectID": "about.html#how-i-work",
     "href": "about.html#how-i-work",
     "title": "About",
     "section": "How I work",
-    "text": "How I work\nLead with the problem. Most of my tools started as an Excel file someone updated by hand, again and again. I map the manual steps first, then rebuild only the parts where automation pays for itself. I document everything, because a tool nobody else can run is a liability, not an asset."
+    "text": "How I work\n\n  01Map first, build secondEvery tool I ship started as an Excel file someone updated by hand. I map the manual steps first, then automate only where it pays for itself.\n  02Boring interfaces winThe best tool is the one the team actually uses. Drop files in a folder, click run. If adoption needs a manual, the design failed.\n  03Document or it does not existA tool nobody else can run is a liability. Everything I build ships with rendered documentation and a guide, so it survives me being on holiday."
+  },
+  {
+    "objectID": "about.html#toolbox",
+    "href": "about.html#toolbox",
+    "title": "About",
+    "section": "Toolbox",
+    "text": "Toolbox\n\n  PythonSQLPower BI · DAXSAP DatasphereDatabricksPower QueryVBAQuartoLaTeXMatlabStataRAzureAgentic AI · MCP"
+  },
+  {
+    "objectID": "about.html#the-path-so-far",
+    "href": "about.html#the-path-so-far",
+    "title": "About",
+    "section": "The path so far",
+    "text": "The path so far\n\n  2025 → nowFinancial management & budgetary reportingEuropean Union agency, Amsterdam\n  2025Financial analyst & business advisorAdvisory firm, Palermo · Milan\n  2024Investment banking analystBaird, New York City\n  2022 → 2023Financial & data analystING, Milan\n  2024MSc Finance and BankingTor Vergata, Rome · ARPM Quant, New York"
   },
   {
     "objectID": "about.html#off-the-clock",
@@ -32,13 +102,69 @@
     "href": "about.html#elsewhere",
     "title": "About",
     "section": "Elsewhere",
-    "text": "Elsewhere\nLinkedIn · GitHub"
+    "text": "Elsewhere\n\n  LinkedIn\n  GitHub\n  Email"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "I replace fragile spreadsheetswith tools that hold.",
+    "objectID": "projects/invoice-checker.html",
+    "href": "projects/invoice-checker.html",
+    "title": "Invoice Reconciliation Tool",
     "section": "",
-    "text": "Finance · Data · Python\n  I replace fragile spreadsheetswith tools that hold.\n  I am Riccardo, a finance data engineer at the European Medicines Agency. I take manual Excel workflows that break under pressure and rebuild them as Python and SQL pipelines that do not.\n  See the case studies\n\n\nSelected work\n\n\n  \n    \n      \n        Live budget pipeline\n        Annual and multi-annual budgeting moved from manual refreshes to live YTD data.\n        SQLDatabricksPython\n      \n      \n        Before: budget figures synchronized by hand across files. After: a SQL and Databricks pipeline feeding daily dashboards.\n        Read the case study\n      \n    \n  \n\n  \n    \n      \n        Finance automation suite\n        Python scripts that took repetitive division tasks off human hands.\n        PythonAzureJS\n      \n      \n        Fee calculator, finance chatbot, and evaluation tools now running inside the team workflow.\n        Read the case study\n      \n    \n  \n\n  \n    \n      \n        Live reporting dashboards\n        Bi-weekly manual reporting replaced by Power BI with live connections.\n        Power BISQLDAX\n      \n      \n        Before: hours of copy and paste every cycle. After: dashboards that update themselves, every day.\n        Read the case study"
+    "text": "Live in production · team adopted"
+  },
+  {
+    "objectID": "projects/invoice-checker.html#the-problem",
+    "href": "projects/invoice-checker.html#the-problem",
+    "title": "Invoice Reconciliation Tool",
+    "section": "The problem",
+    "text": "The problem\nChecking supplier invoices meant combining 5 separate SAP extracts against a reference table in a static shared database, where each person uploaded and downloaded the latest version. Across several teams this turned into chaos: constant reminders, emails back and forth, and no certainty about which file was current. Each cycle covered more than 200 invoices and disputes, some open for years, across many procedure types.\n\n  BeforeManual merge of 5 extracts. Upload and download of a shared file. Reminder emails. Checks that were sometimes wrong and always slow.\n  AfterDrop the new reports in a folder, run the tool, get a verified master file with a colour coded summary. Instant, logged, archived."
+  },
+  {
+    "objectID": "projects/invoice-checker.html#what-i-built",
+    "href": "projects/invoice-checker.html#what-i-built",
+    "title": "Invoice Reconciliation Tool",
+    "section": "What I built",
+    "text": "What I built\nA fully automated script packaged as a standalone EXE, so the team runs it without installing Python. The workflow: drop the new SAP reports into the downloads folder, run the tool. It validates the file formats, extracts the data, applies all matching, transformation, checking and deduplication rules, archives the input files with timestamps, writes a run log, and produces a master CSV holding the full archive. On top of that sits an Excel view with colour coded checks and an embedded summary table, because the people reading it live in Excel.\n\n\n\nReconciliation flow\n\n\nThe trade off: shipping an EXE means I own packaging and updates. In exchange, adoption was immediate, since nobody had to learn a new tool beyond “drop files, click run”."
+  },
+  {
+    "objectID": "projects/invoice-checker.html#outcome",
+    "href": "projects/invoice-checker.html#outcome",
+    "title": "Invoice Reconciliation Tool",
+    "section": "Outcome",
+    "text": "Outcome\nA single source of truth where there used to be five files and an argument. Around 10 hours of weekly work saved, plus the removal of manual checks that regularly produced wrong results. The script processes all extracts simultaneously and writes thousands of rows to the master file in seconds.\n\n\n\nGUI and Excel summary\n\n\nStack: Python (packaged EXE), pandas-style data matching, CSV master file, Excel reporting layer"
+  },
+  {
+    "objectID": "projects/docs-system.html",
+    "href": "projects/docs-system.html",
+    "title": "Living Documentation System",
+    "section": "",
+    "text": "Live · in daily team use"
+  },
+  {
+    "objectID": "projects/docs-system.html#the-problem",
+    "href": "projects/docs-system.html#the-problem",
+    "title": "Living Documentation System",
+    "section": "The problem",
+    "text": "The problem\nTeam documentation lived in Word files full of screenshots and links that broke over time. Versions diverged across teams, changes were untracked, and every update meant manual fixes throughout the document.\n\n  BeforeWord documents, broken links, manual screenshot updates, no way to track which version was current.\n  AfterOne QMD template and one stylesheet. Every document renders to HTML in an identical, current, linkable format."
+  },
+  {
+    "objectID": "projects/docs-system.html#what-i-built",
+    "href": "projects/docs-system.html#what-i-built",
+    "title": "Living Documentation System",
+    "section": "What I built",
+    "text": "What I built\nA documentation system for the team based on Quarto: a QMD document template, a reporting template, and a shared style.css carrying the house colours, so every output looks the same regardless of who wrote it. Documents render to HTML with a dynamic table of contents, collapsable sections, cross references to each other, and images and graphs that update with the underlying data instead of being pasted in.\n\n\n\nSystem overview\n\n\nThis is also the quiet enabler of the other projects on this site: every tool I ship comes with documentation in this format, so it survives me being on holiday."
+  },
+  {
+    "objectID": "projects/docs-system.html#outcome",
+    "href": "projects/docs-system.html#outcome",
+    "title": "Living Documentation System",
+    "section": "Outcome",
+    "text": "Outcome\nInterconnected, linkable documents that can be reproduced in the same format every time. Managers get consistent reporting; the team gets documentation that is actually current. Video guides complement the written docs for onboarding.\n\n\n\nDocumentation examples\n\n\nStack: Quarto (QMD), HTML, CSS, video editing for guides"
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Each project follows the same shape: the problem as it existed, what I built, and what changed. Numbers where I have them, screenshots where they help.\n\n  In progress\n  Flight price tracker. A small agent built with Claude Code that tracks flight prices on a fixed route and logs them over time. It lands here once it runs reliably.\n\n\n\n\n\n\n\n\n\n\n\n\nLive Revenue & Expenditure Dashboard\n\n\n\nSQL\n\nSAP Datasphere\n\nPower BI\n\nPython\n\n\n\nFrom 20+ manual SAP extracts to a daily, enterprise-wide pipeline.\n\n\n\n\n\n\n\n\n\nEmail Pipeline & Submission Dashboard\n\n\n\nPython\n\nRegex\n\nPower BI\n\nOutlook\n\n\n\nA legacy VBA macro replaced by a Python pipeline parsing 500 submissions a week.\n\n\n\n\n\n\n\n\n\nInvoice Reconciliation Tool\n\n\n\nPython\n\nAutomation\n\nExcel\n\n\n\nFive SAP extracts, one click, one master file the whole team trusts.\n\n\n\n\n\n\n\n\n\nLiving Documentation System\n\n\n\nQuarto\n\nHTML\n\nCSS\n\n\n\nWord files with broken links replaced by templated, rendered HTML docs.\n\n\n\n\n\nNo matching items"
   }
 ]

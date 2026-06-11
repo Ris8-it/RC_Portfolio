@@ -1,0 +1,31 @@
+<svg viewBox="0 0 780 280" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace" font-size="13"><style>
+g[stroke] path{stroke-dasharray:6 6;animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-24}}
+rect[stroke="#4FD1C5"]{animation:glow 3s ease-in-out infinite}
+@keyframes glow{0%,100%{stroke-opacity:.4}50%{stroke-opacity:.9}}
+rect[stroke="#F0A8A8"]{animation:fade 3s ease-in-out infinite}
+@keyframes fade{0%,100%{stroke-opacity:.5}50%{stroke-opacity:.25}}
+</style>
+<rect width="780" height="280" rx="14" fill="#11162B"/>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#8B9BFF"/></marker></defs>
+<g stroke="#8B9BFF" stroke-opacity=".35" fill="none">
+<path d="M165 140h55" marker-end="url(#a)"/><path d="M430 110l55 0" marker-end="url(#a)"/><path d="M430 170l55 0" marker-end="url(#a)"/>
+</g>
+<rect x="25" y="85" width="140" height="110" rx="10" fill="#1B2240" stroke="#F0A8A8" stroke-opacity=".5"/>
+<text x="95" y="120" fill="#F0A8A8" text-anchor="middle">SAP extracts</text>
+<text x="95" y="144" fill="#9AA3B8" text-anchor="middle" font-size="11">5 reports</text>
+<text x="95" y="162" fill="#9AA3B8" text-anchor="middle" font-size="11">dropped in a folder</text>
+<rect x="220" y="70" width="210" height="140" rx="10" fill="#1B2240" stroke="#8B9BFF" stroke-opacity=".6"/>
+<text x="325" y="100" fill="#E8EAF2" text-anchor="middle">Standalone EXE</text>
+<text x="325" y="124" fill="#9AA3B8" text-anchor="middle" font-size="11">format validation</text>
+<text x="325" y="142" fill="#9AA3B8" text-anchor="middle" font-size="11">matching + dedup</text>
+<text x="325" y="160" fill="#9AA3B8" text-anchor="middle" font-size="11">timestamped archive</text>
+<text x="325" y="178" fill="#9AA3B8" text-anchor="middle" font-size="11">full run log</text>
+<rect x="485" y="65" width="270" height="80" rx="10" fill="#1B2240" stroke="#4FD1C5" stroke-opacity=".7"/>
+<text x="620" y="98" fill="#4FD1C5" text-anchor="middle">Master CSV · single source of truth</text>
+<text x="620" y="122" fill="#9AA3B8" text-anchor="middle" font-size="11">200+ invoices and disputes per cycle</text>
+<rect x="485" y="160" width="270" height="55" rx="10" fill="#1B2240" stroke="#4FD1C5" stroke-opacity=".4"/>
+<text x="620" y="193" fill="#9AA3B8" text-anchor="middle" font-size="12">Excel summary, colour coded checks</text>
+<text x="390" y="35" fill="#E8EAF2" text-anchor="middle" font-size="15">Invoice reconciliation flow</text>
+<text x="390" y="255" fill="#9AA3B8" text-anchor="middle" font-size="11">before: shared static database, upload/download, reminder emails · after: drop files, done</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg viewBox="0 0 780 360" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+<rect width="780" height="360" rx="14" fill="#11162B" stroke="#8B9BFF" stroke-opacity=".3" stroke-dasharray="8 8"/>
+<circle cx="36" cy="30" r="6" fill="#F0A8A8" opacity=".6"/><circle cx="56" cy="30" r="6" fill="#8B9BFF" opacity=".6"/><circle cx="76" cy="30" r="6" fill="#4FD1C5" opacity=".6"/>
+<text x="390" y="180" fill="#9AA3B8" text-anchor="middle" font-size="15">Sanitized screenshot coming soon</text>
+<text x="390" y="205" fill="#9AA3B8" text-anchor="middle" font-size="12" opacity=".7">replace this file, keep the same name</text>
+</svg>
