@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Each project follows the same shape: the problem as it existed, what I built, and what changed. Numbers where I have them, screenshots where they help.\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "I work in financial management and budgetary reporting at the European Medicines Agency in Amsterdam. My background is finance and portfolio management (MSc, Tor Vergata), and my day to day is making financial data flow without human glue: SQL pipelines, Databricks, Python, Power BI."
+  },
+  {
+    "objectID": "about.html#how-i-work",
+    "href": "about.html#how-i-work",
+    "title": "About",
+    "section": "How I work",
+    "text": "How I work\nLead with the problem. Most of my tools started as an Excel file someone updated by hand, again and again. I map the manual steps first, then rebuild only the parts where automation pays for itself. I document everything, because a tool nobody else can run is a liability, not an asset."
+  },
+  {
+    "objectID": "about.html#off-the-clock",
+    "href": "about.html#off-the-clock",
+    "title": "About",
+    "section": "Off the clock",
+    "text": "Off the clock\nCrime novels, long evening runs, and videogames. I hold a World Champion title in BTD2, which I mention because it is true and because nobody believes it at first."
+  },
+  {
+    "objectID": "about.html#elsewhere",
+    "href": "about.html#elsewhere",
+    "title": "About",
+    "section": "Elsewhere",
+    "text": "Elsewhere\nLinkedIn · GitHub"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "I replace fragile spreadsheetswith tools that hold.",
+    "section": "",
+    "text": "Finance · Data · Python\n  I replace fragile spreadsheetswith tools that hold.\n  I am Riccardo, a finance data engineer at the European Medicines Agency. I take manual Excel workflows that break under pressure and rebuild them as Python and SQL pipelines that do not.\n  See the case studies\n\n\nSelected work\n\n\n  \n    \n      \n        Live budget pipeline\n        Annual and multi-annual budgeting moved from manual refreshes to live YTD data.\n        SQLDatabricksPython\n      \n      \n        Before: budget figures synchronized by hand across files. After: a SQL and Databricks pipeline feeding daily dashboards.\n        Read the case study\n      \n    \n  \n\n  \n    \n      \n        Finance automation suite\n        Python scripts that took repetitive division tasks off human hands.\n        PythonAzureJS\n      \n      \n        Fee calculator, finance chatbot, and evaluation tools now running inside the team workflow.\n        Read the case study\n      \n    \n  \n\n  \n    \n      \n        Live reporting dashboards\n        Bi-weekly manual reporting replaced by Power BI with live connections.\n        Power BISQLDAX\n      \n      \n        Before: hours of copy and paste every cycle. After: dashboards that update themselves, every day.\n        Read the case study"
+  }
+]
