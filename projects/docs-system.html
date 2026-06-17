@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2026-03-01">
-<meta name="description" content="Word files with broken links replaced by templated, rendered HTML docs.">
+<meta name="description" content="Word files with broken links replaced by templated, rendered documentation.">
 
 <title>Living Documentation System – Riccardo Cammarata</title>
 <style>
@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-dab333370b46a58f04c2e79b6e18fa8e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-dc6f1de4d1a81b6559f081a4687f75d1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-d15fbfcdc388843510f15aec9f47cbc6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -140,6 +140,7 @@ ul.task-list li input[type="checkbox"] {
 <h1 class="title">Living Documentation System</h1>
   <div class="quarto-categories">
     <div class="quarto-category">Quarto</div>
+    <div class="quarto-category">Markdown</div>
     <div class="quarto-category">HTML</div>
     <div class="quarto-category">CSS</div>
   </div>
@@ -147,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Word files with broken links replaced by templated, rendered HTML docs.
+    Word files with broken links replaced by templated, rendered documentation.
   </div>
 </div>
 
@@ -170,36 +171,48 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<span class="status-line live"><span class="dot"></span>Live · in daily team use</span>
+<span class="status-line live"><span class="dot"></span>Live</span>
 <section id="the-problem" class="level2">
 <h2 data-anchor-id="the-problem">The problem</h2>
-<p>Team documentation lived in Word files full of screenshots and links that broke over time. Versions diverged across teams, changes were untracked, and every update meant manual fixes throughout the document.</p>
-<div class="before-after">
-  <div class="pane before"><h4>Before</h4><p>Word documents, broken links, manual screenshot updates, no way to track which version was current.</p></div>
-  <div class="pane after"><h4>After</h4><p>One QMD template and one stylesheet. Every document renders to HTML in an identical, current, linkable format.</p></div>
+<p>Team documentation lived in Word files full of pasted screenshots and links that broke over time. Versions diverged across teams, changes were untracked, and every update meant manual fixes throughout the document, with mismatched fonts, oversized logos, and highlights in every colour.</p>
+<div class="imgswap" data-cap-before="Before · a Word document, version v7_FINAL_final2" data-cap-after="After · one rendered, templated HTML document">
+  <div class="toggle"><button class="before">Before</button><button class="after on">After</button></div>
+  <div class="imgswap-stage">
+    <div class="layer before"><img src="../images/doc-before.png" alt="Old Word document, before"></div>
+    <div class="layer after active"><img src="../images/doc-after.png" alt="Rendered documentation, after"></div>
+  </div>
+  <div class="cap">After · one rendered, templated HTML document</div>
 </div>
 </section>
 <section id="what-i-built" class="level2">
 <h2 data-anchor-id="what-i-built">What I built</h2>
-<p>A documentation system for the team based on Quarto: a QMD document template, a reporting template, and a shared style.css carrying the house colours, so every output looks the same regardless of who wrote it. Documents render to HTML with a dynamic table of contents, collapsable sections, cross references to each other, and images and graphs that update with the underlying data instead of being pasted in.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/docs-system.svg" class="img-fluid figure-img"></p>
-<figcaption>System overview</figcaption>
-</figure>
+<div class="featured-new">
+  <div class="fn-label"><span class="spark">★</span>One template, every document</div>
+  <h3>A documentation system built on Quarto and Markdown</h3>
+  <p>Documents are written in Markdown inside a shared QMD template, with a single YAML header controlling everything: the title banner, the table of contents, syntax highlighting, and output to both HTML and PDF from the same source. One style.css carries the house colours, so every output looks identical regardless of who wrote it.</p>
 </div>
-<p>This is also the quiet enabler of the other projects on this site: every tool I ship comes with documentation in this format, so it survives me being on holiday.</p>
+<p>The result is interactive rather than static: a live table of contents, collapsable callout boxes, cross references between documents, and images and graphs that update with the underlying data instead of being pasted in. Links stay alive because they are part of the build, not copied by hand.</p>
+</section>
+<section id="why-it-matters" class="level2">
+<h2 data-anchor-id="why-it-matters">Why it matters</h2>
+<p>This is the quiet backbone of everything else here. Every tool I ship comes documented in this format, so it survives me being on holiday. The same YAML produces a clean web page for quick reference and a PDF for formal sign-off, from one file, with no reformatting.</p>
+<div class="shots">
+  <figure class="figure"><img src="../images/doc-after.png" alt="Rendered HTML doc" class="figure-img"><figcaption>The rendered HTML: TOC, banner, callouts, styled code</figcaption></figure>
+  <figure class="figure"><img src="../images/doc-before.png" alt="Old Word doc" class="figure-img"><figcaption>The Word file it replaced</figcaption></figure>
+</div>
 </section>
 <section id="outcome" class="level2">
 <h2 data-anchor-id="outcome">Outcome</h2>
 <p>Interconnected, linkable documents that can be reproduced in the same format every time. Managers get consistent reporting; the team gets documentation that is actually current. Video guides complement the written docs for onboarding.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/placeholder-shot.svg" class="img-fluid figure-img"></p>
-<figcaption>Documentation examples</figcaption>
-</figure>
+</section>
+<section id="before-and-after" class="level2">
+<h2 data-anchor-id="before-and-after">Before and after</h2>
+<div class="reveal-compare" role="button" tabindex="0" aria-label="Click to reveal the after state">
+  <div class="rc-layer rc-before"><h4>Before</h4><p>Word documents full of pasted screenshots and links that broke over time, with versions quietly drifting apart across teams.</p></div>
+  <div class="rc-layer rc-after"><div class="rc-cells"></div><div class="rc-content"><h4>After</h4><p>One QMD template and one stylesheet rendering to interconnected HTML and PDF, with a live table of contents and cross references that never rot.</p><p class="touch">My touch: one YAML header produces both the web page and the formal PDF, so there is never a second version to keep in sync.</p></div></div>
+  <span class="rc-prompt"><span class="dot"></span>click to reveal</span>
 </div>
-<p><strong>Stack:</strong> Quarto (QMD), HTML, CSS, video editing for guides</p>
+<p><strong>Stack:</strong> Quarto (QMD, Markdown), YAML, HTML, CSS, PDF output, video editing for guides</p>
 
 
 </section>
@@ -606,7 +619,7 @@ ul.task-list li input[type="checkbox"] {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© 2026 Riccardo Cammarata · Built with Quarto</p>
+<p>Riccardo Cammarata · Portfolio · Built with Quarto</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

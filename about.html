@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-dab333370b46a58f04c2e79b6e18fa8e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-dc6f1de4d1a81b6559f081a4687f75d1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-d15fbfcdc388843510f15aec9f47cbc6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -153,13 +153,13 @@ ul.task-list li input[type="checkbox"] {
 
 
 <span class="status-chip"><span class="dot"></span>Open to interesting problems</span>
-<p>I am a finance data engineer. My background is finance and portfolio management (MSc, University of Rome Tor Vergata), and my day to day is making financial data flow without human glue: SQL pipelines, Python tooling, Power BI, and lately agentic AI systems that I keep on a short leash. I currently work in financial management for a European Union agency in Amsterdam.</p>
+<p>I am a financial and data engineer. My background is finance and portfolio management (MSc, University of Rome Tor Vergata), and my day to day is making financial data flow without human glue: SQL pipelines, Python tooling, Power BI, and lately agentic AI systems that I keep on a short leash.</p>
 <section id="how-i-work" class="level2">
 <h2 data-anchor-id="how-i-work">How I work</h2>
 <div class="principles">
-  <div class="p-card"><div class="glyph">01</div><h4>Map first, build second</h4><p>Every tool I ship started as an Excel file someone updated by hand. I map the manual steps first, then automate only where it pays for itself.</p></div>
-  <div class="p-card"><div class="glyph">02</div><h4>Boring interfaces win</h4><p>The best tool is the one the team actually uses. Drop files in a folder, click run. If adoption needs a manual, the design failed.</p></div>
-  <div class="p-card"><div class="glyph">03</div><h4>Document or it does not exist</h4><p>A tool nobody else can run is a liability. Everything I build ships with rendered documentation and a guide, so it survives me being on holiday.</p></div>
+  <div class="p-card"><div class="glyph">01</div><h4>Map priorities, build for the team</h4><p>Every tool starts as something done by hand. I map what matters first, then build around how the team actually works, not how I would prefer it to work.</p></div>
+  <div class="p-card"><div class="glyph">02</div><h4>The interface should help the user</h4><p>A tool is only as good as its adoption. The interface has to carry the user through the task, so the right action is the easy one and mistakes are hard to make.</p></div>
+  <div class="p-card"><div class="glyph">03</div><h4>Document or it does not exist</h4><p>A tool nobody else can run is a liability. Everything I build ships with rendered documentation and a guide, so it survives me being away.</p></div>
 </div>
 </section>
 <section id="toolbox" class="level2">
@@ -180,11 +180,18 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="off-the-clock" class="level2">
 <h2 data-anchor-id="off-the-clock">Off the clock</h2>
-<p>Crime novels, long evening runs, and videogames. I hold a World Champion title in BTD2, which I mention because it is true and because nobody believes it at first.</p>
 <div class="gallery">
-  <img src="images/placeholder-shot.svg" alt="Photo placeholder">
-  <img src="images/placeholder-shot.svg" alt="Photo placeholder">
-  <img src="images/placeholder-shot.svg" alt="Photo placeholder">
+  <figure class="g-item figure">
+    <img src="images/grepolis-hof.png" alt="Grepolis Hall of Fame" class="figure-img">
+    <figcaption>First builder in the Grepolis Hall of Fame, and I play the niche game BTD2 at a level that once earned a World Champion title. I took part in the World Masters Tournament across players from countries all over the world.</figcaption>
+  </figure>
+  <figure class="g-item figure">
+    <img src="images/hobby-museum.jpg" alt="At a museum" class="figure-img">
+    <figcaption>Long evening runs, crime novels, museums and fairs. I like the kind of hobby that gets me out of the house and into a conversation.</figcaption>
+  </figure>
+  <figure class="g-item card-quote figure">
+    <blockquote class="blockquote">I like sharing what I learn and meeting new people. Most of what I am good at came from being in the room with people better than me.</blockquote>
+  </figure>
 </div>
 </section>
 <section id="elsewhere" class="level2">
@@ -192,7 +199,17 @@ ul.task-list li input[type="checkbox"] {
 <div class="socials">
   <a href="https://www.linkedin.com/in/riccardo-cammarata-00s" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i>LinkedIn</a>
   <a href="https://github.com/Ris8-it" target="_blank" rel="noopener"><i class="bi bi-github"></i>GitHub</a>
-  <a href="mailto:riccardocammarata00@gmail.com"><i class="bi bi-envelope-fill"></i>Email</a>
+  <button id="emailBtn" class="social-btn" type="button"><i class="bi bi-envelope-fill"></i>Email</button>
+</div>
+
+<div id="emailModal" class="email-modal" hidden="">
+  <div class="email-card">
+    <button class="email-close" aria-label="Close">×</button>
+    <p class="email-label">Reach me at</p>
+    <p class="email-addr" id="emailAddr">riccardocammarata00@gmail.com</p>
+    <button class="email-copy" id="emailCopy">Copy to clipboard</button>
+    <span class="email-copied" id="emailCopied">Copied</span>
+  </div>
 </div>
 
 
@@ -600,7 +617,7 @@ ul.task-list li input[type="checkbox"] {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© 2026 Riccardo Cammarata · Built with Quarto</p>
+<p>Riccardo Cammarata · Portfolio · Built with Quarto</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

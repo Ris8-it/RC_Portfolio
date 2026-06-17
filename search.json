@@ -2,79 +2,107 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "I optimise financial workflowsand build tools that last.",
+    "title": "Becoming the financial data engineer I want to be.",
     "section": "",
-    "text": "Finance · Data · Python\n  I optimise financial workflowsand build tools that last.\n  I am Riccardo, a finance data engineer based in Amsterdam. I rebuild manual Excel workflows as Python and SQL pipelines that do not break, and I work every month to be a better developer than the last.\n  \n    0saved weekly across teams\n    0inconsistencies resolved\n    0tools in production\n  \n  \n    See the case studies\n    How I work →\n  \n\n\n\n  \n    01Revenue & Expenditure Pipeline\n    02Email Pipeline & Dashboard\n    03Invoice Reconciliation\n    04Living Documentation\n  \n\n\n/ 01Selected work\n\n\n  \n    \n      \n        \n        Live\n        Revenue & Expenditure Pipeline\n        20+ manual SAP extracts rebuilt as one governed pipeline with daily refresh.\n        SAP DatasphereSQLPower BI\n        flip ↻\n      \n      \n        ~40 collective hours saved per week. 300+ inconsistencies resolved. Monthly refresh became daily, for every team.\n        Read the case study\n      \n    \n  \n\n  \n    \n      \n        \n        Live\n        Email Pipeline & Submission Dashboard\n        A legacy VBA macro replaced by Python parsing 500 submissions a week.\n        PythonRegexPower BI\n        flip ↻\n      \n      \n        57 regex patterns, a clean 120k email archive since 2019, a live dashboard. Around 5 hours saved weekly, errors gone.\n        Read the case study\n      \n    \n  \n\n  \n    \n      \n        \n        Live\n        Invoice Reconciliation Tool\n        Five SAP extracts, one click, one master file the whole team trusts.\n        PythonEXEExcel\n        flip ↻\n      \n      \n        Drop files, run, done. Validation, matching, deduplication, archive and log. ~10 hours of weekly work saved.\n        Read the case study\n      \n    \n  \n\n  \n    \n      \n        \n        Live\n        Living Documentation System\n        Word files with broken links replaced by templated HTML documentation.\n        QuartoHTMLCSS\n        flip ↻\n      \n      \n        One template, one stylesheet, identical output for every team. Cross referenced, current, and reproducible.\n        Read the case study"
+    "text": "Finance & portfolio management · Data analysis · Coding\n  Becoming the financial data engineer I want to be.\n  Hello, I am Riccardo. I work as a financial and data engineer based in Amsterdam. Most of what I do is building financial models and rebuilding manual workflows into Python and SQL pipelines, and every month I try to be a better developer than I was the month before.\n  \n    0hours saved weekly,across many teams\n    0data inconsistenciesresolved\n    0pipelines and toolsin production\n  \n  \n    See the case studies\n    How I work →\n  \n\n\n\n  \n    01Revenue & Expenditure Pipeline\n    02Email Pipeline & Submission Dashboard\n    03Invoice Reconciliation Tool\n    04Living Documentation System\n  \n\n\n/*Selected work\n\n\n  \n    \n      \n        \n        Live\n        Revenue & Expenditure Pipeline\n        20+ manual SAP extracts rebuilt as one governed pipeline with daily refresh.\n        SAP DatasphereSQLPower BI\n        flip ↻\n      \n      \n        ~40 collective hours saved per week. 300+ inconsistencies resolved. Monthly refresh became daily, for every team.\n        Read the case study\n      \n    \n  \n\n  \n    \n      \n        \n        Live\n        Email Pipeline & Submission Dashboard\n        A legacy VBA macro replaced by Python parsing 500 submissions a week.\n        PythonRegexPower BI\n        flip ↻\n      \n      \n        57 regex patterns, a clean 120k email archive since 2019, a live dashboard. Around 5 hours saved weekly, errors gone.\n        Read the case study\n      \n    \n  \n\n  \n    \n      \n        \n        Live\n        Invoice Reconciliation Tool\n        Five SAP extracts, one click, one master file the whole team trusts.\n        PythonEXEExcel\n        flip ↻\n      \n      \n        Drop files, run, done. Validation, matching, deduplication, archive and log. ~10 hours of weekly work saved.\n        Read the case study\n      \n    \n  \n\n  \n    \n      \n        \n        Live\n        Living Documentation System\n        Word files with broken links replaced by templated HTML documentation.\n        QuartoHTMLCSS\n        flip ↻\n      \n      \n        One template, one stylesheet, identical output for every team. Cross referenced, current, and reproducible.\n        Read the case study"
   },
   {
     "objectID": "projects/email-pipeline.html",
     "href": "projects/email-pipeline.html",
     "title": "Email Pipeline & Submission Dashboard",
     "section": "",
-    "text": "Live in production · runs daily"
+    "text": "Live"
   },
   {
     "objectID": "projects/email-pipeline.html#the-problem",
     "href": "projects/email-pipeline.html#the-problem",
     "title": "Email Pipeline & Submission Dashboard",
     "section": "The problem",
-    "text": "The problem\nWeekly submission statistics depended on a legacy Excel VBA macro that downloaded one email per second, ran once a week, and locked the computer while it worked. Parsing email titles into fields produced wrong and missing values, so every run was followed by manual edits. The volume: around 500 submissions per week, on top of an archive of roughly 120,000 emails.\n\n  BeforeOne email per second. Weekly runs that froze the machine. Wrong parsing, manual corrections every week, statistics in a fragile Excel file.\n  AfterA background Python script feeding a clean CSV archive since 2019, with a live Power BI dashboard on top. No pivot tables, no manual refresh."
+    "text": "The problem\nWeekly submission statistics depended on a VBA macro built in 2014 that downloaded one email per second, ran once a week, and locked the computer while it worked. Parsing email titles into fields produced wrong and missing values, so every run was followed by manual edits. The volume: around 500 submissions per week, on top of an archive of roughly 120,000 emails.\n\n  BeforeAfter\n  \n    \n    \n  \n  After · the live submission dashboard"
   },
   {
-    "objectID": "projects/email-pipeline.html#what-i-built",
-    "href": "projects/email-pipeline.html#what-i-built",
+    "objectID": "projects/email-pipeline.html#the-new-script",
+    "href": "projects/email-pipeline.html#the-new-script",
     "title": "Email Pipeline & Submission Dashboard",
-    "section": "What I built",
-    "text": "What I built\nA Python application with a small GUI: you pick the Outlook folder, pick the mode, and run. The parser normalises dates and applies 57 regex patterns to extract the right fields from inconsistent email titles. Output is a clean CSV rather than Excel, which handles the 120,000-email archive without strain. That CSV feeds a Power BI semantic model connected through SharePoint, with dynamic graphs that automatically adapt to the latest weeks in the dataset. All documentation lives in QMD files rendered to HTML.\n\n\n\nPipeline overview\n\n\nThe script can run automatically on computer start or manually for double checks, so the data is daily by default instead of weekly by ritual."
+    "section": "The new script",
+    "text": "The new script\n\n  ★The core of the rebuild\n  A Python tool that does in 30 seconds what used to take an hour\n  A small application with a GUI: pick the Outlook folder, pick the mode, run. It finds the right emails, normalises every date format, and applies 57 regex patterns to pull clean fields out of inconsistent titles. The patterns are ordered from most specific to most general, so the messy real-world cases are caught first.\n\nHere is the heart of the parser, the ordered pattern list that replaced years of manual correction:\n\n  Part of the 57-pattern parser, ordered most specific first\n  The GUI: pick a folder, pick a mode, run\n\nThe script can run automatically on computer start or manually for double checks, so the data is daily by default instead of weekly by ritual. It writes a clean CSV rather than Excel, which handles the 120,000-email archive without strain."
+  },
+  {
+    "objectID": "projects/email-pipeline.html#the-power-bi-rebuild",
+    "href": "projects/email-pipeline.html#the-power-bi-rebuild",
+    "title": "Email Pipeline & Submission Dashboard",
+    "section": "The Power BI rebuild",
+    "text": "The Power BI rebuild\nThe clean CSV feeds a rebuilt Power BI model, not a pile of pivot tables. The new structure uses organised folders and subfolders, dynamic measures written as DAX rather than copied cells, and a clean, deduplicated data model connected through SharePoint. It is a proper star schema: a central fact table of emails joined to dimension tables for date and category, so the dynamic graphs adapt to the latest weeks on their own.\n\n  Measures in organised folders, not scattered\n  Named measure groups and conformed tables\n  Star schema: fact table joined to dimensions"
   },
   {
     "objectID": "projects/email-pipeline.html#outcome",
     "href": "projects/email-pipeline.html#outcome",
     "title": "Email Pipeline & Submission Dashboard",
     "section": "Outcome",
-    "text": "Outcome\nAround 5 hours saved every week, plus the manual checks and corrections that no longer exist. The team now has consistent, clean data since 2019 and a dashboard that is always current.\n\n\n\nGUI and dashboard\n\n\nStack: Python (GUI, regex parsing), CSV, SharePoint, Power BI semantic model, Quarto documentation"
+    "text": "Outcome\nAround 5 hours saved every week, plus the manual checks and corrections that no longer exist. The team now has consistent, clean data since 2019 and a dashboard that is always current. All documentation lives in QMD files rendered to HTML.\n\n  A page from the live dashboard\n  The old data: highlighted and patched by hand"
+  },
+  {
+    "objectID": "projects/email-pipeline.html#before-and-after",
+    "href": "projects/email-pipeline.html#before-and-after",
+    "title": "Email Pipeline & Submission Dashboard",
+    "section": "Before and after",
+    "text": "Before and after\n\n  BeforeA 2014 VBA macro crawling Outlook at one email per second, run once a week, freezing the machine and mangling half the fields it parsed.\n  AfterA background Python tool with 57 regex patterns, a clean CSV archive of 120,000 emails, and a live dashboard that needs no manual refresh.My touch: I designed the parser around the messiest real titles first, not the clean ones, so the patterns hold against what people actually send.\n  click to reveal\n\nStack: Python (GUI, 57 regex patterns), CSV, SharePoint, Power BI semantic model, DAX, Quarto documentation"
   },
   {
     "objectID": "projects/sap-dashboard.html",
     "href": "projects/sap-dashboard.html",
-    "title": "Live Revenue & Expenditure Dashboard",
+    "title": "Revenue & Expenditure Pipeline",
     "section": "",
-    "text": "Live in production · Expenditure model in development"
+    "text": "Live"
   },
   {
     "objectID": "projects/sap-dashboard.html#the-problem",
     "href": "projects/sap-dashboard.html#the-problem",
-    "title": "Live Revenue & Expenditure Dashboard",
+    "title": "Revenue & Expenditure Pipeline",
     "section": "The problem",
-    "text": "The problem\nRevenue and expenditure reporting at the organisation depended on more than 20 separate SAP reports, each extracted by hand as an Excel file. Filters were applied inside individual workbooks and could not be traced afterwards. Data structures differed between teams, so Finance, Procurement and others routinely produced numbers that disagreed with each other.\n\n  Before20+ manual Excel extracts. Untraceable filters. Monthly or quarterly refresh, on a different schedule per team. Hundreds of inconsistencies between reports.\n  AfterOne governed pipeline. Filters and fields defined once, at the source. Daily refresh at enterprise level. Around 10 fact tables, clean data back to 2020."
+    "text": "The problem\nRevenue and expenditure reporting depended on more than 20 separate SAP reports, each extracted by hand as an Excel file. Filters were applied inside individual workbooks and could not be traced afterwards. Data structures differed between teams, so Finance, Procurement and others routinely produced numbers that disagreed with each other.\n\n  BeforeAfter\n  \n    \n    \n  \n  After · the live governed dashboard"
   },
   {
     "objectID": "projects/sap-dashboard.html#what-i-built",
     "href": "projects/sap-dashboard.html#what-i-built",
-    "title": "Live Revenue & Expenditure Dashboard",
+    "title": "Revenue & Expenditure Pipeline",
     "section": "What I built",
-    "text": "What I built\nI helped rewrite most of the data ingestion around one idea: a live connection instead of file exports. Working with SAP consultants, we moved the source layer to SAP Datasphere and rebuilt the data model there, so every filter and field lives in one place instead of inside someone’s workbook. A live gateway then feeds the Power BI dashboard directly, currently around 10 fact tables for the Revenue model with clean data since 2020. The Expenditure side is in development on the same foundation.\n\n\n\nEnd to end data flow\n\n\nThe trade off: building the model centrally was slower upfront than fixing individual reports, and it required cross-team agreement on definitions. That agreement is exactly what removed the inconsistencies."
+    "text": "What I built\nI helped rewrite most of the data ingestion around one idea: a live connection instead of file exports. Working with SAP consultants, we moved the source layer to SAP Datasphere and rebuilt the data model there, so every filter and field is defined once rather than inside someone’s workbook. A live gateway then feeds Power BI directly.\n\nThe new model is a clean star schema: a small set of fact tables (revenue, expenditure, commitments) connected to shared dimension tables for date, entity, fund and category. Measures sit in organised display folders rather than scattered across reports, and the data is deduplicated at the source. The result is year-to-date (YTD) data refreshed daily, with more than 20 report views rebuilt on one foundation.\n\n  THE NEW DATA FLOW\n  SAP Datasphere (governed model, deduplicated)  →  live gateway  →  Power BI  →  YTD data, refreshed daily, 20+ views."
+  },
+  {
+    "objectID": "projects/sap-dashboard.html#the-data-model",
+    "href": "projects/sap-dashboard.html#the-data-model",
+    "title": "Revenue & Expenditure Pipeline",
+    "section": "The data model",
+    "text": "The data model\nA blurred view of the rebuilt model. Fact tables sit at the centre, connected to conformed dimension tables, the structure that replaced 20-plus disconnected extracts.\n\n  Star schema: fact tables connected to shared dimensions"
   },
   {
     "objectID": "projects/sap-dashboard.html#outcome",
     "href": "projects/sap-dashboard.html#outcome",
-    "title": "Live Revenue & Expenditure Dashboard",
+    "title": "Revenue & Expenditure Pipeline",
     "section": "Outcome",
-    "text": "Outcome\nRefresh frequency went from monthly or quarterly (and different per team) to daily for the whole organisation. The change saved around 40 collective working hours per week across the teams involved in reporting, and resolved more than 300 inconsistencies between reporting mechanisms and incorrect values.\n\n\n\nData model view\n\n\nStack: SAP Datasphere, SQL, Power BI (live gateway), Python, Databricks"
+    "text": "Outcome\nRefresh frequency went from monthly or quarterly (and different per team) to daily for the whole organisation. The change saved around 40 collective working hours per week across the teams involved in reporting, and resolved more than 300 inconsistencies between reporting mechanisms and incorrect values.\n\n  One of the rebuilt report views\n  The kind of manual report it replaced"
+  },
+  {
+    "objectID": "projects/sap-dashboard.html#before-and-after",
+    "href": "projects/sap-dashboard.html#before-and-after",
+    "title": "Revenue & Expenditure Pipeline",
+    "section": "Before and after",
+    "text": "Before and after\n\n  BeforeTwenty-plus reports pulled from SAP by hand every cycle, each one filtered inside its own workbook, none of them agreeing with the next.\n  AfterOne governed model in SAP Datasphere feeding Power BI live. Same definitions for every team, refreshed daily, traceable end to end.My touch: the real win was getting Finance and Procurement to agree on one definition of every field before a single line of the model was written.\n  click to reveal\n\nStack: SAP Datasphere, SQL, Power BI (live gateway), Python, Databricks"
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Open to interesting problems\nI am a finance data engineer. My background is finance and portfolio management (MSc, University of Rome Tor Vergata), and my day to day is making financial data flow without human glue: SQL pipelines, Python tooling, Power BI, and lately agentic AI systems that I keep on a short leash. I currently work in financial management for a European Union agency in Amsterdam."
+    "text": "Open to interesting problems\nI am a financial and data engineer. My background is finance and portfolio management (MSc, University of Rome Tor Vergata), and my day to day is making financial data flow without human glue: SQL pipelines, Python tooling, Power BI, and lately agentic AI systems that I keep on a short leash."
   },
   {
     "objectID": "about.html#how-i-work",
     "href": "about.html#how-i-work",
     "title": "About",
     "section": "How I work",
-    "text": "How I work\n\n  01Map first, build secondEvery tool I ship started as an Excel file someone updated by hand. I map the manual steps first, then automate only where it pays for itself.\n  02Boring interfaces winThe best tool is the one the team actually uses. Drop files in a folder, click run. If adoption needs a manual, the design failed.\n  03Document or it does not existA tool nobody else can run is a liability. Everything I build ships with rendered documentation and a guide, so it survives me being on holiday."
+    "text": "How I work\n\n  01Map priorities, build for the teamEvery tool starts as something done by hand. I map what matters first, then build around how the team actually works, not how I would prefer it to work.\n  02The interface should help the userA tool is only as good as its adoption. The interface has to carry the user through the task, so the right action is the easy one and mistakes are hard to make.\n  03Document or it does not existA tool nobody else can run is a liability. Everything I build ships with rendered documentation and a guide, so it survives me being away."
   },
   {
     "objectID": "about.html#toolbox",
@@ -95,76 +123,174 @@
     "href": "about.html#off-the-clock",
     "title": "About",
     "section": "Off the clock",
-    "text": "Off the clock\nCrime novels, long evening runs, and videogames. I hold a World Champion title in BTD2, which I mention because it is true and because nobody believes it at first."
+    "text": "Off the clock\n\n  \n    \n    First builder in the Grepolis Hall of Fame, and I play the niche game BTD2 at a level that once earned a World Champion title. I took part in the World Masters Tournament across players from countries all over the world.\n  \n  \n    \n    Long evening runs, crime novels, museums and fairs. I like the kind of hobby that gets me out of the house and into a conversation.\n  \n  \n    I like sharing what I learn and meeting new people. Most of what I am good at came from being in the room with people better than me."
   },
   {
     "objectID": "about.html#elsewhere",
     "href": "about.html#elsewhere",
     "title": "About",
     "section": "Elsewhere",
-    "text": "Elsewhere\n\n  LinkedIn\n  GitHub\n  Email"
+    "text": "Elsewhere\n\n  LinkedIn\n  GitHub\n  Email\n\n\n\n  \n    ×\n    Reach me at\n    riccardocammarata00@gmail.com\n    Copy to clipboard\n    Copied"
+  },
+  {
+    "objectID": "templates/documentation-template.html",
+    "href": "templates/documentation-template.html",
+    "title": "[DOCUMENT TITLE]",
+    "section": "",
+    "text": "ImportantClick to view: Document Summary Card\n\n\n\n\n\nClassification: Internal Use Only, European Medicines Agency, A-FI-PRE Document reference: [REFERENCE] Status: [Draft / Live / Internal] Effective date: [DD MMM YYYY]"
+  },
+  {
+    "objectID": "templates/documentation-template.html#purpose-and-scope",
+    "href": "templates/documentation-template.html#purpose-and-scope",
+    "title": "[DOCUMENT TITLE]",
+    "section": "1.1 Purpose and Scope",
+    "text": "1.1 Purpose and Scope\n[Describe the scope of the document and what it covers.]\n\n\n\nObjective\nSection\n\n\n\n\n[Objective 1]\n[Section reference]\n\n\n[Objective 2]\n[Section reference]"
+  },
+  {
+    "objectID": "templates/documentation-template.html#system-context",
+    "href": "templates/documentation-template.html#system-context",
+    "title": "[DOCUMENT TITLE]",
+    "section": "1.2 System Context",
+    "text": "1.2 System Context\n[Describe the system, its data sources, and its place in the broader environment.]"
+  },
+  {
+    "objectID": "templates/documentation-template.html#document-structure",
+    "href": "templates/documentation-template.html#document-structure",
+    "title": "[DOCUMENT TITLE]",
+    "section": "1.3 Document Structure",
+    "text": "1.3 Document Structure\n\nSection 2: [What it covers]\nSection 3: [What it covers]\nSection 4: [What it covers]"
+  },
+  {
+    "objectID": "templates/documentation-template.html#tables-components",
+    "href": "templates/documentation-template.html#tables-components",
+    "title": "[DOCUMENT TITLE]",
+    "section": "2.1 [Tables / Components]",
+    "text": "2.1 [Tables / Components]\n[Describe the main tables or components.]\n\n2.1.1 [EMA Sourced Tables / Technology Stack]\n\n\n\n[Column 1]\n[Column 2]\n[Column 3]\n\n\n\n\n[Value]\n[Value]\n[Value]\n\n\n\n\n\n2.1.2 [Power BI Created Tables / Dependencies]\n\n\n\n[Column 1]\n[Column 2]\n[Column 3]\n\n\n\n\n[Value]\n[Value]\n[Value]"
+  },
+  {
+    "objectID": "templates/documentation-template.html#table-relationships-processing-logic",
+    "href": "templates/documentation-template.html#table-relationships-processing-logic",
+    "title": "[DOCUMENT TITLE]",
+    "section": "2.2 [Table Relationships / Processing Logic]",
+    "text": "2.2 [Table Relationships / Processing Logic]\n\n\n\n\n\n\nNoteClick to view: [Diagram title]\n\n\n\n\n\n\n\n\nFigure 1: [Caption]\n\n\n\n\n\n[Describe the relationships or processing logic.]"
+  },
+  {
+    "objectID": "templates/documentation-template.html#architecture-overview",
+    "href": "templates/documentation-template.html#architecture-overview",
+    "title": "[DOCUMENT TITLE]",
+    "section": "3.1 Architecture Overview",
+    "text": "3.1 Architecture Overview\n[Describe the measure architecture or processing pipeline.]\n\n3.1.1 [Category / Module name]\n[Describe this category or module.]\n-- Example DAX measure\n-- Measure name: [MeasureName]\n[MeasureName] =\nCALCULATE(\n    COUNTROWS( '[FactTable]' )\n)\n# Example Python code\n# Module: [module_name.py]\ndef example_function(input_data):\n    \"\"\"[Description of what this function does.]\"\"\"\n    result = input_data\n    return result"
+  },
+  {
+    "objectID": "templates/documentation-template.html#maintenance-guidelines",
+    "href": "templates/documentation-template.html#maintenance-guidelines",
+    "title": "[DOCUMENT TITLE]",
+    "section": "3.2 Maintenance Guidelines",
+    "text": "3.2 Maintenance Guidelines\n\n\n\nRule\nRationale\n\n\n\n\n[Rule 1]\n[Why this rule matters]\n\n\n[Rule 2]\n[Why this rule matters]"
+  },
+  {
+    "objectID": "templates/documentation-template.html#layout-structure",
+    "href": "templates/documentation-template.html#layout-structure",
+    "title": "[DOCUMENT TITLE]",
+    "section": "4.1 Layout Structure",
+    "text": "4.1 Layout Structure\n[Describe the overall layout or interface structure.]\n\n\n\n\n\n\nNoteClick to view: Layout diagram\n\n\n\n\n\n\n\n\nFigure 2: [Layout description]"
+  },
+  {
+    "objectID": "templates/documentation-template.html#pages-sections-tabs",
+    "href": "templates/documentation-template.html#pages-sections-tabs",
+    "title": "[DOCUMENT TITLE]",
+    "section": "4.2 [Pages / Sections / Tabs]",
+    "text": "4.2 [Pages / Sections / Tabs]\n\n4.2.1 [Page or Section 1]\nAnalytical role: [What this page or section does.]\nBusiness questions this page answers:\n\n[Question 1]\n[Question 2]\n\n\n\n\n\n\n\nNoteClick to view: [Page name] screenshot\n\n\n\n\n\n\n\n\nFigure 3: [Caption]\n\n\n\n\n\n\n\n\nVisualization\nTitle\nPurpose\n\n\n\n\n[Type]\n[Title shown on page]\n[What it shows]\n\n\n[Type]\n[Title]\n[Purpose]\n\n\n\n\n\n\n4.2.2 [Page or Section 2]\nAnalytical role: [What this page or section does.]\nBusiness questions this page answers:\n\n[Question 1]\n[Question 2]\n\n\n\n\n\n\n\nNoteClick to view: [Page name] screenshot\n\n\n\n\n\n\n\n\nFigure 4: [Caption]\n\n\n\n\n\n\n\n\nVisualization\nTitle\nPurpose\n\n\n\n\n[Type]\n[Title]\n[Purpose]"
   },
   {
     "objectID": "projects/invoice-checker.html",
     "href": "projects/invoice-checker.html",
     "title": "Invoice Reconciliation Tool",
     "section": "",
-    "text": "Live in production · team adopted"
+    "text": "Live and active"
   },
   {
     "objectID": "projects/invoice-checker.html#the-problem",
     "href": "projects/invoice-checker.html#the-problem",
     "title": "Invoice Reconciliation Tool",
     "section": "The problem",
-    "text": "The problem\nChecking supplier invoices meant combining 5 separate SAP extracts against a reference table in a static shared database, where each person uploaded and downloaded the latest version. Across several teams this turned into chaos: constant reminders, emails back and forth, and no certainty about which file was current. Each cycle covered more than 200 invoices and disputes, some open for years, across many procedure types.\n\n  BeforeManual merge of 5 extracts. Upload and download of a shared file. Reminder emails. Checks that were sometimes wrong and always slow.\n  AfterDrop the new reports in a folder, run the tool, get a verified master file with a colour coded summary. Instant, logged, archived."
+    "text": "The problem\nChecking supplier invoices meant combining 5 separate SAP extracts against a reference table in a static shared database, where each person uploaded and downloaded the latest version. Across several teams this turned into chaos: constant reminders, emails back and forth, and no certainty about which file was current. Each cycle covered more than 200 invoices and disputes, some open for years, across many procedure types.\n\n  BeforeAfter\n  \n    \n    \n  \n  After · one validated master file"
   },
   {
-    "objectID": "projects/invoice-checker.html#what-i-built",
-    "href": "projects/invoice-checker.html#what-i-built",
+    "objectID": "projects/invoice-checker.html#the-new-script",
+    "href": "projects/invoice-checker.html#the-new-script",
     "title": "Invoice Reconciliation Tool",
-    "section": "What I built",
-    "text": "What I built\nA fully automated script packaged as a standalone EXE, so the team runs it without installing Python. The workflow: drop the new SAP reports into the downloads folder, run the tool. It validates the file formats, extracts the data, applies all matching, transformation, checking and deduplication rules, archives the input files with timestamps, writes a run log, and produces a master CSV holding the full archive. On top of that sits an Excel view with colour coded checks and an embedded summary table, because the people reading it live in Excel.\n\n\n\nReconciliation flow\n\n\nThe trade off: shipping an EXE means I own packaging and updates. In exchange, adoption was immediate, since nobody had to learn a new tool beyond “drop files, click run”."
+    "section": "The new script",
+    "text": "The new script\n\n  ★The tool that ended the email chains\n  Drop five files in a folder, run, get one source of truth\n  A fully automated script packaged as a standalone EXE, so the team runs it without installing Python. It validates the file formats, extracts the data, applies all matching, transformation, checking and deduplication rules, archives the input files with timestamps, writes a run log, and produces a master CSV holding the full archive. On top of that sits an Excel view with colour-coded checks and an embedded summary table, because the people reading it live in Excel.\n\n\n  The standalone EXE: no Python needed\n  Part of the matching and deduplication logic\n  The clean drop-in folder structure"
+  },
+  {
+    "objectID": "projects/invoice-checker.html#the-data-model",
+    "href": "projects/invoice-checker.html#the-data-model",
+    "title": "Invoice Reconciliation Tool",
+    "section": "The data model",
+    "text": "The data model\nBehind the Excel view sits a clean, deduplicated model: a fact table of invoices and disputes joined to dimension tables for supplier, procedure type and status. The same structured approach that makes the dashboards trustworthy.\n\n  Fact table joined to supplier, procedure and status dimensions"
   },
   {
     "objectID": "projects/invoice-checker.html#outcome",
     "href": "projects/invoice-checker.html#outcome",
     "title": "Invoice Reconciliation Tool",
     "section": "Outcome",
-    "text": "Outcome\nA single source of truth where there used to be five files and an argument. Around 10 hours of weekly work saved, plus the removal of manual checks that regularly produced wrong results. The script processes all extracts simultaneously and writes thousands of rows to the master file in seconds.\n\n\n\nGUI and Excel summary\n\n\nStack: Python (packaged EXE), pandas-style data matching, CSV master file, Excel reporting layer"
+    "text": "Outcome\nA single source of truth where there used to be five files and an argument. Around 10 hours of weekly work saved, plus the removal of manual checks that regularly produced wrong results. The script processes all extracts simultaneously and writes thousands of rows to the master file in seconds.\n\n  The auto-generated, colour-coded Excel summary\n  The manual reconciliation it replaced"
+  },
+  {
+    "objectID": "projects/invoice-checker.html#before-and-after",
+    "href": "projects/invoice-checker.html#before-and-after",
+    "title": "Invoice Reconciliation Tool",
+    "section": "Before and after",
+    "text": "Before and after\n\n  BeforeFive SAP extracts merged by hand against a shared static file, passed around by email, with no certainty which version was current.\n  AfterDrop the files in a folder, run the EXE, get one validated master file with colour-coded checks and a full audit log.My touch: I shipped it as an EXE so nobody had to install Python. Adoption was instant because the tool asked nothing of the people using it.\n  click to reveal\n\nStack: Python (packaged EXE), data matching and deduplication, CSV master file, Excel reporting layer"
   },
   {
     "objectID": "projects/docs-system.html",
     "href": "projects/docs-system.html",
     "title": "Living Documentation System",
     "section": "",
-    "text": "Live · in daily team use"
+    "text": "Live"
   },
   {
     "objectID": "projects/docs-system.html#the-problem",
     "href": "projects/docs-system.html#the-problem",
     "title": "Living Documentation System",
     "section": "The problem",
-    "text": "The problem\nTeam documentation lived in Word files full of screenshots and links that broke over time. Versions diverged across teams, changes were untracked, and every update meant manual fixes throughout the document.\n\n  BeforeWord documents, broken links, manual screenshot updates, no way to track which version was current.\n  AfterOne QMD template and one stylesheet. Every document renders to HTML in an identical, current, linkable format."
+    "text": "The problem\nTeam documentation lived in Word files full of pasted screenshots and links that broke over time. Versions diverged across teams, changes were untracked, and every update meant manual fixes throughout the document, with mismatched fonts, oversized logos, and highlights in every colour.\n\n  BeforeAfter\n  \n    \n    \n  \n  After · one rendered, templated HTML document"
   },
   {
     "objectID": "projects/docs-system.html#what-i-built",
     "href": "projects/docs-system.html#what-i-built",
     "title": "Living Documentation System",
     "section": "What I built",
-    "text": "What I built\nA documentation system for the team based on Quarto: a QMD document template, a reporting template, and a shared style.css carrying the house colours, so every output looks the same regardless of who wrote it. Documents render to HTML with a dynamic table of contents, collapsable sections, cross references to each other, and images and graphs that update with the underlying data instead of being pasted in.\n\n\n\nSystem overview\n\n\nThis is also the quiet enabler of the other projects on this site: every tool I ship comes with documentation in this format, so it survives me being on holiday."
+    "text": "What I built\n\n  ★One template, every document\n  A documentation system built on Quarto and Markdown\n  Documents are written in Markdown inside a shared QMD template, with a single YAML header controlling everything: the title banner, the table of contents, syntax highlighting, and output to both HTML and PDF from the same source. One style.css carries the house colours, so every output looks identical regardless of who wrote it.\n\nThe result is interactive rather than static: a live table of contents, collapsable callout boxes, cross references between documents, and images and graphs that update with the underlying data instead of being pasted in. Links stay alive because they are part of the build, not copied by hand."
+  },
+  {
+    "objectID": "projects/docs-system.html#why-it-matters",
+    "href": "projects/docs-system.html#why-it-matters",
+    "title": "Living Documentation System",
+    "section": "Why it matters",
+    "text": "Why it matters\nThis is the quiet backbone of everything else here. Every tool I ship comes documented in this format, so it survives me being on holiday. The same YAML produces a clean web page for quick reference and a PDF for formal sign-off, from one file, with no reformatting.\n\n  The rendered HTML: TOC, banner, callouts, styled code\n  The Word file it replaced"
   },
   {
     "objectID": "projects/docs-system.html#outcome",
     "href": "projects/docs-system.html#outcome",
     "title": "Living Documentation System",
     "section": "Outcome",
-    "text": "Outcome\nInterconnected, linkable documents that can be reproduced in the same format every time. Managers get consistent reporting; the team gets documentation that is actually current. Video guides complement the written docs for onboarding.\n\n\n\nDocumentation examples\n\n\nStack: Quarto (QMD), HTML, CSS, video editing for guides"
+    "text": "Outcome\nInterconnected, linkable documents that can be reproduced in the same format every time. Managers get consistent reporting; the team gets documentation that is actually current. Video guides complement the written docs for onboarding."
+  },
+  {
+    "objectID": "projects/docs-system.html#before-and-after",
+    "href": "projects/docs-system.html#before-and-after",
+    "title": "Living Documentation System",
+    "section": "Before and after",
+    "text": "Before and after\n\n  BeforeWord documents full of pasted screenshots and links that broke over time, with versions quietly drifting apart across teams.\n  AfterOne QMD template and one stylesheet rendering to interconnected HTML and PDF, with a live table of contents and cross references that never rot.My touch: one YAML header produces both the web page and the formal PDF, so there is never a second version to keep in sync.\n  click to reveal\n\nStack: Quarto (QMD, Markdown), YAML, HTML, CSS, PDF output, video editing for guides"
   },
   {
     "objectID": "projects/index.html",
     "href": "projects/index.html",
     "title": "Projects",
     "section": "",
-    "text": "Each project follows the same shape: the problem as it existed, what I built, and what changed. Numbers where I have them, screenshots where they help.\n\n  In progress\n  Flight price tracker. A small agent built with Claude Code that tracks flight prices on a fixed route and logs them over time. It lands here once it runs reliably.\n\n\n\n\n\n\n\n\n\n\n\n\nLive Revenue & Expenditure Dashboard\n\n\n\nSQL\n\nSAP Datasphere\n\nPower BI\n\nPython\n\n\n\nFrom 20+ manual SAP extracts to a daily, enterprise-wide pipeline.\n\n\n\n\n\n\n\n\n\nEmail Pipeline & Submission Dashboard\n\n\n\nPython\n\nRegex\n\nPower BI\n\nOutlook\n\n\n\nA legacy VBA macro replaced by a Python pipeline parsing 500 submissions a week.\n\n\n\n\n\n\n\n\n\nInvoice Reconciliation Tool\n\n\n\nPython\n\nAutomation\n\nExcel\n\n\n\nFive SAP extracts, one click, one master file the whole team trusts.\n\n\n\n\n\n\n\n\n\nLiving Documentation System\n\n\n\nQuarto\n\nHTML\n\nCSS\n\n\n\nWord files with broken links replaced by templated, rendered HTML docs.\n\n\n\n\n\nNo matching items"
+    "text": "Each project follows the same shape: the problem as it existed, what I built, and what changed. Numbers where I have them, screenshots where they help.\n\n  In progress\n  \n    AI agent fleet.\n    A small fleet of agents I am building with Claude Code to support day to day decisions: tracking prices and statuses, drafting and triaging email, and rebuilding tools faster than I could by hand. It lands here as a case study once the pieces run reliably together.\n  \n\n\n\n\n\n\n\n\n\n\n\n\nRevenue & Expenditure Pipeline\n\n\n\nSAP Datasphere\n\nSQL\n\nPower BI\n\nPython\n\n\n\nFrom 20+ manual SAP extracts to a daily, enterprise-wide pipeline.\n\n\n\n\n\n\n\n\n\nEmail Pipeline & Submission Dashboard\n\n\n\nPython\n\nRegex\n\nPower BI\n\nOutlook\n\n\n\nA legacy VBA macro replaced by a Python pipeline parsing 500 submissions a week.\n\n\n\n\n\n\n\n\n\nInvoice Reconciliation Tool\n\n\n\nPython\n\nAutomation\n\nExcel\n\n\n\nFive SAP extracts, one click, one master file the whole team trusts.\n\n\n\n\n\n\n\n\n\nLiving Documentation System\n\n\n\nQuarto\n\nMarkdown\n\nHTML\n\nCSS\n\n\n\nWord files with broken links replaced by templated, rendered documentation.\n\n\n\n\n\nNo matching items"
   }
 ]

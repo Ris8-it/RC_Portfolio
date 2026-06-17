@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-dab333370b46a58f04c2e79b6e18fa8e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-dc6f1de4d1a81b6559f081a4687f75d1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-d15fbfcdc388843510f15aec9f47cbc6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -171,36 +171,58 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<span class="status-line live"><span class="dot"></span>Live in production · runs daily</span>
+<span class="status-line live"><span class="dot"></span>Live</span>
 <section id="the-problem" class="level2">
 <h2 data-anchor-id="the-problem">The problem</h2>
-<p>Weekly submission statistics depended on a legacy Excel VBA macro that downloaded one email per second, ran once a week, and locked the computer while it worked. Parsing email titles into fields produced wrong and missing values, so every run was followed by manual edits. The volume: around 500 submissions per week, on top of an archive of roughly 120,000 emails.</p>
-<div class="before-after">
-  <div class="pane before"><h4>Before</h4><p>One email per second. Weekly runs that froze the machine. Wrong parsing, manual corrections every week, statistics in a fragile Excel file.</p></div>
-  <div class="pane after"><h4>After</h4><p>A background Python script feeding a clean CSV archive since 2019, with a live Power BI dashboard on top. No pivot tables, no manual refresh.</p></div>
+<p>Weekly submission statistics depended on a VBA macro built in 2014 that downloaded one email per second, ran once a week, and locked the computer while it worked. Parsing email titles into fields produced wrong and missing values, so every run was followed by manual edits. The volume: around 500 submissions per week, on top of an archive of roughly 120,000 emails.</p>
+<div class="imgswap" data-cap-before="Before · the weekly statistics in a fragile Excel file" data-cap-after="After · the live submission dashboard">
+  <div class="toggle"><button class="before">Before</button><button class="after on">After</button></div>
+  <div class="imgswap-stage">
+    <div class="layer before"><img src="../images/sub-before-1.png" alt="Old VBA-driven statistics, before"></div>
+    <div class="layer after active"><img src="../images/sub-after-1.png" alt="Live dashboard, after"></div>
+  </div>
+  <div class="cap">After · the live submission dashboard</div>
 </div>
 </section>
-<section id="what-i-built" class="level2">
-<h2 data-anchor-id="what-i-built">What I built</h2>
-<p>A Python application with a small GUI: you pick the Outlook folder, pick the mode, and run. The parser normalises dates and applies 57 regex patterns to extract the right fields from inconsistent email titles. Output is a clean CSV rather than Excel, which handles the 120,000-email archive without strain. That CSV feeds a Power BI semantic model connected through SharePoint, with dynamic graphs that automatically adapt to the latest weeks in the dataset. All documentation lives in QMD files rendered to HTML.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/email-pipeline.svg" class="img-fluid figure-img"></p>
-<figcaption>Pipeline overview</figcaption>
-</figure>
+<section id="the-new-script" class="level2">
+<h2 data-anchor-id="the-new-script">The new script</h2>
+<div class="featured-new">
+  <div class="fn-label"><span class="spark">★</span>The core of the rebuild</div>
+  <h3>A Python tool that does in 30 seconds what used to take an hour</h3>
+  <p>A small application with a GUI: pick the Outlook folder, pick the mode, run. It finds the right emails, normalises every date format, and applies 57 regex patterns to pull clean fields out of inconsistent titles. The patterns are ordered from most specific to most general, so the messy real-world cases are caught first.</p>
 </div>
-<p>The script can run automatically on computer start or manually for double checks, so the data is daily by default instead of weekly by ritual.</p>
+<p>Here is the heart of the parser, the ordered pattern list that replaced years of manual correction:</p>
+<div class="shots">
+  <figure class="figure"><img src="../images/sub-snippet.png" alt="Regex pattern list from the parser" class="figure-img"><figcaption>Part of the 57-pattern parser, ordered most specific first</figcaption></figure>
+  <figure class="figure"><img src="../images/sub-ui.png" alt="Script GUI" class="figure-img"><figcaption>The GUI: pick a folder, pick a mode, run</figcaption></figure>
+</div>
+<p>The script can run automatically on computer start or manually for double checks, so the data is daily by default instead of weekly by ritual. It writes a clean CSV rather than Excel, which handles the 120,000-email archive without strain.</p>
+</section>
+<section id="the-power-bi-rebuild" class="level2">
+<h2 data-anchor-id="the-power-bi-rebuild">The Power BI rebuild</h2>
+<p>The clean CSV feeds a rebuilt Power BI model, not a pile of pivot tables. The new structure uses organised folders and subfolders, dynamic measures written as DAX rather than copied cells, and a clean, deduplicated data model connected through SharePoint. It is a proper star schema: a central fact table of emails joined to dimension tables for date and category, so the dynamic graphs adapt to the latest weeks on their own.</p>
+<div class="shots">
+  <figure class="figure"><img src="../images/sub-folders.png" alt="Organised measure folders" class="figure-img"><figcaption>Measures in organised folders, not scattered</figcaption></figure>
+  <figure class="figure"><img src="../images/submission-nomenclature.png" alt="Measure groups and tables" class="figure-img"><figcaption>Named measure groups and conformed tables</figcaption></figure>
+  <figure class="figure"><img src="../images/sub-datamodel.png" alt="Star schema" class="figure-img"><figcaption>Star schema: fact table joined to dimensions</figcaption></figure>
+</div>
 </section>
 <section id="outcome" class="level2">
 <h2 data-anchor-id="outcome">Outcome</h2>
-<p><mark>Around 5 hours saved every week</mark>, plus the manual checks and corrections that no longer exist. The team now has <mark>consistent, clean data since 2019</mark> and a dashboard that is always current.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/placeholder-shot.svg" class="img-fluid figure-img"></p>
-<figcaption>GUI and dashboard</figcaption>
-</figure>
+<p><mark>Around 5 hours saved every week</mark>, plus the manual checks and corrections that no longer exist. The team now has <mark>consistent, clean data since 2019</mark> and a dashboard that is always current. All documentation lives in QMD files rendered to HTML.</p>
+<div class="shots">
+  <figure class="figure"><img src="../images/sub-after-2.png" alt="Dashboard detail" class="figure-img"><figcaption>A page from the live dashboard</figcaption></figure>
+  <figure class="figure"><img src="../images/sub-before-data.png" alt="Old data, highlighted by hand" class="figure-img"><figcaption>The old data: highlighted and patched by hand</figcaption></figure>
 </div>
-<p><strong>Stack:</strong> Python (GUI, regex parsing), CSV, SharePoint, Power BI semantic model, Quarto documentation</p>
+</section>
+<section id="before-and-after" class="level2">
+<h2 data-anchor-id="before-and-after">Before and after</h2>
+<div class="reveal-compare" role="button" tabindex="0" aria-label="Click to reveal the after state">
+  <div class="rc-layer rc-before"><h4>Before</h4><p>A 2014 VBA macro crawling Outlook at one email per second, run once a week, freezing the machine and mangling half the fields it parsed.</p></div>
+  <div class="rc-layer rc-after"><div class="rc-cells"></div><div class="rc-content"><h4>After</h4><p>A background Python tool with 57 regex patterns, a clean CSV archive of 120,000 emails, and a live dashboard that needs no manual refresh.</p><p class="touch">My touch: I designed the parser around the messiest real titles first, not the clean ones, so the patterns hold against what people actually send.</p></div></div>
+  <span class="rc-prompt"><span class="dot"></span>click to reveal</span>
+</div>
+<p><strong>Stack:</strong> Python (GUI, 57 regex patterns), CSV, SharePoint, Power BI semantic model, DAX, Quarto documentation</p>
 
 
 </section>
@@ -607,7 +629,7 @@ ul.task-list li input[type="checkbox"] {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>© 2026 Riccardo Cammarata · Built with Quarto</p>
+<p>Riccardo Cammarata · Portfolio · Built with Quarto</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

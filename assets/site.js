@@ -35,7 +35,77 @@
   }
   document.addEventListener("scroll", onScroll, { passive: true }); onScroll();
 
-  if (reduced) return; /* everything below is motion candy */
+  /* Email copy modal */
+  var emailBtn = document.getElementById("emailBtn");
+  var emailModal = document.getElementById("emailModal");
+  if (emailBtn && emailModal) {
+    var closeBtn = emailModal.querySelector(".email-close");
+    var copyBtn = document.getElementById("emailCopy");
+    var copied = document.getElementById("emailCopied");
+    var addr = document.getElementById("emailAddr").textContent.trim();
+    function openM() { emailModal.hidden = false; requestAnimationFrame(function () { emailModal.classList.add("show"); }); }
+    function closeM() { emailModal.classList.remove("show"); setTimeout(function () { emailModal.hidden = true; if (copied) copied.classList.remove("show"); }, 250); }
+    emailBtn.addEventListener("click", openM);
+    if (closeBtn) closeBtn.addEventListener("click", closeM);
+    emailModal.addEventListener("click", function (e) { if (e.target === emailModal) closeM(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !emailModal.hidden) closeM(); });
+    if (copyBtn) copyBtn.addEventListener("click", function () {
+      navigator.clipboard.writeText(addr).then(function () { if (copied) copied.classList.add("show"); });
+    });
+  }
+
+  /* Image swap before/after toggles */
+  document.querySelectorAll(".imgswap").forEach(function (sw) {
+    var btnB = sw.querySelector(".toggle .before");
+    var btnA = sw.querySelector(".toggle .after");
+    var layB = sw.querySelector(".layer.before");
+    var layA = sw.querySelector(".layer.after");
+    var cap = sw.querySelector(".cap");
+    function show(which) {
+      var isB = which === "before";
+      if (btnB) btnB.classList.toggle("on", isB);
+      if (btnA) btnA.classList.toggle("on", !isB);
+      if (layB) layB.classList.toggle("active", isB);
+      if (layA) layA.classList.toggle("active", !isB);
+      if (cap) cap.textContent = isB ? (sw.dataset.capBefore || "Before") : (sw.dataset.capAfter || "After");
+    }
+    if (btnB) btnB.addEventListener("click", function () { show("before"); });
+    if (btnA) btnA.addEventListener("click", function () { show("after"); });
+    show("after");
+  });
+
+  /* Reveal comparison: build grid cells, wipe right-to-left on click */
+  document.querySelectorAll(".reveal-compare").forEach(function (rc) {
+    var cells = rc.querySelector(".rc-cells");
+    if (cells && !cells.children.length) {
+      var cols = 8, rows = 4;
+      for (var i = 0; i < cols * rows; i++) cells.appendChild(document.createElement("span"));
+    }
+    var spans = cells ? cells.querySelectorAll("span") : [];
+    rc.addEventListener("click", function () {
+      if (rc.classList.contains("revealed")) { // toggle back to before
+        rc.classList.remove("revealed");
+        spans.forEach(function (s) { s.style.transitionDelay = "0ms"; });
+        return;
+      }
+      var cols = 8, rows = 4;
+      spans.forEach(function (s, i) {
+        var c = i % cols, r = Math.floor(i / cols);
+        // right edge first, left corners last: delay grows toward the left
+        var delay = (cols - 1 - c) * 45 + r * 20;
+        s.style.transitionDelay = delay + "ms";
+      });
+      rc.classList.add("revealed");
+    });
+    rc.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); rc.click(); }
+    });
+  });
+
+  if (reduced) {
+    document.querySelectorAll(".reveal-compare").forEach(function (rc) { rc.classList.add("revealed"); });
+    return;
+  }
 
   /* Tile tilt + spotlight */
   document.querySelectorAll(".tile").forEach(function (tile) {
@@ -70,7 +140,7 @@
   });
 
   /* Count-up stats */
-  var nums = document.querySelectorAll(".stat .num[data-to]");
+  var nums = document.querySelectorAll(".kpi .num[data-to], .stat .num[data-to]");
   if (nums.length) {
     var seen = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
