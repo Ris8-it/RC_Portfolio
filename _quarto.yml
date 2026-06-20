@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Riccardo Cammarata"
+  description: "Finance data engineer. Python tools that replace fragile manual workflows."
+  favicon: images/favicon.png
+  navbar:
+    pinned: true
+    left:
+      - href: index.qmd
+        text: Home
+      - href: projects/index.qmd
+        text: Projects
+      - href: about.qmd
+        text: About
+    right:
+      - icon: github
+        href: https://github.com/Ris8-it
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/riccardo-cammarata-00s
+        aria-label: LinkedIn
+  page-footer:
+    center: "Riccardo Cammarata · Portfolio · Built with Quarto tools"
+
+format:
+  html:
+    theme: [styles/theme.scss]
+    toc: false
+    anchor-sections: false
+    include-in-header: assets/head.html
+    include-after-body: assets/after-body.html
+    smooth-scroll: true

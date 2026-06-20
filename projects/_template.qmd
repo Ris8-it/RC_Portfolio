@@ -1,0 +1,34 @@
+---
+title: "PROJECT NAME"
+description: "One line: what changed."
+date: 2026-06-11
+categories: [Python, SQL]
+image: ../images/PROJECT-cover.png
+---
+
+## The problem
+
+What the manual workflow looked like and where it broke.
+
+```{=html}
+<div class="before-after">
+  <div class="pane before"><h4>Before</h4><p>Manual steps, fragility, time cost.</p></div>
+  <div class="pane after"><h4>After</h4><p>What runs now, and what it saves.</p></div>
+</div>
+```
+
+## What I built
+
+Approach, key decisions, trade offs.
+
+![Screenshot caption](../images/PROJECT-shot1.png)
+
+```python
+# Short snippet only where it adds value
+```
+
+## Outcome
+
+Quantified result. Link to sanitized repo: [github.com/...](https://github.com)
+
+**Stack:** Python, SQL

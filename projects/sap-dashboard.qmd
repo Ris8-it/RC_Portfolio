@@ -1,0 +1,67 @@
+---
+title: "Revenue & Expenditure Pipeline"
+description: "More than 20 reports once pulled from SAP by hand, now one daily pipeline for the whole organisation."
+date: 2026-06-01
+categories: [SAP Datasphere, SQL, Power BI, Python]
+image: ../images/sap-pipeline.svg
+---
+
+```{=html}
+<span class="status-line live"><span class="dot"></span>Live and working</span>
+```
+
+## The problem
+
+Revenue and expenditure reporting depended on more than 20 separate reports, each one pulled out of SAP by hand as an Excel file. Every workbook had its own filters applied inside it, and there was no way to trace them afterwards. The data was structured differently from one team to the next, so Finance, Procurement and the others kept producing numbers that did not agree with each other.
+
+```{=html}
+<div class="ba-pair">
+  <figure class="before"><span class="ba-tag">Before</span><img src="../images/rev-before-1.png" alt="Before"><figcaption>Before · one of the many exports people filtered by hand</figcaption></figure>
+  <figure class="after"><span class="ba-tag">After</span><img src="../images/rev-after-1.png" alt="After"><figcaption>After · the live governed dashboard</figcaption></figure>
+</div>
+```
+
+## What I built
+
+I helped rewrite most of the data ingestion around one idea: a live connection instead of file exports. Working with SAP consultants, we moved the source layer to SAP Datasphere and rebuilt the data model there, so every filter and field is defined once rather than inside someone's workbook. A live gateway then feeds Power BI directly.
+
+```{=html}
+<img src="../images/rev-improved-flow.svg" alt="Improved data flow: SAP Datasphere to Power BI, daily YTD data, 20+ views">
+```
+
+The new model is a clean star schema: a small set of fact tables for revenue, expenditure and commitments, connected to shared dimension tables for date, entity, fund and category. The measures live in tidy folders instead of being scattered across reports, and the data is cleaned of duplicates right at the source. The result is data up to the current date, refreshed every day, with more than 20 report views rebuilt on the same foundation.
+
+## The data model
+
+This is a close recreation of the rebuilt model, using mockup names. Fact tables sit at the centre, connected to conformed dimension tables, the structure that replaced more than twenty disconnected extracts.
+
+```{=html}
+<div class="shots single">
+  <figure><img src="../images/rev-datamodel.png" alt="Star schema data model"><figcaption>Star schema (recreation with mockup names): fact tables connected to shared dimensions</figcaption></figure>
+</div>
+```
+
+## Outcome
+
+The data went from being refreshed monthly or quarterly, on a different schedule for each team, to being refreshed every day across the whole organisation. The change saved <mark>around 40 collective working hours per week</mark> across the teams involved in reporting, and resolved <mark>more than 300 inconsistencies</mark> between reporting mechanisms and incorrect values.
+
+```{=html}
+<div class="ba-pair">
+  <figure class="before"><span class="ba-tag">Before</span><img src="../images/rev-before-2.png" alt="Old manual report"><figcaption>Before · the kind of manual report it replaced</figcaption></figure>
+  <figure class="after"><span class="ba-tag">After</span><img src="../images/rev-after-2.png" alt="Dashboard detail view"><figcaption>After · one of the rebuilt report views</figcaption></figure>
+</div>
+```
+
+## Before and after
+
+```{=html}
+<div class="reveal-compare" role="button" tabindex="0" aria-label="Click to reveal the after state">
+  <div class="rc-layer rc-after"><div class="rc-content"><h4>After</h4><p>One governed model in SAP Datasphere feeding Power BI live. Same definitions for every team, refreshed daily, traceable end to end.</p><p class="touch">My touch: the real win was getting Finance and Procurement to agree on one definition of every field before a single line of the model was written.</p></div></div>
+  <div class="rc-layer rc-before"><div class="rc-cells"></div><div class="rc-content"><h4>Before</h4><p>More than 20 reports, all pulled from SAP by hand every cycle, each one filtered inside its own workbook, and none of them agreeing with the next.</p></div></div>
+  <span class="rc-prompt"><span class="dot"></span></span>
+</div>
+```
+
+```{=html}
+<p class="stack-line"><strong>Stack:</strong> SAP Datasphere, SQL, Power BI (live gateway), Python, Databricks</p>
+```

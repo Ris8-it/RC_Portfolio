@@ -1,0 +1,32 @@
+{
+  "about.qmd": {
+    "about.html": "1cc2d993"
+  },
+  "index.qmd": {
+    "index.html": "7328c964"
+  },
+  "projects/cinema-model.qmd": {
+    "cinema-model.html": "f173f0b9"
+  },
+  "projects/crypto-regulation.qmd": {
+    "crypto-regulation.html": "0db56045"
+  },
+  "projects/docs-system.qmd": {
+    "docs-system.html": "a7ec385c"
+  },
+  "projects/email-pipeline.qmd": {
+    "email-pipeline.html": "3fbffc22"
+  },
+  "projects/index.qmd": {
+    "index.html": "297ca9f7"
+  },
+  "projects/invoice-checker.qmd": {
+    "invoice-checker.html": "cadbcc79"
+  },
+  "projects/sap-dashboard.qmd": {
+    "sap-dashboard.html": "d3cb45f6"
+  },
+  "templates/documentation-template.qmd": {
+    "documentation-template.html": "d2c32221"
+  }
+}

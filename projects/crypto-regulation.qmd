@@ -1,0 +1,111 @@
+---
+title: "Crypto Regulation: Measuring the Market Response"
+description: "A Fama and French model with a regulation dummy, measuring how restrictive and expansive rules moved the top five cryptoassets across the EU and the US."
+date: 2025-09-01
+categories: [Econometrics, Eikon, Datastream, Fama-French]
+image: ../images/crypto-cover.svg
+---
+
+```{=html}
+<span class="status-line live"><span class="dot"></span>Quantitative analysis</span>
+```
+
+## The question
+
+After the 2020 to 2021 run-up, the European Union and the United States took clearly different routes: the EU moved toward one codified framework, the US relied on enforcement and scattered guidance. I wanted to answer one thing with numbers instead of opinion. When a real legal measure lands, does the market actually react, and does it react differently in the two places?
+
+```{=html}
+<img src="../images/crypto-cover.svg" alt="Crypto regulation and the market, 2020 to 2025">
+```
+
+## The data
+
+I built the panel from Refinitiv Eikon and Datastream: the five largest cryptoassets by capitalisation, with daily price, return and volume from 2020 to 2025. I cleaned the series, aligned them to one calendar, computed log returns, and matched every asset-day to a hand-built timeline of regulatory events. The result is one tidy, model-ready table.
+
+```{=html}
+<img src="../images/crypto-dataset.png" alt="Python script that builds and cleans the dataset">
+```
+
+## The five assets and the dummy
+
+```{=html}
+<div class="info-grid">
+  <div class="info-card">
+    <h4>Top 5 cryptoassets</h4>
+    <p>The five largest by market capitalisation over the window: <strong>BTC, ETH, BNB, XRP and ADA</strong>. Together they make up the large majority of the market, so the panel stays representative without drowning in thin, illiquid coins.</p>
+  </div>
+  <div class="info-card">
+    <h4>The regulation dummy</h4>
+    <p>A binary variable per asset and date. It is <strong>1</strong> when regulation is in play: a measure announced, coming into force, or an enforcement case. It is <strong>0</strong> in a free-market window with no relevant regulation. That single switch is what lets the model isolate the regulatory effect.</p>
+  </div>
+</div>
+```
+
+## The model
+
+The backbone is a Fama and French style factor model, estimated across the five assets, extended with the regulation dummy. Returns are explained by the usual market factors and inflation, and the dummy carries the part that regulation explains on top of ordinary market movement. I ran it in two further variations so the result could be read from more than one angle.
+
+```{=html}
+<div class="info-grid three">
+  <div class="info-card">
+    <h4>Base</h4>
+    <p>Market factors and inflation, plus the regulation dummy. The dummy coefficient is the headline effect.</p>
+  </div>
+  <div class="info-card">
+    <h4>Geographic split</h4>
+    <p>The same model run with a region variable, so the American market and the European one are compared side by side rather than pooled.</p>
+  </div>
+  <div class="info-card">
+    <h4>Counterfactual</h4>
+    <p>A scenario variation that asks the opposite question: what the path would look like under more, or less, regulation than actually happened.</p>
+  </div>
+</div>
+```
+
+```{=html}
+<div class="featured-new">
+  <div class="fn-label"><span class="spark">&#9733;</span>The idea behind it</div>
+  <h3>One dummy, two regimes, three views</h3>
+  <p>Framing regulation as a binary indicator inside a factor model turns a vague debate into something estimable and falsifiable. The geographic split and the counterfactual then let me say not just whether regulation mattered, but where it mattered and what a different policy path might have meant, which is the part that makes the analysis useful rather than just descriptive.</p>
+</div>
+```
+
+## Behind the graphs
+
+```{=html}
+<div class="math-box">
+  <div class="math-eq">r<sub>i,t</sub> − r<sub>f,t</sub> = α + β<sub>1</sub>(r<sub>m,t</sub> − r<sub>f,t</sub>) + β<sub>2</sub>SMB<sub>t</sub> + β<sub>3</sub>HML<sub>t</sub> + β<sub>4</sub>π<sub>t</sub> + <strong>δ·D<sub>i,t</sub></strong> + ε<sub>i,t</sub></div>
+  <p>Each asset's excess return is explained by the market factor, the size and value factors from Fama and French, and inflation (π). The term that matters here is <strong>δ·D</strong>: the coefficient on the regulation dummy. Under the usual assumptions, δ measures the average shift in returns during regulatory windows once the ordinary factors are accounted for, so a δ that is positive and significant means regulation moved the market beyond normal noise.</p>
+  <p class="math-note">The forward-looking part reuses the same structure for simulation: holding the factors at modelled paths and flipping the dummy on or off lets the model project how returns would behave under stronger or weaker regulation, which is exactly the counterfactual variation.</p>
+</div>
+```
+
+## The result
+
+```{=html}
+<img src="../images/crypto-eu-us.svg" alt="Estimated regulatory effect by jurisdiction">
+```
+
+## What the model showed
+
+The two regions behaved very differently. In the EU the regulation dummy came out clearly positive and statistically meaningful, strongest around the introduction of the single framework. In plain terms, when the rules became clear, the market got steadier, as if clarity brought activity onshore instead of scaring it away. In the US the same dummy sat close to zero and was not statistically different from noise. That does not mean enforcement can never matter; it means that during these years the market was driven far more by hype than by any single legal measure, so the regulatory signal simply got drowned out.
+
+## Why I built it this way
+
+I wanted a structure where the data could prove me wrong, and for the US it essentially did. The full study behind this was a long and detailed piece of work, with several variables and event scenarios, and it runs to around a hundred pages, far too specific to drop into a portfolio. What I have kept here is the core idea: a clean factor model, a regulation dummy, and two variations that let the same data answer where regulation worked and what a different policy path might have looked like.
+
+## The bigger picture
+
+```{=html}
+<div class="thesis-highlight">
+  <span class="th-star">&#9733;</span>
+  <div class="th-body">
+    <h4>Capstone project</h4>
+    <p>This was the culmination project for my Master's degree in Finance and Banking, built on real, cleaned datasets and large data clusters rather than toy examples. The version here keeps the core idea; the full study runs far longer and stays under wraps.</p>
+  </div>
+</div>
+```
+
+```{=html}
+<p class="stack-line"><strong>Stack:</strong> Refinitiv Eikon, Datastream, Python, Fama-French factor model, regulation dummy, scenario simulation</p>
+```

@@ -1,0 +1,20 @@
+---
+title: "Projects"
+listing:
+  contents: "*.qmd"
+  type: grid
+  sort: "date desc"
+  fields: [title, description, categories]
+---
+
+Each project follows the same shape: the problem as it existed, what I built, and what changed. Numbers where I have them, screenshots where they help.
+
+```{=html}
+<div class="progress-card reveal-up">
+  <span class="badge-status dev">In progress</span>
+  <div>
+    <strong>AI agent fleet.</strong>
+    <p>A small fleet of agents I am building with Claude Code to support day to day decisions: tracking prices and statuses, drafting and triaging email, and rebuilding tools faster than I could by hand. It lands here as a case study once the pieces run reliably together.</p>
+  </div>
+</div>
+```

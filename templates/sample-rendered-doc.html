@@ -1,0 +1,66 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>
+:root{--navy:#14375e;--mid:#1b5084;--steel:#4a90c4;--tint:#eaf2fc;--tint2:#f4f8fd;--border:#dce6f0;--body:#2c3e50;--muted:#5d6b7c;}
+*{box-sizing:border-box;}
+body{margin:0;background:#f6f8fb;font-family:Verdana,Arial,sans-serif;font-size:13px;color:var(--body);}
+.wrap{width:820px;margin:0 auto;background:#fff;min-height:100%;display:flex;}
+.toc{width:210px;background:var(--tint2);border-right:1px solid var(--border);padding:24px 18px;font-size:12px;}
+.toc h4{color:var(--navy);text-transform:uppercase;letter-spacing:.05em;font-size:11px;margin:0 0 12px;}
+.toc a{display:block;color:var(--mid);text-decoration:none;padding:5px 0;border-left:2px solid transparent;padding-left:8px;}
+.toc a.active{border-left-color:var(--steel);color:var(--navy);font-weight:bold;}
+.main{flex:1;}
+.banner{background:linear-gradient(120deg,var(--navy),var(--mid));color:#fff;padding:30px 36px;}
+.banner .eyebrow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;opacity:.8;font-family:'Fira Code',monospace;}
+.banner h1{margin:8px 0 4px;font-size:25px;}
+.banner .meta{font-size:12px;opacity:.85;}
+.content{padding:28px 36px;}
+.callout{border-left:4px solid var(--steel);background:var(--tint);padding:12px 16px;border-radius:4px;margin:16px 0;font-size:12px;}
+.callout.imp{border-left-color:var(--navy);background:#eff4fb;}
+h2{color:var(--navy);font-size:18px;border-bottom:1px solid var(--border);padding-bottom:6px;margin:24px 0 10px;}
+h3{color:var(--mid);font-size:14px;margin:16px 0 6px;}
+p{line-height:1.5;}
+table{border-collapse:collapse;width:100%;font-size:12px;margin:12px 0;}
+th{background:var(--navy);color:#fff;text-align:left;padding:7px 10px;}
+td{border-bottom:1px solid var(--border);padding:7px 10px;}
+tr:nth-child(even) td{background:var(--tint2);}
+.code{background:#102b47;color:#f0f6ff;border-radius:6px;padding:14px 16px;font-family:'Fira Code',monospace;font-size:12px;line-height:1.6;margin:14px 0;}
+.code .k{color:#61a8ec;}.code .s{color:#8bc89e;}.code .c{color:#6c89a8;}
+.tag{display:inline-block;background:var(--tint);color:var(--mid);border:1px solid var(--border);border-radius:99px;padding:2px 10px;font-size:11px;margin-right:6px;}
+</style></head><body><div class="wrap">
+<div class="toc">
+<h4>Table of Contents</h4>
+<a class="active">1. Introduction</a>
+<a>1.1 Purpose and Scope</a>
+<a>1.2 System Context</a>
+<a>2. Data Modelling</a>
+<a>2.1 Source Tables</a>
+<a>2.2 Relationships</a>
+<a>3. Processing Logic</a>
+<a>4. Measures</a>
+</div>
+<div class="main">
+<div class="banner">
+<div class="eyebrow">Technical Reference</div>
+<h1>Revenue Reporting Pipeline</h1>
+<div class="meta">Technical Document &nbsp;·&nbsp; 04 Jun 2026 &nbsp;·&nbsp; Status: Live</div>
+</div>
+<div class="content">
+<div class="callout imp"><b>Summary card.</b> Reference: DOC/2026 · Status: Live · Effective date: 04 Jun 2026</div>
+<h2>1. Introduction</h2>
+<p>This document covers the revenue reporting pipeline, from source ingestion through to the published dashboard. The audience is the reporting team and any analyst maintaining the model.</p>
+<h3>1.1 Purpose and Scope</h3>
+<table><tr><th>Objective</th><th>Section</th></tr>
+<tr><td>Describe the data model</td><td>Section 2</td></tr>
+<tr><td>Document the processing logic</td><td>Section 3</td></tr>
+<tr><td>List the published measures</td><td>Section 4</td></tr></table>
+<div class="callout"><b>Note.</b> The model refreshes daily at 06:00. No manual extract is required.</div>
+<h2>2. Data Modelling</h2>
+<p>The model follows a star schema. Source tables feed a central fact table, with dimensions for date, entity, and category.</p>
+<h3>2.1 Source Tables</h3>
+<table><tr><th>Table</th><th>Source</th><th>Grain</th></tr>
+<tr><td>Fact ledger</td><td>Datasphere</td><td>Transaction</td></tr>
+<tr><td>Date dimension</td><td>Generated</td><td>Day</td></tr>
+<tr><td>Entity dimension</td><td>Datasphere</td><td>Entity</td></tr></table>
+<h2>3. Processing Logic</h2>
+<div class="code"><span class="c"># refresh handled by the live gateway</span><br><span class="k">def</span> refresh_model(source):<br>&nbsp;&nbsp;&nbsp;&nbsp;data = source.<span class="k">pull</span>(<span class="s">"latest"</span>)<br>&nbsp;&nbsp;&nbsp;&nbsp;<span class="k">return</span> clean(data).deduplicate()</div>
+<p><span class="tag">HTML</span><span class="tag">PDF</span><span class="tag">Cross-referenced</span><span class="tag">Live data</span></p>
+</div></div></div></body></html>
