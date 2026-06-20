@@ -426,27 +426,24 @@ mark, .hl {
 .status-line {
   font-family: $font-family-monospace; font-size: .78rem;
   display: inline-flex; gap: .5rem; align-items: center;
-  padding: .3rem .9rem; border-radius: 999px; margin-bottom: 1rem;
-  position: relative; isolation: isolate; overflow: hidden;
+  padding: .35rem 1rem; border-radius: 999px; margin-bottom: 1rem;
+  position: relative; isolation: isolate;
+  background: #0E1426; border: 1px solid rgba(79,209,197,.22);
 }
-/* rotating conic arc clipped to the pill; inner pill leaves a thin glowing ring */
+/* a glowing dot that travels smoothly around the actual pill border */
 .status-line::before {
-  content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: -2;
-  background: conic-gradient(from 0deg, rgba(79,209,197,0), #4FD1C5 70deg, #8B9BFF 120deg, rgba(79,209,197,0) 180deg, rgba(79,209,197,0) 360deg);
-  animation: spin 3.2s linear infinite;
+  content: ""; position: absolute; width: 7px; height: 7px; border-radius: 50%;
+  background: #4FD1C5; box-shadow: 0 0 10px 3px rgba(79,209,197,.9), 0 0 4px 1px #4FD1C5;
+  offset-path: border-box; offset-distance: 0%; offset-rotate: 0deg;
+  will-change: offset-distance;
+  animation: trail 3.4s linear infinite;
 }
-.status-line::after {
-  content: ""; position: absolute; inset: 1.5px; border-radius: 999px; z-index: -1;
-  background: #0E1426;
+@keyframes trail {
+  to { offset-distance: 100%; }
 }
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-.status-line.live { color: var(--teal); }
-.status-line.dev { color: #FFD58A; }
-.status-line.dev::before {
-  background: conic-gradient(from 0deg, rgba(255,213,138,0), #FFD58A 70deg, #F0A8A8 120deg, rgba(255,213,138,0) 180deg, rgba(255,213,138,0) 360deg);
-}
+.status-line.live { color: #4FD1C5; }
+.status-line.dev { color: #FFD58A; border-color: rgba(255,213,138,.3); }
+.status-line.dev::before { background: #FFD58A; box-shadow: 0 0 10px 3px rgba(255,213,138,.9), 0 0 4px 1px #FFD58A; }
 
 img { border-radius: 12px; }
 #quarto-document-content img { max-width: 100%; height: auto; }

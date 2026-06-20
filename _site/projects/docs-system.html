@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-4b3ae02ca3d2c990793b4a58c5ee5acf.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-ad63cc7d682760cfd2c058bb2d4805ac.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-021c02bcb267b6666c7a3a75335c0a7b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -193,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-anchor-id="from-data-to-a-referenced-graph">From data to a referenced graph</h2>
 <p>The other half of the system is how graphs get made. Instead of pasting a screenshot that goes stale, a chart is produced by a small data script and rendered into the document at build time. The same output can then be referenced and previewed from any other document, so one corrected number updates everywhere it appears.</p>
 <div class="ba-pair">
-  <figure class="before figure"><span class="ba-tag">Before</span><img src="../images/doc-before-1.png" alt="Old pasted chart" class="figure-img"><figcaption>Before · a chart pasted in by hand, frozen the moment it was copied</figcaption></figure>
+  <figure class="before figure"><span class="ba-tag">Before</span><img src="../images/doc-before-2.png" alt="Old Word doc alt=" old="" pasted="" chart"="" class="figure-img"><figcaption>Before · a chart pasted in by hand, frozen the moment it was copied</figcaption></figure>
   <figure class="after figure"><span class="ba-tag">After</span><img src="../images/doc-flow.svg" alt="Data to rendered graph workflow" class="figure-img"><figcaption>After · a scripted pipeline from source data to a rendered, reusable graph</figcaption></figure>
 </div>
 <p>The flow is end to end: source queries land in a downloads folder, a processor turns them into clean tables, those feed a shared dataset, and the chart is rendered straight into the page. Because the graph is generated rather than pasted, it carries the same styling everywhere and can be previewed and reused across documents without a single manual export.</p>
@@ -202,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 data-anchor-id="why-it-matters">Why it matters</h2>
 <p>This is the quiet backbone of everything else here. Every tool I ship comes documented in this format, so it survives me being on holiday. The same YAML produces a clean web page for quick reference and a PDF for formal sign-off, from one file, with no reformatting.</p>
 <div class="ba-pair">
-  <figure class="before figure"><span class="ba-tag">Before</span><img src="../images/doc-before-2.png" alt="Old Word doc" class="figure-img"><figcaption>Before · another page from the old documentation, with its own formatting drift</figcaption></figure>
+  <figure class="before figure"><span class="ba-tag">Before</span><img src="../images/doc-before-1.png" alt="Old Word doc" class="figure-img"><figcaption>Before · another page from the old documentation, with its own formatting drift</figcaption></figure>
   <figure class="after figure"><span class="ba-tag">After</span><img src="../images/doc-after.png" alt="Rendered HTML doc" class="figure-img"><figcaption>After · another page from the same system, rendered with TOC, callouts and styled code</figcaption></figure>
 </div>
 </section>
