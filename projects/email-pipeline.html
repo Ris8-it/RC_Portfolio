@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-dab333370b46a58f04c2e79b6e18fa8e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d15fbfcdc388843510f15aec9f47cbc6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-0756081b6a8f055b062b3b417beafc82.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -175,13 +175,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="the-problem" class="level2">
 <h2 data-anchor-id="the-problem">The problem</h2>
 <p>Weekly submission statistics depended on a VBA macro built in 2014 that downloaded one email per second, ran once a week, and locked the computer while it worked. Parsing email titles into fields produced wrong and missing values, so every run was followed by manual edits. The volume: around 500 submissions per week, on top of an archive of roughly 120,000 emails.</p>
-<div class="imgswap" data-cap-before="Before · the weekly statistics in a fragile Excel file" data-cap-after="After · the live submission dashboard">
-  <div class="toggle"><button class="before">Before</button><button class="after on">After</button></div>
-  <div class="imgswap-stage">
-    <div class="layer before"><img src="../images/sub-before-1.png" alt="Old VBA-driven statistics, before"></div>
-    <div class="layer after active"><img src="../images/sub-after-1.png" alt="Live dashboard, after"></div>
-  </div>
-  <div class="cap">After · the live submission dashboard</div>
+<div class="ba-pair">
+  <figure class="before figure"><span class="ba-tag">Before</span><img src="../images/sub-before-1.png" alt="Before" class="figure-img"><figcaption>Before · the weekly statistics in a fragile Excel file</figcaption></figure>
+  <figure class="after figure"><span class="ba-tag">After</span><img src="../images/sub-after-1.png" alt="After" class="figure-img"><figcaption>After · the live submission dashboard</figcaption></figure>
 </div>
 </section>
 <section id="the-new-script" class="level2">
@@ -189,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="featured-new">
   <div class="fn-label"><span class="spark">★</span>The core of the rebuild</div>
   <h3>A Python tool that does in 30 seconds what used to take an hour</h3>
-  <p>A small application with a GUI: pick the Outlook folder, pick the mode, run. It finds the right emails, normalises every date format, and applies 57 regex patterns to pull clean fields out of inconsistent titles. The patterns are ordered from most specific to most general, so the messy real-world cases are caught first.</p>
+  <p>A small application with a GUI: pick the Outlook folder, pick the mode, run. It finds the right emails, puts every date into the same format, and runs 57 regex patterns to pull clean fields out of titles that are never written the same way twice. The patterns run from the most specific to the most general, so the messy cases get caught first.</p>
 </div>
 <p>Here is the heart of the parser, the ordered pattern list that replaced years of manual correction:</p>
 <div class="shots">
@@ -197,6 +193,57 @@ ul.task-list li input[type="checkbox"] {
   <figure class="figure"><img src="../images/sub-ui.png" alt="Script GUI" class="figure-img"><figcaption>The GUI: pick a folder, pick a mode, run</figcaption></figure>
 </div>
 <p>The script can run automatically on computer start or manually for double checks, so the data is daily by default instead of weekly by ritual. It writes a clean CSV rather than Excel, which handles the 120,000-email archive without strain.</p>
+</section>
+<section id="behind-the-scenes" class="level2">
+<h2 data-anchor-id="behind-the-scenes">Behind the scenes</h2>
+<p>A look at how the parser actually works. These snippets are simplified and anonymised, but the logic is the real thing.</p>
+<div class="code-tour">
+  <div class="ct-head"><span class="ct-dots"><i></i><i></i><i></i></span><span class="ct-file">email_master_downloader.py</span></div>
+  <div class="ct-tabs">
+    <button class="ct-tab on">Ordered patterns</button>
+    <button class="ct-tab">Date normalisation</button>
+    <button class="ct-tab">Deduplication</button>
+  </div>
+  <div class="ct-body">
+    <div class="ct-panel on">
+      <pre><span class="cm"># Patterns run most specific first, so the messy</span>
+<span class="cm"># real titles are caught before the generic ones.</span>
+patterns = [
+    re.compile(r<span class="st">'(\d{4})\s*-\s*REF\s+(\d{1,4}/?\d{0,4})'</span>, re.I),
+    re.compile(r<span class="st">'(\d{4})\s+REF\s+(\d{1,4}/?\d{0,4})'</span>, re.I),
+    re.compile(r<span class="st">'-\s*(\d{4})\s*-\s*REF\s+(\d{1,4})'</span>, re.I),
+    re.compile(r<span class="st">'REF\s+(\d{1,4}/?\d{0,4})'</span>, re.I),
+]
+<span class="kw">for</span> rx <span class="kw">in</span> patterns:
+    m = rx.search(title)
+    <span class="kw">if</span> m:
+        <span class="kw">return</span> normalise(m.groups())</pre>
+      <div class="ct-note"><h5>Why ordered</h5>People never write a subject line the same way twice. Sorting the patterns from most to least specific means a clean match wins before a loose one can grab the wrong fragment. Fifty-seven patterns cover the long tail without a single manual correction.</div>
+    </div>
+    <div class="ct-panel">
+      <pre><span class="cm"># Every date format people use, into one.</span>
+<span class="kw">def</span> <span class="fn">normalise_date</span>(raw):
+    <span class="kw">for</span> fmt <span class="kw">in</span> (<span class="st">"%d/%m/%Y"</span>, <span class="st">"%d-%m-%Y"</span>,
+                <span class="st">"%d %b %Y"</span>, <span class="st">"%d.%m.%y"</span>):
+        <span class="kw">try</span>:
+            <span class="kw">return</span> datetime.strptime(raw, fmt)
+        <span class="kw">except</span> ValueError:
+            <span class="kw">continue</span>
+    <span class="kw">return</span> <span class="fn">flag_for_review</span>(raw)</pre>
+      <div class="ct-note"><h5>No silent failures</h5>A date that matches nothing is not dropped or guessed. It is flagged and surfaced in the dashboard, so the few genuine edge cases get a human glance instead of quietly corrupting a weekly total.</div>
+    </div>
+    <div class="ct-panel">
+      <pre><span class="cm"># Append only what is genuinely new.</span>
+key = [<span class="st">"ref"</span>, <span class="st">"date"</span>, <span class="st">"type"</span>]
+merged = pd.concat([master, incoming])
+merged = merged.drop_duplicates(
+    subset=key, keep=<span class="st">"last"</span>)
+added = len(merged) - len(master)
+<span class="fn">log</span>(f<span class="st">"appended {added} new rows"</span>)</pre>
+      <div class="ct-note"><h5>Idempotent runs</h5>Run it once or ten times, the archive stays correct. Deduplication on a composite key means a re-run never doubles a week, which is what made it safe to schedule on startup.</div>
+    </div>
+  </div>
+</div>
 </section>
 <section id="the-power-bi-rebuild" class="level2">
 <h2 data-anchor-id="the-power-bi-rebuild">The Power BI rebuild</h2>
@@ -210,19 +257,19 @@ ul.task-list li input[type="checkbox"] {
 <section id="outcome" class="level2">
 <h2 data-anchor-id="outcome">Outcome</h2>
 <p><mark>Around 5 hours saved every week</mark>, plus the manual checks and corrections that no longer exist. The team now has <mark>consistent, clean data since 2019</mark> and a dashboard that is always current. All documentation lives in QMD files rendered to HTML.</p>
-<div class="shots">
-  <figure class="figure"><img src="../images/sub-after-2.png" alt="Dashboard detail" class="figure-img"><figcaption>A page from the live dashboard</figcaption></figure>
-  <figure class="figure"><img src="../images/sub-before-data.png" alt="Old data, highlighted by hand" class="figure-img"><figcaption>The old data: highlighted and patched by hand</figcaption></figure>
+<div class="ba-pair">
+  <figure class="before figure"><span class="ba-tag">Before</span><img src="../images/sub-before-data.png" alt="Old data, highlighted by hand" class="figure-img"><figcaption>Before · data highlighted and patched by hand</figcaption></figure>
+  <figure class="after figure"><span class="ba-tag">After</span><img src="../images/sub-after-2.png" alt="Dashboard detail" class="figure-img"><figcaption>After · a page from the live dashboard</figcaption></figure>
 </div>
 </section>
 <section id="before-and-after" class="level2">
 <h2 data-anchor-id="before-and-after">Before and after</h2>
 <div class="reveal-compare" role="button" tabindex="0" aria-label="Click to reveal the after state">
-  <div class="rc-layer rc-before"><h4>Before</h4><p>A 2014 VBA macro crawling Outlook at one email per second, run once a week, freezing the machine and mangling half the fields it parsed.</p></div>
-  <div class="rc-layer rc-after"><div class="rc-cells"></div><div class="rc-content"><h4>After</h4><p>A background Python tool with 57 regex patterns, a clean CSV archive of 120,000 emails, and a live dashboard that needs no manual refresh.</p><p class="touch">My touch: I designed the parser around the messiest real titles first, not the clean ones, so the patterns hold against what people actually send.</p></div></div>
-  <span class="rc-prompt"><span class="dot"></span>click to reveal</span>
+  <div class="rc-layer rc-after"><div class="rc-content"><h4>After</h4><p>A background Python tool with 57 regex patterns, a clean CSV archive of 120,000 emails, and a live dashboard that needs no manual refresh.</p><p class="touch">My touch: I built the parser around the messiest titles first instead of the clean ones, so it holds up against what people actually send.</p></div></div>
+  <div class="rc-layer rc-before"><div class="rc-cells"></div><div class="rc-content"><h4>Before</h4><p>An old VBA macro from 2014 that crawled through Outlook at one email per second, ran once a week, froze the machine, and got half the fields wrong.</p></div></div>
+  <span class="rc-prompt"><span class="dot"></span></span>
 </div>
-<p><strong>Stack:</strong> Python (GUI, 57 regex patterns), CSV, SharePoint, Power BI semantic model, DAX, Quarto documentation</p>
+<p class="stack-line"><strong>Stack:</strong> Python (GUI, 57 regex patterns), CSV, SharePoint, Power BI semantic model, DAX, Quarto documentation</p>
 
 
 </section>
@@ -629,7 +676,7 @@ ul.task-list li input[type="checkbox"] {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Riccardo Cammarata · Portfolio · Built with Quarto</p>
+<p>Riccardo Cammarata · Portfolio · Built with Quarto tools</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

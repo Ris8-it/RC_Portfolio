@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-dab333370b46a58f04c2e79b6e18fa8e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d15fbfcdc388843510f15aec9f47cbc6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-0756081b6a8f055b062b3b417beafc82.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -174,14 +174,10 @@ ul.task-list li input[type="checkbox"] {
 <span class="status-line live"><span class="dot"></span>Live</span>
 <section id="the-problem" class="level2">
 <h2 data-anchor-id="the-problem">The problem</h2>
-<p>Team documentation lived in Word files full of pasted screenshots and links that broke over time. Versions diverged across teams, changes were untracked, and every update meant manual fixes throughout the document, with mismatched fonts, oversized logos, and highlights in every colour.</p>
-<div class="imgswap" data-cap-before="Before · a Word document, version v7_FINAL_final2" data-cap-after="After · one rendered, templated HTML document">
-  <div class="toggle"><button class="before">Before</button><button class="after on">After</button></div>
-  <div class="imgswap-stage">
-    <div class="layer before"><img src="../images/doc-before.png" alt="Old Word document, before"></div>
-    <div class="layer after active"><img src="../images/doc-after.png" alt="Rendered documentation, after"></div>
-  </div>
-  <div class="cap">After · one rendered, templated HTML document</div>
+<p>Team documentation lived in Word files stuffed with pasted screenshots and links that broke over time. Versions drifted apart from one team to the next, nobody tracked the changes, and every update meant fixing the same things by hand all through the document, with fonts that did not match, logos that were too big, and highlights in every colour.</p>
+<div class="ba-pair">
+  <figure class="before figure"><span class="ba-tag">Before</span><img src="../images/doc-before-1.png" alt="Before" class="figure-img"><figcaption>Before · yes, there really was documentation like this, with several versions, notes scribbled down the right margin, and a name like <mark>v6_Final2</mark></figcaption></figure>
+  <figure class="after figure"><span class="ba-tag">After</span><img src="../images/doc-after-2.png" alt="After" class="figure-img"><figcaption>After · one rendered, templated document, here a dashboard user guide</figcaption></figure>
 </div>
 </section>
 <section id="what-i-built" class="level2">
@@ -193,12 +189,21 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>The result is interactive rather than static: a live table of contents, collapsable callout boxes, cross references between documents, and images and graphs that update with the underlying data instead of being pasted in. Links stay alive because they are part of the build, not copied by hand.</p>
 </section>
+<section id="from-data-to-a-referenced-graph" class="level2">
+<h2 data-anchor-id="from-data-to-a-referenced-graph">From data to a referenced graph</h2>
+<p>The other half of the system is how graphs get made. Instead of pasting a screenshot that goes stale, a chart is produced by a small data script and rendered into the document at build time. The same output can then be referenced and previewed from any other document, so one corrected number updates everywhere it appears.</p>
+<div class="ba-pair">
+  <figure class="before figure"><span class="ba-tag">Before</span><img src="../images/doc-before-1.png" alt="Old pasted chart" class="figure-img"><figcaption>Before · a chart pasted in by hand, frozen the moment it was copied</figcaption></figure>
+  <figure class="after figure"><span class="ba-tag">After</span><img src="../images/doc-flow.svg" alt="Data to rendered graph workflow" class="figure-img"><figcaption>After · a scripted pipeline from source data to a rendered, reusable graph</figcaption></figure>
+</div>
+<p>The flow is end to end: source queries land in a downloads folder, a processor turns them into clean tables, those feed a shared dataset, and the chart is rendered straight into the page. Because the graph is generated rather than pasted, it carries the same styling everywhere and can be previewed and reused across documents without a single manual export.</p>
+</section>
 <section id="why-it-matters" class="level2">
 <h2 data-anchor-id="why-it-matters">Why it matters</h2>
 <p>This is the quiet backbone of everything else here. Every tool I ship comes documented in this format, so it survives me being on holiday. The same YAML produces a clean web page for quick reference and a PDF for formal sign-off, from one file, with no reformatting.</p>
-<div class="shots">
-  <figure class="figure"><img src="../images/doc-after.png" alt="Rendered HTML doc" class="figure-img"><figcaption>The rendered HTML: TOC, banner, callouts, styled code</figcaption></figure>
-  <figure class="figure"><img src="../images/doc-before.png" alt="Old Word doc" class="figure-img"><figcaption>The Word file it replaced</figcaption></figure>
+<div class="ba-pair">
+  <figure class="before figure"><span class="ba-tag">Before</span><img src="../images/doc-before-2.png" alt="Old Word doc" class="figure-img"><figcaption>Before · another page from the old documentation, with its own formatting drift</figcaption></figure>
+  <figure class="after figure"><span class="ba-tag">After</span><img src="../images/doc-after.png" alt="Rendered HTML doc" class="figure-img"><figcaption>After · another page from the same system, rendered with TOC, callouts and styled code</figcaption></figure>
 </div>
 </section>
 <section id="outcome" class="level2">
@@ -208,11 +213,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="before-and-after" class="level2">
 <h2 data-anchor-id="before-and-after">Before and after</h2>
 <div class="reveal-compare" role="button" tabindex="0" aria-label="Click to reveal the after state">
-  <div class="rc-layer rc-before"><h4>Before</h4><p>Word documents full of pasted screenshots and links that broke over time, with versions quietly drifting apart across teams.</p></div>
-  <div class="rc-layer rc-after"><div class="rc-cells"></div><div class="rc-content"><h4>After</h4><p>One QMD template and one stylesheet rendering to interconnected HTML and PDF, with a live table of contents and cross references that never rot.</p><p class="touch">My touch: one YAML header produces both the web page and the formal PDF, so there is never a second version to keep in sync.</p></div></div>
-  <span class="rc-prompt"><span class="dot"></span>click to reveal</span>
+  <div class="rc-layer rc-after"><div class="rc-content"><h4>After</h4><p>One QMD template and one stylesheet rendering to interconnected HTML and PDF, with a live table of contents and cross references that never rot.</p><p class="touch">My touch: one YAML header produces both the web page and the formal PDF, so there is never a second copy to keep in sync.</p></div></div>
+  <div class="rc-layer rc-before"><div class="rc-cells"></div><div class="rc-content"><h4>Before</h4><p>Word documents stuffed with pasted screenshots and links that broke over time, with versions quietly drifting apart from one team to the next.</p></div></div>
+  <span class="rc-prompt"><span class="dot"></span></span>
 </div>
-<p><strong>Stack:</strong> Quarto (QMD, Markdown), YAML, HTML, CSS, PDF output, video editing for guides</p>
+<p class="stack-line"><strong>Stack:</strong> Quarto (QMD, Markdown), YAML, HTML, CSS, PDF output, video editing for guides</p>
 
 
 </section>
@@ -619,7 +624,7 @@ ul.task-list li input[type="checkbox"] {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Riccardo Cammarata · Portfolio · Built with Quarto</p>
+<p>Riccardo Cammarata · Portfolio · Built with Quarto tools</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

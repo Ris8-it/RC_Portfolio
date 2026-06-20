@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="dcterms.date" content="2026-06-01">
-<meta name="description" content="From 20+ manual SAP extracts to a daily, enterprise-wide pipeline.">
+<meta name="description" content="More than 20 reports once pulled from SAP by hand, now one daily pipeline for the whole organisation.">
 
 <title>Revenue &amp; Expenditure Pipeline – Riccardo Cammarata</title>
 <style>
@@ -43,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-dab333370b46a58f04c2e79b6e18fa8e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d15fbfcdc388843510f15aec9f47cbc6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-0756081b6a8f055b062b3b417beafc82.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -148,7 +148,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    From 20+ manual SAP extracts to a daily, enterprise-wide pipeline.
+    More than 20 reports once pulled from SAP by hand, now one daily pipeline for the whole organisation.
   </div>
 </div>
 
@@ -171,52 +171,44 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<span class="status-line live"><span class="dot"></span>Live</span>
+<span class="status-line live"><span class="dot"></span>Live and working</span>
 <section id="the-problem" class="level2">
 <h2 data-anchor-id="the-problem">The problem</h2>
-<p>Revenue and expenditure reporting depended on more than 20 separate SAP reports, each extracted by hand as an Excel file. Filters were applied inside individual workbooks and could not be traced afterwards. Data structures differed between teams, so Finance, Procurement and others routinely produced numbers that disagreed with each other.</p>
-<div class="imgswap" data-cap-before="Before · one of many hand-filtered SAP exports" data-cap-after="After · the live governed dashboard">
-  <div class="toggle"><button class="before">Before</button><button class="after on">After</button></div>
-  <div class="imgswap-stage">
-    <div class="layer before"><img src="../images/rev-before-1.png" alt="Manual SAP export, before"></div>
-    <div class="layer after active"><img src="../images/rev-after-1.png" alt="Live dashboard, after"></div>
-  </div>
-  <div class="cap">After · the live governed dashboard</div>
+<p>Revenue and expenditure reporting depended on more than 20 separate reports, each one pulled out of SAP by hand as an Excel file. Every workbook had its own filters applied inside it, and there was no way to trace them afterwards. The data was structured differently from one team to the next, so Finance, Procurement and the others kept producing numbers that did not agree with each other.</p>
+<div class="ba-pair">
+  <figure class="before figure"><span class="ba-tag">Before</span><img src="../images/rev-before-1.png" alt="Before" class="figure-img"><figcaption>Before · one of the many exports people filtered by hand</figcaption></figure>
+  <figure class="after figure"><span class="ba-tag">After</span><img src="../images/rev-after-1.png" alt="After" class="figure-img"><figcaption>After · the live governed dashboard</figcaption></figure>
 </div>
 </section>
 <section id="what-i-built" class="level2">
 <h2 data-anchor-id="what-i-built">What I built</h2>
 <p>I helped rewrite most of the data ingestion around one idea: a live connection instead of file exports. Working with SAP consultants, we moved the source layer to SAP Datasphere and rebuilt the data model there, so every filter and field is defined once rather than inside someone’s workbook. A live gateway then feeds Power BI directly.</p>
-<img class="" src="../images/sap-pipeline.svg" alt="Improved data flow: Datasphere to Power BI">
-<p>The new model is a clean star schema: a small set of fact tables (revenue, expenditure, commitments) connected to shared dimension tables for date, entity, fund and category. Measures sit in organised display folders rather than scattered across reports, and the data is deduplicated at the source. The result is year-to-date (YTD) data refreshed daily, with more than 20 report views rebuilt on one foundation.</p>
-<div class="card-soft">
-  <h4 style="font-family:var(--bs-font-monospace);color:var(--teal);font-size:.85rem;letter-spacing:.05em;">THE NEW DATA FLOW</h4>
-  <p>SAP Datasphere (governed model, deduplicated)&nbsp; →&nbsp; live gateway&nbsp; →&nbsp; Power BI&nbsp; →&nbsp; YTD data, refreshed daily, 20+ views.</p>
-</div>
+<img src="../images/rev-improved-flow.svg" alt="Improved data flow: SAP Datasphere to Power BI, daily YTD data, 20+ views">
+<p>The new model is a clean star schema: a small set of fact tables for revenue, expenditure and commitments, connected to shared dimension tables for date, entity, fund and category. The measures live in tidy folders instead of being scattered across reports, and the data is cleaned of duplicates right at the source. The result is data up to the current date, refreshed every day, with more than 20 report views rebuilt on the same foundation.</p>
 </section>
 <section id="the-data-model" class="level2">
 <h2 data-anchor-id="the-data-model">The data model</h2>
-<p>A blurred view of the rebuilt model. Fact tables sit at the centre, connected to conformed dimension tables, the structure that replaced 20-plus disconnected extracts.</p>
-<div class="shots">
-  <figure class="figure"><img src="../images/rev-datamodel.png" alt="Star schema data model" class="figure-img"><figcaption>Star schema: fact tables connected to shared dimensions</figcaption></figure>
+<p>This is a close recreation of the rebuilt model, using mockup names. Fact tables sit at the centre, connected to conformed dimension tables, the structure that replaced more than twenty disconnected extracts.</p>
+<div class="shots single">
+  <figure class="figure"><img src="../images/rev-datamodel.png" alt="Star schema data model" class="figure-img"><figcaption>Star schema (recreation with mockup names): fact tables connected to shared dimensions</figcaption></figure>
 </div>
 </section>
 <section id="outcome" class="level2">
 <h2 data-anchor-id="outcome">Outcome</h2>
-<p>Refresh frequency went from monthly or quarterly (and different per team) to daily for the whole organisation. The change saved <mark>around 40 collective working hours per week</mark> across the teams involved in reporting, and resolved <mark>more than 300 inconsistencies</mark> between reporting mechanisms and incorrect values.</p>
-<div class="shots">
-  <figure class="figure"><img src="../images/rev-after-2.png" alt="Dashboard detail view" class="figure-img"><figcaption>One of the rebuilt report views</figcaption></figure>
-  <figure class="figure"><img src="../images/rev-before-2.png" alt="Old manual report" class="figure-img"><figcaption>The kind of manual report it replaced</figcaption></figure>
+<p>The data went from being refreshed monthly or quarterly, on a different schedule for each team, to being refreshed every day across the whole organisation. The change saved <mark>around 40 collective working hours per week</mark> across the teams involved in reporting, and resolved <mark>more than 300 inconsistencies</mark> between reporting mechanisms and incorrect values.</p>
+<div class="ba-pair">
+  <figure class="before figure"><span class="ba-tag">Before</span><img src="../images/rev-before-2.png" alt="Old manual report" class="figure-img"><figcaption>Before · the kind of manual report it replaced</figcaption></figure>
+  <figure class="after figure"><span class="ba-tag">After</span><img src="../images/rev-after-2.png" alt="Dashboard detail view" class="figure-img"><figcaption>After · one of the rebuilt report views</figcaption></figure>
 </div>
 </section>
 <section id="before-and-after" class="level2">
 <h2 data-anchor-id="before-and-after">Before and after</h2>
 <div class="reveal-compare" role="button" tabindex="0" aria-label="Click to reveal the after state">
-  <div class="rc-layer rc-before"><h4>Before</h4><p>Twenty-plus reports pulled from SAP by hand every cycle, each one filtered inside its own workbook, none of them agreeing with the next.</p></div>
-  <div class="rc-layer rc-after"><div class="rc-cells"></div><div class="rc-content"><h4>After</h4><p>One governed model in SAP Datasphere feeding Power BI live. Same definitions for every team, refreshed daily, traceable end to end.</p><p class="touch">My touch: the real win was getting Finance and Procurement to agree on one definition of every field before a single line of the model was written.</p></div></div>
-  <span class="rc-prompt"><span class="dot"></span>click to reveal</span>
+  <div class="rc-layer rc-after"><div class="rc-content"><h4>After</h4><p>One governed model in SAP Datasphere feeding Power BI live. Same definitions for every team, refreshed daily, traceable end to end.</p><p class="touch">My touch: the real win was getting Finance and Procurement to agree on one definition of every field before a single line of the model was written.</p></div></div>
+  <div class="rc-layer rc-before"><div class="rc-cells"></div><div class="rc-content"><h4>Before</h4><p>More than 20 reports, all pulled from SAP by hand every cycle, each one filtered inside its own workbook, and none of them agreeing with the next.</p></div></div>
+  <span class="rc-prompt"><span class="dot"></span></span>
 </div>
-<p><strong>Stack:</strong> SAP Datasphere, SQL, Power BI (live gateway), Python, Databricks</p>
+<p class="stack-line"><strong>Stack:</strong> SAP Datasphere, SQL, Power BI (live gateway), Python, Databricks</p>
 
 
 </section>
@@ -623,7 +615,7 @@ ul.task-list li input[type="checkbox"] {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Riccardo Cammarata · Portfolio · Built with Quarto</p>
+<p>Riccardo Cammarata · Portfolio · Built with Quarto tools</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

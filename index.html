@@ -41,7 +41,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-dab333370b46a58f04c2e79b6e18fa8e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d15fbfcdc388843510f15aec9f47cbc6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-0756081b6a8f055b062b3b417beafc82.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -137,19 +137,29 @@ ul.task-list li input[type="checkbox"] {
 
 
 <section class="hero">
-  <div class="orb o1"></div>
-  <img class="photo stagger s1" src="images/riccardo.jpg" alt="Riccardo Cammarata">
-  <p class="eyebrow stagger s2">Finance &amp; portfolio management · Data analysis · Coding</p>
-  <h1 class="stagger s3">Becoming the <span class="accent">financial data engineer</span> I want to be.</h1>
-  <p class="lede stagger s4">Hello, I am Riccardo. I work as a financial and data engineer based in Amsterdam. Most of what I do is building financial models and rebuilding manual workflows into Python and SQL pipelines, and every month I try to be a better developer than I was the month before.</p>
-  <div class="kpis stagger s5">
-    <div class="kpi"><div class="num" data-to="40" data-suf="+">0</div><div class="lbl">hours saved weekly,<br>across many teams</div></div>
-    <div class="kpi"><div class="num" data-to="300" data-suf="+">0</div><div class="lbl">data inconsistencies<br>resolved</div></div>
-    <div class="kpi"><div class="num" data-to="10" data-suf="">0</div><div class="lbl">pipelines and tools<br>in production</div></div>
-  </div>
-  <div class="cta-row stagger s6">
-    <a class="cta" href="projects/index.html">See the case studies</a>
-    <a class="cta-ghost" href="about.html">How I work →</a>
+  <div class="hero-grid">
+    <div class="hero-text">
+      <p class="eyebrow stagger s1">Finance &amp; portfolio management · Data analysis · Coding</p>
+      <h1 class="stagger s2">I build <span class="accent">dependable tools</span> out of messy financial data.</h1>
+      <p class="lede stagger s3">Hello, I am Riccardo, a financial and data engineer. I come from Italy and I love to travel the world. I build financial models and rebuild manual workflows into Python and SQL pipelines that hold up under pressure, and I am always pushing to write better code than I did the month before (with a little touch of AI behind!).</p>
+      <div class="kpis stagger s4">
+        <div class="kpi"><div class="num" data-to="40" data-suf="+">0</div><div class="lbl">hours saved weekly,<br>across many teams</div></div>
+        <div class="kpi"><div class="num" data-to="300" data-suf="+">0</div><div class="lbl">data inconsistencies<br>resolved</div></div>
+        <div class="kpi"><div class="num" data-to="10" data-suf="">0</div><div class="lbl">pipelines and tools<br>in production</div></div>
+        <div class="kpi kpi-accent"><span class="burst"><i class="pstar"></i><i class="pstar"></i><i class="pstar"></i><i class="pstar"></i></span><div class="num" data-to="110" data-suf="%">0</div><div class="lbl">effort on<br>every build</div></div>
+      </div>
+      <div class="cta-row stagger s5">
+        <a class="cta" href="projects/index.html">See the case studies</a>
+        <a class="cta-ghost" href="about.html">How I work →</a>
+      </div>
+    </div>
+    <div class="hero-visual stagger s3">
+      <div class="photo-frame">
+        <img class="hero-photo" src="images/riccardo.jpg" alt="Riccardo Cammarata">
+        <span class="glare"></span>
+        <span class="star s-a"></span><span class="star s-b"></span><span class="star s-c"></span><span class="star s-d"></span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -157,12 +167,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="track">
     <a href="projects/sap-dashboard.html"><span class="idx">01</span>Revenue &amp; Expenditure Pipeline</a>
     <a href="projects/email-pipeline.html"><span class="idx">02</span>Email Pipeline &amp; Submission Dashboard</a>
-    <a href="projects/invoice-checker.html"><span class="idx">03</span>Invoice Reconciliation Tool</a>
+    <a href="projects/invoice-checker.html"><span class="idx">03</span>Invoice Reconciliation &amp; Dashboard</a>
     <a href="projects/docs-system.html"><span class="idx">04</span>Living Documentation System</a>
   </div>
 </div>
 
-<h2 class="sec reveal-up"><span class="k">/*</span>Selected work</h2>
+<h2 class="sec reveal-up"><span class="k">/*</span>The work I am proudest of</h2>
 <section class="tiles">
 
   <div class="tile reveal-up">
@@ -171,7 +181,7 @@ ul.task-list li input[type="checkbox"] {
         <img class="thumb" src="images/sap-pipeline.svg" alt="" aria-hidden="true">
         <span class="badge-status live">Live</span>
         <h3>Revenue &amp; Expenditure Pipeline</h3>
-        <p>20+ manual SAP extracts rebuilt as one governed pipeline with daily refresh.</p>
+        <p>More than 20 reports that used to come out of SAP by hand, now one pipeline that refreshes every day.</p>
         <div><span class="tag">SAP Datasphere</span><span class="tag">SQL</span><span class="tag">Power BI</span></div>
         <span class="flip-hint">flip ↻</span>
       </div>
@@ -188,7 +198,7 @@ ul.task-list li input[type="checkbox"] {
         <img class="thumb" src="images/email-pipeline.svg" alt="" aria-hidden="true">
         <span class="badge-status live">Live</span>
         <h3>Email Pipeline &amp; Submission Dashboard</h3>
-        <p>A legacy VBA macro replaced by Python parsing 500 submissions a week.</p>
+        <p>An old VBA macro from 2014, now a Python tool that reads 500 submissions a week.</p>
         <div><span class="tag">Python</span><span class="tag">Regex</span><span class="tag">Power BI</span></div>
         <span class="flip-hint">flip ↻</span>
       </div>
@@ -202,38 +212,25 @@ ul.task-list li input[type="checkbox"] {
   <div class="tile reveal-up">
     <div class="tile-inner">
       <div class="tile-face front">
-        <img class="thumb" src="images/invoice-checker.svg" alt="" aria-hidden="true">
-        <span class="badge-status live">Live</span>
-        <h3>Invoice Reconciliation Tool</h3>
-        <p>Five SAP extracts, one click, one master file the whole team trusts.</p>
-        <div><span class="tag">Python</span><span class="tag">EXE</span><span class="tag">Excel</span></div>
+        <img class="thumb" src="images/crypto-cover.svg" alt="" aria-hidden="true">
+        <span class="badge-status live">Analysis</span>
+        <h3>Crypto Regulation: EU vs US</h3>
+        <p>A panel study of the top five cryptoassets, built around a binomial regulation indicator.</p>
+        <div><span class="tag">Econometrics</span><span class="tag">Eikon</span><span class="tag">Panel</span></div>
         <span class="flip-hint">flip ↻</span>
       </div>
       <div class="tile-face back">
-        <p>Drop files, run, done. Validation, matching, deduplication, archive and log. <mark>~10 hours</mark> of weekly work saved.</p>
-        <a class="tile-link" href="projects/invoice-checker.html">Read the case study</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="tile reveal-up">
-    <div class="tile-inner">
-      <div class="tile-face front">
-        <img class="thumb" src="images/docs-system.svg" alt="" aria-hidden="true">
-        <span class="badge-status live">Live</span>
-        <h3>Living Documentation System</h3>
-        <p>Word files with broken links replaced by templated HTML documentation.</p>
-        <div><span class="tag">Quarto</span><span class="tag">HTML</span><span class="tag">CSS</span></div>
-        <span class="flip-hint">flip ↻</span>
-      </div>
-      <div class="tile-face back">
-        <p>One template, one stylesheet, identical output for every team. Cross referenced, current, and <mark>reproducible</mark>.</p>
-        <a class="tile-link" href="projects/docs-system.html">Read the case study</a>
+        <p>A real <mark>EU effect</mark>, a muted <mark>US one</mark>. A Fama and French model with a regulation dummy, on data from 2020 to 2025.</p>
+        <a class="tile-link" href="projects/crypto-regulation.html">Read the case study</a>
       </div>
     </div>
   </div>
 
 </section>
+
+<div class="all-projects-cta reveal-up">
+  <a class="cta-ghost" href="projects/index.html">See all projects →</a>
+</div>
 
 
 
@@ -639,7 +636,7 @@ ul.task-list li input[type="checkbox"] {
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Riccardo Cammarata · Portfolio · Built with Quarto</p>
+<p>Riccardo Cammarata · Portfolio · Built with Quarto tools</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

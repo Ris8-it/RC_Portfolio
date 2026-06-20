@@ -35,6 +35,124 @@
   }
   document.addEventListener("scroll", onScroll, { passive: true }); onScroll();
 
+  /* Hexfield: lightly fade hexagons in and out over the dot background */
+  if (!reduced) {
+    var field = document.createElement("div");
+    field.id = "hexfield";
+    document.body.appendChild(field);
+    var hexSvg = '<svg width="100%" height="100%" viewBox="0 0 60 68" xmlns="http://www.w3.org/2000/svg">' +
+      '<path d="M30 2 L56 17 L56 51 L30 66 L4 51 L4 17 Z" fill="none" stroke="COL" stroke-width="1.2"/></svg>';
+    var hexPalette = [
+      "rgba(79,209,197,0.85)",   // teal
+      "rgba(139,155,255,0.8)",   // periwinkle
+      "rgba(240,168,168,0.7)",   // coral
+      "rgba(255,213,138,0.7)",   // amber
+      "rgba(150,220,255,0.8)",   // sky
+      "rgba(190,160,255,0.75)"   // violet
+    ];
+    function spawnHex() {
+      if (field.children.length > 12) return;
+      var el = document.createElement("div");
+      el.className = "hex";
+      var size = 22 + Math.random() * 60;
+      var life = 1.2 + Math.random() * 1.4;
+      var col = hexPalette[Math.floor(Math.random() * hexPalette.length)];
+      el.style.width = size + "px"; el.style.height = (size * 1.13) + "px";
+      el.style.left = (Math.random() * 96) + "vw";
+      el.style.top = (Math.random() * 94) + "vh";
+      el.style.setProperty("--life", life + "s");
+      el.innerHTML = hexSvg.replace("COL", col);
+      field.appendChild(el);
+      setTimeout(function () { el.remove(); }, life * 1000);
+    }
+    setInterval(spawnHex, 360);
+    spawnHex(); spawnHex(); spawnHex(); spawnHex();
+  }
+
+  /* Code tour: tab switching */
+  document.querySelectorAll(".code-tour").forEach(function (ct) {
+    var tabs = ct.querySelectorAll(".ct-tab");
+    var panels = ct.querySelectorAll(".ct-panel");
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener("click", function () {
+        tabs.forEach(function (t) { t.classList.remove("on"); });
+        panels.forEach(function (p) { p.classList.remove("on"); });
+        tab.classList.add("on");
+        if (panels[i]) panels[i].classList.add("on");
+      });
+    });
+  });
+
+  /* Lightbox: zoom images, link before/after pairs */
+  (function () {
+    var figs = document.querySelectorAll(".shots figure, .ba-pair figure");
+    if (!figs.length) return;
+    var lb = document.createElement("div");
+    lb.className = "lightbox";
+    lb.innerHTML =
+      '<button class="lb-close" aria-label="Close">&times;</button>' +
+      '<figure><div class="lb-toggle"><button class="before">Before</button><button class="after">After</button></div>' +
+      '<img alt=""><figcaption></figcaption></figure>';
+    document.body.appendChild(lb);
+    var lbImg = lb.querySelector("img");
+    var lbCap = lb.querySelector("figcaption");
+    var lbToggle = lb.querySelector(".lb-toggle");
+    var btnB = lb.querySelector(".lb-toggle .before");
+    var btnA = lb.querySelector(".lb-toggle .after");
+    var pairData = null;
+
+    function setPairView(which) {
+      if (!pairData) return;
+      var isB = which === "before";
+      btnB.classList.toggle("on", isB);
+      btnA.classList.toggle("on", !isB);
+      lbImg.src = isB ? pairData.beforeSrc : pairData.afterSrc;
+      lbCap.textContent = isB ? pairData.beforeCap : pairData.afterCap;
+    }
+    function openSingle(src, cap) {
+      pairData = null; lbToggle.classList.remove("on");
+      lbImg.src = src; lbCap.textContent = cap || "";
+      lb.classList.add("show");
+    }
+    function openPair(data, which) {
+      pairData = data; lbToggle.classList.add("on");
+      setPairView(which); lb.classList.add("show");
+    }
+    function close() { lb.classList.remove("show"); }
+
+    btnB.addEventListener("click", function (e) { e.stopPropagation(); setPairView("before"); });
+    btnA.addEventListener("click", function (e) { e.stopPropagation(); setPairView("after"); });
+    lb.querySelector(".lb-close").addEventListener("click", close);
+    lb.addEventListener("click", function (e) { if (e.target === lb) close(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+
+    figs.forEach(function (fig) {
+      fig.classList.add("zoomable");
+      var ico = document.createElement("span"); ico.className = "zoom-ico"; fig.appendChild(ico);
+      var img = fig.querySelector("img");
+      var cap = fig.querySelector("figcaption");
+      var capText = cap ? cap.textContent : "";
+      fig.addEventListener("click", function () {
+        var pairEl = fig.closest(".ba-pair");
+        if (pairEl) {
+          var bImg = pairEl.querySelector(".before img");
+          var aImg = pairEl.querySelector(".after img");
+          var bCap = pairEl.querySelector(".before figcaption");
+          var aCap = pairEl.querySelector(".after figcaption");
+          if (bImg && aImg) {
+            openPair({
+              beforeSrc: bImg.src, afterSrc: aImg.src,
+              beforeCap: bCap ? bCap.textContent : "Before",
+              afterCap: aCap ? aCap.textContent : "After"
+            }, fig.classList.contains("before") ? "before" : "after");
+            return;
+          }
+        }
+        openSingle(img ? img.src : "", capText);
+      });
+    });
+  })();
+
   /* Email copy modal */
   var emailBtn = document.getElementById("emailBtn");
   var emailModal = document.getElementById("emailModal");
@@ -54,48 +172,23 @@
     });
   }
 
-  /* Image swap before/after toggles */
-  document.querySelectorAll(".imgswap").forEach(function (sw) {
-    var btnB = sw.querySelector(".toggle .before");
-    var btnA = sw.querySelector(".toggle .after");
-    var layB = sw.querySelector(".layer.before");
-    var layA = sw.querySelector(".layer.after");
-    var cap = sw.querySelector(".cap");
-    function show(which) {
-      var isB = which === "before";
-      if (btnB) btnB.classList.toggle("on", isB);
-      if (btnA) btnA.classList.toggle("on", !isB);
-      if (layB) layB.classList.toggle("active", isB);
-      if (layA) layA.classList.toggle("active", !isB);
-      if (cap) cap.textContent = isB ? (sw.dataset.capBefore || "Before") : (sw.dataset.capAfter || "After");
-    }
-    if (btnB) btnB.addEventListener("click", function () { show("before"); });
-    if (btnA) btnA.addEventListener("click", function () { show("after"); });
-    show("after");
-  });
-
-  /* Reveal comparison: build grid cells, wipe right-to-left on click */
+  /* Reveal comparison: BEFORE is built of square cells that dissolve to reveal AFTER */
   document.querySelectorAll(".reveal-compare").forEach(function (rc) {
     var cells = rc.querySelector(".rc-cells");
     if (cells && !cells.children.length) {
-      var cols = 8, rows = 4;
-      for (var i = 0; i < cols * rows; i++) cells.appendChild(document.createElement("span"));
+      for (var i = 0; i < 32; i++) cells.appendChild(document.createElement("span"));
     }
     var spans = cells ? cells.querySelectorAll("span") : [];
     rc.addEventListener("click", function () {
-      if (rc.classList.contains("revealed")) { // toggle back to before
-        rc.classList.remove("revealed");
-        spans.forEach(function (s) { s.style.transitionDelay = "0ms"; });
-        return;
-      }
-      var cols = 8, rows = 4;
+      var revealing = !rc.classList.contains("revealed");
+      var cols = 8;
       spans.forEach(function (s, i) {
         var c = i % cols, r = Math.floor(i / cols);
-        // right edge first, left corners last: delay grows toward the left
-        var delay = (cols - 1 - c) * 45 + r * 20;
+        // right edge dissolves first, left corners last
+        var delay = revealing ? ((cols - 1 - c) * 45 + r * 20) : (c * 30);
         s.style.transitionDelay = delay + "ms";
       });
-      rc.classList.add("revealed");
+      rc.classList.toggle("revealed");
     });
     rc.addEventListener("keydown", function (e) {
       if (e.key === "Enter" || e.key === " ") { e.preventDefault(); rc.click(); }
