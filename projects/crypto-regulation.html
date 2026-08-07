@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -14,10 +14,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -40,10 +43,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-dab333370b46a58f04c2e79b6e18fa8e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b3f2c5434af99d2b4bf1c4ed56293b0a.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-6a83e57aafa1ba3d3e59f13399af287a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-3567229ed2dc60fa20162770abea376f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,20 +75,27 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+</head><body class="nav-fixed fullcontent quarto-light">﻿<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;family=DM+Sans:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700&amp;family=Figtree:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<meta name="theme-color" content="#0A0E17">
+<meta name="color-scheme" content="dark">
+<style>@property --a { syntax: "<angle>"; inherits: false; initial-value: 0deg; }</style>
 
 
-</head>
 
-<body class="nav-fixed fullcontent quarto-light">
+
+
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/riccardo.jpg" alt="" class="navbar-logo light-content">
+    <img src="../images/riccardo.jpg" alt="" class="navbar-logo dark-content">
+    </a>
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Riccardo Cammarata</span>
     </a>
@@ -180,7 +190,67 @@ ul.task-list li input[type="checkbox"] {
 <section id="the-data" class="level2">
 <h2 data-anchor-id="the-data">The data</h2>
 <p>I built the panel from Refinitiv Eikon and Datastream: the five largest cryptoassets by capitalisation, with daily price, return and volume from 2020 to 2025. I cleaned the series, aligned them to one calendar, computed log returns, and matched every asset-day to a hand-built timeline of regulatory events. The result is one tidy, model-ready table.</p>
-<img src="../images/crypto-dataset.png" alt="Python script that builds and cleans the dataset">
+<div class="codeblock">
+  <div class="codeblock-head">build_dataset.py</div>
+<pre><code><span class="cm"># 1. Pull the top five cryptoassets from Eikon / Datastream</span>
+assets = [<span class="st">"BTC"</span>, <span class="st">"ETH"</span>, <span class="st">"BNB"</span>, <span class="st">"XRP"</span>, <span class="st">"ADA"</span>]
+px = get_prices(assets, start=<span class="st">"2020-01-01"</span>, end=<span class="st">"2025-12-31"</span>)
+
+<span class="cm"># 2. Clean: align the calendar, fill gaps, take log returns</span>
+px = (px.resample(<span class="st">"D"</span>).last()
+        .ffill()
+        .pipe(drop_outliers))
+ret = np.log(px).diff()
+
+<span class="cm"># 3. Regulation dummy: 1 = measure announced, in force, or a case</span>
+df[<span class="st">"reg_dummy"</span>] = df[<span class="st">"date"</span>].map(reg_calendar).fillna(<span class="nu">0</span>)
+df[<span class="st">"region"</span>]    = df[<span class="st">"asset"</span>].map(jurisdiction)
+
+<span class="cm"># 4. Merge the Fama-French factors and inflation, ready to model</span>
+df = df.merge(ff_factors, on=<span class="st">"date"</span>).merge(cpi, on=<span class="st">"date"</span>)
+df.to_parquet(<span class="st">"panel_clean.parquet"</span>)</code></pre>
+</div>
+
+
+<table class="data-table caption-top table">
+<caption>Three rows out of <span class="tnum">panel_clean.parquet</span>: five assets, roughly 2,190 days, one row per asset-day.</caption>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th">date</th>
+<th data-quarto-table-cell-role="th">asset</th>
+<th data-quarto-table-cell-role="th">ret</th>
+<th data-quarto-table-cell-role="th">mkt</th>
+<th data-quarto-table-cell-role="th">infl</th>
+<th data-quarto-table-cell-role="th">reg</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2021-04-12</td>
+<td>BTC</td>
+<td>0.031</td>
+<td>0.018</td>
+<td>0.004</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>2023-06-20</td>
+<td>ETH</td>
+<td>−0.012</td>
+<td>−0.009</td>
+<td>0.006</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>2024-12-30</td>
+<td>BNB</td>
+<td>0.008</td>
+<td>0.005</td>
+<td>0.002</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="the-five-assets-and-the-dummy" class="level2">
 <h2 data-anchor-id="the-five-assets-and-the-dummy">The five assets and the dummy</h2>
@@ -246,6 +316,14 @@ ul.task-list li input[type="checkbox"] {
     <h4>Capstone project</h4>
     <p>This was the culmination project for my Master's degree in Finance and Banking, built on real, cleaned datasets and large data clusters rather than toy examples. The version here keeps the core idea; the full study runs far longer and stays under wraps.</p>
   </div>
+</div>
+</section>
+<section id="before-and-after" class="level2">
+<h2 data-anchor-id="before-and-after">Before and after</h2>
+<div class="reveal-compare" role="button" tabindex="0" aria-label="Before and after. Drag across, or press Enter, to switch between them.">
+  <div class="rc-layer rc-after"><div class="rc-content"><h4>After</h4><p>One tidy panel, one factor model, one binary switch. The question becomes a coefficient you can test, argue with, and be wrong about in public.</p><p class="touch">My touch: I built it so the data could prove me wrong, and for the United States it did exactly that. That result stayed in.</p></div></div>
+  <div class="rc-layer rc-before"><div class="rc-cells"></div><div class="rc-content"><h4>Before</h4><p>A debate settled by whoever spoke last. Everyone had a view on whether regulation helped or hurt crypto, and nobody had a number attached to it.</p></div></div>
+  <span class="rc-prompt"><span class="dot"></span></span>
 </div>
 <p class="stack-line"><strong>Stack:</strong> Refinitiv Eikon, Datastream, Python, Fama-French factor model, regulation dummy, scenario simulation</p>
 
@@ -651,14 +729,14 @@ ul.task-list li input[type="checkbox"] {
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>Riccardo Cammarata · Amsterdam</p>
+</div>   
     <div class="nav-footer-center">
-<p>Riccardo Cammarata · Portfolio · Built with Quarto tools</p>
-</div>
-    <div class="nav-footer-right">
       &nbsp;
     </div>
+    <div class="nav-footer-right">
+<p>riccardocammarata00@gmail.com</p>
+</div>
   </div>
 </footer>
 

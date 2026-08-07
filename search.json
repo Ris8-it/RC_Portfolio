@@ -1,103 +1,5 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Becoming a better financial engineer, one tool at a time.",
-    "section": "",
-    "text": "Finance & portfolio management · Data analysis · Coding\n      Becoming a better financial engineer, one tool at a time.\n      Hello, I am Riccardo, a financial and data engineer. I come from Italy and I love to travel the world. I build financial models and rebuild manual workflows into Python and SQL pipelines that hold up under pressure, and I am always pushing to write better code than I did the month before (with a little touch of AI behind!).\n      \n        0hours saved weekly,across many teams\n        0data inconsistenciesresolved\n        0pipelines and toolsin production\n        0effort onevery build\n      \n      \n        See the case studies\n        How I work →\n      \n    \n    \n      \n        \n        \n        \n      \n    \n  \n\n\n\n  \n    01Revenue & Expenditure Pipeline\n    02Email Pipeline & Submission Dashboard\n    03Invoice Reconciliation & Dashboard\n    04Living Documentation System\n  \n\n\n/*The work I am proudest of\n\n\n  \n    \n      \n        \n        Live\n        Revenue & Expenditure Pipeline\n        More than 20 reports that used to come out of SAP by hand, now one pipeline that refreshes every day.\n        SAP DatasphereSQLPower BI\n        flip ↻\n      \n      \n        ~40 collective hours saved per week. 300+ inconsistencies resolved. Monthly refresh became daily, for every team.\n        Read the case study\n      \n    \n  \n\n  \n    \n      \n        \n        Live\n        Email Pipeline & Submission Dashboard\n        An old VBA macro from 2014, now a Python tool that reads 500 submissions a week.\n        PythonRegexPower BI\n        flip ↻\n      \n      \n        57 regex patterns, a clean 120k email archive since 2019, a live dashboard. Around 5 hours saved weekly, errors gone.\n        Read the case study\n      \n    \n  \n\n  \n    \n      \n        \n        Analysis\n        Crypto Regulation: EU vs US\n        A panel study of the top five cryptoassets, built around a binomial regulation indicator.\n        EconometricsEikonPanel\n        flip ↻\n      \n      \n        A real EU effect, a muted US one. A Fama and French model with a regulation dummy, on data from 2020 to 2025.\n        Read the case study\n      \n    \n  \n\n\n\n\n  See all projects →"
-  },
-  {
-    "objectID": "projects/cinema-model.html",
-    "href": "projects/cinema-model.html",
-    "title": "Financial Analysis: From Scanned Statements to a Clear Case",
-    "section": "",
-    "text": "Advisory engagement"
-  },
-  {
-    "objectID": "projects/cinema-model.html#the-problem",
-    "href": "projects/cinema-model.html#the-problem",
-    "title": "Financial Analysis: From Scanned Statements to a Clear Case",
-    "section": "The problem",
-    "text": "The problem\nI advised a small operator in the cinema business that wanted to grow. The numbers behind the decision came as hard copy: scanned financial statements, black and white report pages of turnover, EBITDA, EBIT and earnings, often transcribed by hand. The figures existed, but they were slow to work with and impossible to interrogate. Before anyone could talk about growth, the business needed a financial analysis it could actually trust.\n\n  BeforeBefore · the income statement and balance sheet as scanned report pages\n  AfterAfter · one structured model, from clean statements to clear forecasts"
-  },
-  {
-    "objectID": "projects/cinema-model.html#from-scanned-statements-to-a-clear-model",
-    "href": "projects/cinema-model.html#from-scanned-statements-to-a-clear-model",
-    "title": "Financial Analysis: From Scanned Statements to a Clear Case",
-    "section": "From scanned statements to a clear model",
-    "text": "From scanned statements to a clear model\n\n  ★The rebuild\n  A financial analysis built from the ground up\n  I digitised the statements into one structured dataset and rebuilt the full picture: the income statement cascading from revenue down to net earnings, and an economic balance sheet tying invested capital to its sources. With every year on the same basis, I could read profitability, working capital and debt capacity cleanly, which is what turned a stack of scanned pages into a model the owner and the banks could both follow."
-  },
-  {
-    "objectID": "projects/cinema-model.html#the-valuation-work",
-    "href": "projects/cinema-model.html#the-valuation-work",
-    "title": "Financial Analysis: From Scanned Statements to a Clear Case",
-    "section": "The valuation work",
-    "text": "The valuation work\nOn the clean base I ran a discounted cash flow alongside a comparables view. The combination did two things. It put a defensible value on the business rather than a single guessed number, and it showed where the value could actually come from. Modelling the operator as a connected set, where two more sites are brought in and the obvious inefficiencies are fixed, the analysis pointed to expected cash flow and earnings rising by more than 120 thousand above the original standalone case.\n\nThat gave the owner something concrete to take to the table. Instead of a flat one million as a starting point, the work justified a higher, evidence-backed value, which in turn supported more bank financing and made the expansion possible: the two additional sites were acquired and folded into one connected operation."
-  },
-  {
-    "objectID": "projects/cinema-model.html#why-it-worked",
-    "href": "projects/cinema-model.html#why-it-worked",
-    "title": "Financial Analysis: From Scanned Statements to a Clear Case",
-    "section": "Why it worked",
-    "text": "Why it worked\nThe point was never a clever model for its own sake. It was that a real decision, how much the business was worth and how far it could stretch, finally rested on numbers everyone could see: the same statements, the same assumptions, and a scenario range that made both the upside and the risk explicit. There is a good deal more to the story that I cannot share, but the shape of it is simple: clear financial analysis turned a vague figure into a fundable plan.\n\n  WHAT CHANGED\n  Scanned statements and hand transcription became one structured financial model: a full income statement to net earnings, an economic balance sheet, and a DCF and comparables view that justified a higher value and a fundable expansion."
-  },
-  {
-    "objectID": "projects/cinema-model.html#before-and-after",
-    "href": "projects/cinema-model.html#before-and-after",
-    "title": "Financial Analysis: From Scanned Statements to a Clear Case",
-    "section": "Before and after",
-    "text": "Before and after\n\n  AfterOne structured financial analysis: clean statements, a DCF and comparables valuation, and a scenario range showing more than 120 thousand of additional cash flow from a connected, more efficient operation.My touch: rebuilding the whole financial picture from scanned paper first, so the growth case rested on numbers the owner and the banks could both trust.\n  BeforeFinancial statements as scanned black and white pages and hand transcriptions, with turnover, EBITDA and earnings that were slow to work with and impossible to interrogate.\n  \n\nStack: Excel, financial statement analysis, DCF valuation, comparables, scenario analysis, data digitisation"
-  },
-  {
-    "objectID": "projects/email-pipeline.html",
-    "href": "projects/email-pipeline.html",
-    "title": "Email Pipeline & Submission Dashboard",
-    "section": "",
-    "text": "Live"
-  },
-  {
-    "objectID": "projects/email-pipeline.html#the-problem",
-    "href": "projects/email-pipeline.html#the-problem",
-    "title": "Email Pipeline & Submission Dashboard",
-    "section": "The problem",
-    "text": "The problem\nWeekly submission statistics depended on a VBA macro built in 2014 that downloaded one email per second, ran once a week, and locked the computer while it worked. Parsing email titles into fields produced wrong and missing values, so every run was followed by manual edits. The volume: around 500 submissions per week, on top of an archive of roughly 120,000 emails.\n\n  BeforeBefore · the weekly statistics in a fragile Excel file\n  AfterAfter · the live submission dashboard"
-  },
-  {
-    "objectID": "projects/email-pipeline.html#the-new-script",
-    "href": "projects/email-pipeline.html#the-new-script",
-    "title": "Email Pipeline & Submission Dashboard",
-    "section": "The new script",
-    "text": "The new script\n\n  ★The core of the rebuild\n  A Python tool that does in 30 seconds what used to take an hour\n  A small application with a GUI: pick the Outlook folder, pick the mode, run. It finds the right emails, puts every date into the same format, and runs 57 regex patterns to pull clean fields out of titles that are never written the same way twice. The patterns run from the most specific to the most general, so the messy cases get caught first.\n\nHere is the heart of the parser, the ordered pattern list that replaced years of manual correction:\n\n  Part of the 57-pattern parser, ordered most specific first\n  The GUI: pick a folder, pick a mode, run\n\nThe script can run automatically on computer start or manually for double checks, so the data is daily by default instead of weekly by ritual. It writes a clean CSV rather than Excel, which handles the 120,000-email archive without strain."
-  },
-  {
-    "objectID": "projects/email-pipeline.html#behind-the-scenes",
-    "href": "projects/email-pipeline.html#behind-the-scenes",
-    "title": "Email Pipeline & Submission Dashboard",
-    "section": "Behind the scenes",
-    "text": "Behind the scenes\nA look at how the parser actually works. These snippets are simplified and anonymised, but the logic is the real thing.\n\n  email_master_downloader.py\n  \n    Ordered patterns\n    Date normalisation\n    Deduplication\n  \n  \n    \n      # Patterns run most specific first, so the messy\n# real titles are caught before the generic ones.\npatterns = [\n    re.compile(r'(\\d{4})\\s*-\\s*REF\\s+(\\d{1,4}/?\\d{0,4})', re.I),\n    re.compile(r'(\\d{4})\\s+REF\\s+(\\d{1,4}/?\\d{0,4})', re.I),\n    re.compile(r'-\\s*(\\d{4})\\s*-\\s*REF\\s+(\\d{1,4})', re.I),\n    re.compile(r'REF\\s+(\\d{1,4}/?\\d{0,4})', re.I),\n]\nfor rx in patterns:\n    m = rx.search(title)\n    if m:\n        return normalise(m.groups())\n      Why orderedPeople never write a subject line the same way twice. Sorting the patterns from most to least specific means a clean match wins before a loose one can grab the wrong fragment. Fifty-seven patterns cover the long tail without a single manual correction.\n    \n    \n      # Every date format people use, into one.\ndef normalise_date(raw):\n    for fmt in (\"%d/%m/%Y\", \"%d-%m-%Y\",\n                \"%d %b %Y\", \"%d.%m.%y\"):\n        try:\n            return datetime.strptime(raw, fmt)\n        except ValueError:\n            continue\n    return flag_for_review(raw)\n      No silent failuresA date that matches nothing is not dropped or guessed. It is flagged and surfaced in the dashboard, so the few genuine edge cases get a human glance instead of quietly corrupting a weekly total.\n    \n    \n      # Append only what is genuinely new.\nkey = [\"ref\", \"date\", \"type\"]\nmerged = pd.concat([master, incoming])\nmerged = merged.drop_duplicates(\n    subset=key, keep=\"last\")\nadded = len(merged) - len(master)\nlog(f\"appended {added} new rows\")\n      Idempotent runsRun it once or ten times, the archive stays correct. Deduplication on a composite key means a re-run never doubles a week, which is what made it safe to schedule on startup."
-  },
-  {
-    "objectID": "projects/email-pipeline.html#the-power-bi-rebuild",
-    "href": "projects/email-pipeline.html#the-power-bi-rebuild",
-    "title": "Email Pipeline & Submission Dashboard",
-    "section": "The Power BI rebuild",
-    "text": "The Power BI rebuild\nThe clean CSV feeds a rebuilt Power BI model, not a pile of pivot tables. The new structure uses organised folders and subfolders, dynamic measures written as DAX rather than copied cells, and a clean, deduplicated data model connected through SharePoint. It is a proper star schema: a central fact table of emails joined to dimension tables for date and category, so the dynamic graphs adapt to the latest weeks on their own.\n\n  Measures in organised folders, not scattered\n  Named measure groups and conformed tables\n  Star schema: fact table joined to dimensions"
-  },
-  {
-    "objectID": "projects/email-pipeline.html#outcome",
-    "href": "projects/email-pipeline.html#outcome",
-    "title": "Email Pipeline & Submission Dashboard",
-    "section": "Outcome",
-    "text": "Outcome\nAround 5 hours saved every week, plus the manual checks and corrections that no longer exist. The team now has consistent, clean data since 2019 and a dashboard that is always current. All documentation lives in QMD files rendered to HTML.\n\n  BeforeBefore · data highlighted and patched by hand\n  AfterAfter · a page from the live dashboard"
-  },
-  {
-    "objectID": "projects/email-pipeline.html#before-and-after",
-    "href": "projects/email-pipeline.html#before-and-after",
-    "title": "Email Pipeline & Submission Dashboard",
-    "section": "Before and after",
-    "text": "Before and after\n\n  AfterA background Python tool with 57 regex patterns, a clean CSV archive of 120,000 emails, and a live dashboard that needs no manual refresh.My touch: I built the parser around the messiest titles first instead of the clean ones, so it holds up against what people actually send.\n  BeforeAn old VBA macro from 2014 that crawled through Outlook at one email per second, ran once a week, froze the machine, and got half the fields wrong.\n  \n\nStack: Python (GUI, 57 regex patterns), CSV, SharePoint, Power BI semantic model, DAX, Quarto documentation"
-  },
-  {
     "objectID": "projects/sap-dashboard.html",
     "href": "projects/sap-dashboard.html",
     "title": "Revenue & Expenditure Pipeline",
@@ -140,158 +42,11 @@
     "text": "Before and after\n\n  AfterOne governed model in SAP Datasphere feeding Power BI live. Same definitions for every team, refreshed daily, traceable end to end.My touch: the real win was getting Finance and Procurement to agree on one definition of every field before a single line of the model was written.\n  BeforeMore than 20 reports, all pulled from SAP by hand every cycle, each one filtered inside its own workbook, and none of them agreeing with the next.\n  \n\nStack: SAP Datasphere, SQL, Power BI (live gateway), Python, Databricks"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
     "section": "",
-    "text": "I am honing my skills to become the financial and data engineer I want to be. I come from Italy and I love to travel the world. My background is finance and portfolio management (MSc, University of Rome Tor Vergata), and my day to day is making financial data flow without human glue: SQL pipelines, Python tooling, Power BI, and lately agentic AI systems that I keep on a short leash."
-  },
-  {
-    "objectID": "about.html#how-i-work",
-    "href": "about.html#how-i-work",
-    "title": "About",
-    "section": "How I work",
-    "text": "How I work\n\n  01Map priorities, build for the teamEvery tool starts as something done by hand. I map what matters first, then build around how the team actually works, not how I would prefer it to work.\n  02The interface should help the userA tool is only as good as its adoption. The interface has to carry the user through the task, so the right action is the easy one and mistakes are hard to make.\n  03Document or it does not existA tool nobody else can run is a liability. Everything I build ships with rendered documentation and a guide, so it survives me being away."
-  },
-  {
-    "objectID": "about.html#toolbox",
-    "href": "about.html#toolbox",
-    "title": "About",
-    "section": "Toolbox",
-    "text": "Toolbox\n\n  PythonSQLPower BI · DAXSAP DatasphereDatabricksPower QueryVBAQuartoLaTeXMatlabStataRAzureAgentic AI · MCP"
-  },
-  {
-    "objectID": "about.html#the-path-so-far",
-    "href": "about.html#the-path-so-far",
-    "title": "About",
-    "section": "The path so far",
-    "text": "The path so far\n\n  2025 → nowFinancial management & budgetary reportingEuropean Union agency, Amsterdam\n  2025Financial analyst & business advisorAdvisory firm, Palermo · Milan\n  2024Investment banking analystBaird, New York City\n  2022 → 2023Financial & data analystING, Milan\n  2024MSc Finance and BankingTor Vergata, Rome · ARPM Quant, New York"
-  },
-  {
-    "objectID": "about.html#off-the-clock",
-    "href": "about.html#off-the-clock",
-    "title": "About",
-    "section": "Off the clock",
-    "text": "Off the clock\n\n  \n    \n    First builder in the Grepolis Hall of Fame, and I play the niche game BTD2 at a level that once earned a World Champion title. I took part in the World Masters Tournament across players from countries all over the world.\n  \n  \n    \n    Long evening runs, crime novels, museums and fairs. I like the kind of hobby that gets me out of the house and into a conversation.\n  \n  \n    I like sharing what I learn and meeting new people. Most of what I am good at came from being in the room with people better than me."
-  },
-  {
-    "objectID": "about.html#elsewhere",
-    "href": "about.html#elsewhere",
-    "title": "About",
-    "section": "Elsewhere",
-    "text": "Elsewhere\n\n  LinkedIn\n  GitHub\n  Email\n\n\n\n  \n    ×\n    Reach me at\n    riccardocammarata00@gmail.com\n    Copy to clipboard\n    Copied"
-  },
-  {
-    "objectID": "templates/documentation-template.html",
-    "href": "templates/documentation-template.html",
-    "title": "[DOCUMENT TITLE]",
-    "section": "",
-    "text": "ImportantClick to view: Document Summary Card\n\n\n\n\n\nClassification: Internal Use Only, European Medicines Agency, A-FI-PRE Document reference: [REFERENCE] Status: [Draft / Live / Internal] Effective date: [DD MMM YYYY]"
-  },
-  {
-    "objectID": "templates/documentation-template.html#purpose-and-scope",
-    "href": "templates/documentation-template.html#purpose-and-scope",
-    "title": "[DOCUMENT TITLE]",
-    "section": "1.1 Purpose and Scope",
-    "text": "1.1 Purpose and Scope\n[Describe the scope of the document and what it covers.]\n\n\n\nObjective\nSection\n\n\n\n\n[Objective 1]\n[Section reference]\n\n\n[Objective 2]\n[Section reference]"
-  },
-  {
-    "objectID": "templates/documentation-template.html#system-context",
-    "href": "templates/documentation-template.html#system-context",
-    "title": "[DOCUMENT TITLE]",
-    "section": "1.2 System Context",
-    "text": "1.2 System Context\n[Describe the system, its data sources, and its place in the broader environment.]"
-  },
-  {
-    "objectID": "templates/documentation-template.html#document-structure",
-    "href": "templates/documentation-template.html#document-structure",
-    "title": "[DOCUMENT TITLE]",
-    "section": "1.3 Document Structure",
-    "text": "1.3 Document Structure\n\nSection 2: [What it covers]\nSection 3: [What it covers]\nSection 4: [What it covers]"
-  },
-  {
-    "objectID": "templates/documentation-template.html#tables-components",
-    "href": "templates/documentation-template.html#tables-components",
-    "title": "[DOCUMENT TITLE]",
-    "section": "2.1 [Tables / Components]",
-    "text": "2.1 [Tables / Components]\n[Describe the main tables or components.]\n\n2.1.1 [EMA Sourced Tables / Technology Stack]\n\n\n\n[Column 1]\n[Column 2]\n[Column 3]\n\n\n\n\n[Value]\n[Value]\n[Value]\n\n\n\n\n\n2.1.2 [Power BI Created Tables / Dependencies]\n\n\n\n[Column 1]\n[Column 2]\n[Column 3]\n\n\n\n\n[Value]\n[Value]\n[Value]"
-  },
-  {
-    "objectID": "templates/documentation-template.html#table-relationships-processing-logic",
-    "href": "templates/documentation-template.html#table-relationships-processing-logic",
-    "title": "[DOCUMENT TITLE]",
-    "section": "2.2 [Table Relationships / Processing Logic]",
-    "text": "2.2 [Table Relationships / Processing Logic]\n\n\n\n\n\n\nNoteClick to view: [Diagram title]\n\n\n\n\n\n\n\n\nFigure 1: [Caption]\n\n\n\n\n\n[Describe the relationships or processing logic.]"
-  },
-  {
-    "objectID": "templates/documentation-template.html#architecture-overview",
-    "href": "templates/documentation-template.html#architecture-overview",
-    "title": "[DOCUMENT TITLE]",
-    "section": "3.1 Architecture Overview",
-    "text": "3.1 Architecture Overview\n[Describe the measure architecture or processing pipeline.]\n\n3.1.1 [Category / Module name]\n[Describe this category or module.]\n-- Example DAX measure\n-- Measure name: [MeasureName]\n[MeasureName] =\nCALCULATE(\n    COUNTROWS( '[FactTable]' )\n)\n# Example Python code\n# Module: [module_name.py]\ndef example_function(input_data):\n    \"\"\"[Description of what this function does.]\"\"\"\n    result = input_data\n    return result"
-  },
-  {
-    "objectID": "templates/documentation-template.html#maintenance-guidelines",
-    "href": "templates/documentation-template.html#maintenance-guidelines",
-    "title": "[DOCUMENT TITLE]",
-    "section": "3.2 Maintenance Guidelines",
-    "text": "3.2 Maintenance Guidelines\n\n\n\nRule\nRationale\n\n\n\n\n[Rule 1]\n[Why this rule matters]\n\n\n[Rule 2]\n[Why this rule matters]"
-  },
-  {
-    "objectID": "templates/documentation-template.html#layout-structure",
-    "href": "templates/documentation-template.html#layout-structure",
-    "title": "[DOCUMENT TITLE]",
-    "section": "4.1 Layout Structure",
-    "text": "4.1 Layout Structure\n[Describe the overall layout or interface structure.]\n\n\n\n\n\n\nNoteClick to view: Layout diagram\n\n\n\n\n\n\n\n\nFigure 2: [Layout description]"
-  },
-  {
-    "objectID": "templates/documentation-template.html#pages-sections-tabs",
-    "href": "templates/documentation-template.html#pages-sections-tabs",
-    "title": "[DOCUMENT TITLE]",
-    "section": "4.2 [Pages / Sections / Tabs]",
-    "text": "4.2 [Pages / Sections / Tabs]\n\n4.2.1 [Page or Section 1]\nAnalytical role: [What this page or section does.]\nBusiness questions this page answers:\n\n[Question 1]\n[Question 2]\n\n\n\n\n\n\n\nNoteClick to view: [Page name] screenshot\n\n\n\n\n\n\n\n\nFigure 3: [Caption]\n\n\n\n\n\n\n\n\nVisualization\nTitle\nPurpose\n\n\n\n\n[Type]\n[Title shown on page]\n[What it shows]\n\n\n[Type]\n[Title]\n[Purpose]\n\n\n\n\n\n\n4.2.2 [Page or Section 2]\nAnalytical role: [What this page or section does.]\nBusiness questions this page answers:\n\n[Question 1]\n[Question 2]\n\n\n\n\n\n\n\nNoteClick to view: [Page name] screenshot\n\n\n\n\n\n\n\n\nFigure 4: [Caption]\n\n\n\n\n\n\n\n\nVisualization\nTitle\nPurpose\n\n\n\n\n[Type]\n[Title]\n[Purpose]"
-  },
-  {
-    "objectID": "projects/invoice-checker.html",
-    "href": "projects/invoice-checker.html",
-    "title": "Invoice Reconciliation & Dashboard",
-    "section": "",
-    "text": "Live and active"
-  },
-  {
-    "objectID": "projects/invoice-checker.html#the-problem",
-    "href": "projects/invoice-checker.html#the-problem",
-    "title": "Invoice Reconciliation & Dashboard",
-    "section": "The problem",
-    "text": "The problem\nChecking supplier invoices meant combining 5 separate SAP extracts against a reference table in a static shared database, where each person uploaded and downloaded the latest version. Across several teams this turned into chaos: constant reminders, emails back and forth, and no certainty about which file was current. Each cycle covered more than 200 invoices and disputes, some open for years, across many procedure types.\n\n  BeforeBefore · five extracts merged into a shared static file\n  AfterAfter · one validated master file"
-  },
-  {
-    "objectID": "projects/invoice-checker.html#the-new-script",
-    "href": "projects/invoice-checker.html#the-new-script",
-    "title": "Invoice Reconciliation & Dashboard",
-    "section": "The new script",
-    "text": "The new script\n\n  ★The tool that ended the email chains\n  Drop five files in a folder, run, get one source of truth\n  A fully automated script packaged as a standalone EXE, so the team runs it without installing Python. It validates the file formats, extracts the data, applies all matching, transformation, checking and deduplication rules, archives the input files with timestamps, writes a run log, and produces a master CSV holding the full archive. On top of that sits an Excel view where each check is marked in its own colour, with a summary table built in, because the people reading it live in Excel.\n\n\n  The standalone EXE: no Python needed\n  Part of the matching and deduplication logic\n  The folder you simply drop the files into"
-  },
-  {
-    "objectID": "projects/invoice-checker.html#the-data-model",
-    "href": "projects/invoice-checker.html#the-data-model",
-    "title": "Invoice Reconciliation & Dashboard",
-    "section": "The data model",
-    "text": "The data model\nBehind the Excel view sits a clean, deduplicated model: a fact table of invoices and disputes joined to dimension tables for supplier, procedure type and status. The same structured approach that makes the dashboards trustworthy.\n\n  Fact table joined to supplier, procedure and status dimensions"
-  },
-  {
-    "objectID": "projects/invoice-checker.html#outcome",
-    "href": "projects/invoice-checker.html#outcome",
-    "title": "Invoice Reconciliation & Dashboard",
-    "section": "Outcome",
-    "text": "Outcome\nOne file everyone can trust, where there used to be five files and an argument. Around 10 hours of weekly work saved, plus the removal of manual checks that regularly produced wrong results. The script processes all extracts simultaneously and writes thousands of rows to the master file in seconds.\n\n  BeforeBefore · the manual reconciliation it replaced\n  AfterAfter · the summary it builds on its own, with a colour for each status"
-  },
-  {
-    "objectID": "projects/invoice-checker.html#before-and-after",
-    "href": "projects/invoice-checker.html#before-and-after",
-    "title": "Invoice Reconciliation & Dashboard",
-    "section": "Before and after",
-    "text": "Before and after\n\n  AfterDrop the files in a folder, run the EXE, get one checked master file where each status has its own colour, with a full log of the run.My touch: I shipped it as an EXE so nobody had to install Python. Adoption was instant because the tool asked nothing of the people using it.\n  BeforeFive SAP extracts merged by hand against a shared static file, passed around by email, with no certainty which version was current.\n  \n\nStack: Python (packaged EXE), data matching and deduplication, CSV master file, Excel reporting layer"
+    "text": "These are the six projects I have finished and am happy to put my name to. Most of them started as somebody’s Monday morning job, and I enjoyed every one of them: working out what the report was really for, sitting with the people who had to use it, and getting to the point where the thing runs without anybody thinking about it. Each write-up follows the same shape, the problem as it actually was, what I built, and what changed afterwards, with numbers where I have them and the parts that did not work where they are worth reading about.\nThe screenshots are all sanitised, so some of them are blurrier than I would like. Names, logos, file paths and anything identifying comes out before a single one goes online.\n\n  \n    \n      \n      \n      \n    \n    \n      Revenue & expenditure pipeline\n      More than twenty reports pulled out of SAP by hand, each filtered inside somebody's own\n        workbook. One governed model now, refreshed overnight.\n      SAP DatasphereSQLPower BIPython\n      20 reports → 1 model\n    \n  \n\n  \n    \n      \n      \n      \n    \n    \n      Submission inbox\n      A VBA macro somebody wrote in 2014 and then left. It handled 500 submissions a week,\n        mostly, and when one went missing we found out a month later.\n      PythonregexOutlookPower BI\n      2014 macro → something readable\n    \n  \n\n  \n    \n      \n      \n      \n    \n    \n      Invoice reconciliation\n      Five extracts matched by eye once a month. It took most of a day and still missed things,\n        which is what happens when you ask a person to be a computer.\n      PythonautomationExcel\n      5 extracts → 1 click\n    \n  \n\n  \n    \n      \n      \n      \n    \n    \n      Documentation that stays true\n      Word files with broken links and nobody's name on them. If a thing only runs while I am\n        around, I have not built a solution, I have built a hostage situation.\n      QuartoMarkdownHTMLCSS\n      stale docs → rendered from source\n    \n  \n\n  \n    \n      \n      \n      \n    \n    \n      Did crypto regulation move the market?\n      A Fama and French model with a regulation dummy, run across the top five cryptoassets.\n        The EU answer and the US answer turned out to be very different.\n      econometricsEikonDatastreamFama-French\n      my thesis, in one chart\n    \n  \n\n  \n    \n      \n      \n      \n    \n    \n      From scanned paper to a valuation\n      Somebody handed me a stack of scanned statements and asked what the business was worth.\n        I built the whole model from the paper up.\n      financial analysisvaluationDCFExcel\n      paper → a case for funding\n    \n  \n\n\n\n  In progress\n  \n    A small fleet of agents.\n    Tools I am building to handle the tracking and triage I currently do by hand: prices and\n      statuses, drafting and sorting email, and rebuilding small utilities faster than I would write\n      them myself. It gets written up here once the pieces run together reliably, and not before."
   },
   {
     "objectID": "projects/docs-system.html",
@@ -343,6 +98,90 @@
     "text": "Before and after\n\n  AfterOne QMD template and one stylesheet rendering to interconnected HTML and PDF, with a live table of contents and cross references that never rot.My touch: one YAML header produces both the web page and the formal PDF, so there is never a second copy to keep in sync.\n  BeforeWord documents stuffed with pasted screenshots and links that broke over time, with versions quietly drifting apart from one team to the next.\n  \n\nStack: Quarto (QMD, Markdown), YAML, HTML, CSS, PDF output, video editing for guides"
   },
   {
+    "objectID": "projects/cinema-model.html",
+    "href": "projects/cinema-model.html",
+    "title": "Financial Analysis: From Scanned Statements to a Clear Case",
+    "section": "",
+    "text": "Advisory engagement"
+  },
+  {
+    "objectID": "projects/cinema-model.html#the-problem",
+    "href": "projects/cinema-model.html#the-problem",
+    "title": "Financial Analysis: From Scanned Statements to a Clear Case",
+    "section": "The problem",
+    "text": "The problem\nI advised a small operator in the cinema business that wanted to grow. The numbers behind the decision came as hard copy: scanned financial statements, black and white report pages of turnover, EBITDA, EBIT and earnings, often transcribed by hand. The figures existed, but they were slow to work with and impossible to interrogate. Before anyone could talk about growth, the business needed a financial analysis it could actually trust.\n\n  BeforeBefore · the income statement and balance sheet as scanned report pages\n  AfterAfter · one structured model, from clean statements to clear forecasts"
+  },
+  {
+    "objectID": "projects/cinema-model.html#from-scanned-statements-to-a-clear-model",
+    "href": "projects/cinema-model.html#from-scanned-statements-to-a-clear-model",
+    "title": "Financial Analysis: From Scanned Statements to a Clear Case",
+    "section": "From scanned statements to a clear model",
+    "text": "From scanned statements to a clear model\n\n  ★The rebuild\n  A financial analysis built from the ground up\n  I digitised the statements into one structured dataset and rebuilt the full picture: the income statement cascading from revenue down to net earnings, and an economic balance sheet tying invested capital to its sources. With every year on the same basis, I could read profitability, working capital and debt capacity cleanly, which is what turned a stack of scanned pages into a model the owner and the banks could both follow."
+  },
+  {
+    "objectID": "projects/cinema-model.html#the-valuation-work",
+    "href": "projects/cinema-model.html#the-valuation-work",
+    "title": "Financial Analysis: From Scanned Statements to a Clear Case",
+    "section": "The valuation work",
+    "text": "The valuation work\nOn the clean base I ran a discounted cash flow alongside a comparables view. The combination did two things. It put a defensible value on the business rather than a single guessed number, and it showed where the value could actually come from. Modelling the operator as a connected set, where two more sites are brought in and the obvious inefficiencies are fixed, the analysis pointed to expected cash flow and earnings rising by more than 120 thousand above the original standalone case.\n\nThat gave the owner something concrete to take to the table. Instead of a flat one million as a starting point, the work justified a higher, evidence-backed value, which in turn supported more bank financing and made the expansion possible: the two additional sites were acquired and folded into one connected operation."
+  },
+  {
+    "objectID": "projects/cinema-model.html#why-it-worked",
+    "href": "projects/cinema-model.html#why-it-worked",
+    "title": "Financial Analysis: From Scanned Statements to a Clear Case",
+    "section": "Why it worked",
+    "text": "Why it worked\nThe point was never a clever model for its own sake. It was that a real decision, how much the business was worth and how far it could stretch, finally rested on numbers everyone could see: the same statements, the same assumptions, and a scenario range that made both the upside and the risk explicit. There is a good deal more to the story that I cannot share, but the shape of it is simple: clear financial analysis turned a vague figure into a fundable plan.\n\n  WHAT CHANGED\n  Scanned statements and hand transcription became one structured financial model: a full income statement to net earnings, an economic balance sheet, and a DCF and comparables view that justified a higher value and a fundable expansion."
+  },
+  {
+    "objectID": "projects/cinema-model.html#before-and-after",
+    "href": "projects/cinema-model.html#before-and-after",
+    "title": "Financial Analysis: From Scanned Statements to a Clear Case",
+    "section": "Before and after",
+    "text": "Before and after\n\n  AfterOne structured financial analysis: clean statements, a DCF and comparables valuation, and a scenario range showing more than 120 thousand of additional cash flow from a connected, more efficient operation.My touch: rebuilding the whole financial picture from scanned paper first, so the growth case rested on numbers the owner and the banks could both trust.\n  BeforeFinancial statements as scanned black and white pages and hand transcriptions, with turnover, EBITDA and earnings that were slow to work with and impossible to interrogate.\n  \n\nStack: Excel, financial statement analysis, DCF valuation, comparables, scenario analysis, data digitisation"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About me",
+    "section": "",
+    "text": "I’m Riccardo. I studied finance at Tor Vergata in Rome, did a stint at ING in Milan, a summer at Baird in New York, and some advisory work between Palermo and Milan. Most recently I spent a year on financial management and budgetary reporting at an EU agency in Amsterdam.\nWhat I actually do is narrower than any of that sounds. Behind almost every number an organisation reports there is a person exporting a file and filtering it by hand. I find those people, work out what they are really doing, and build the thing that does it for them. Then I write it all down, because a tool nobody can run after I leave is not a tool, it is a liability with a nice icon."
+  },
+  {
+    "objectID": "about.html#three-things-i-believe-about-this-work",
+    "href": "about.html#three-things-i-believe-about-this-work",
+    "title": "About me",
+    "section": "Three things I believe about this work",
+    "text": "Three things I believe about this work\n\n  \n    Agree the definitions first\n    The model is the easy part. Getting two departments to accept one definition of a field is the\n      part that decides whether the thing survives contact with a real month end.\n  \n    Make the right action the easy one\n    A tool is worth exactly what it gets used. That usually means fewer options rather than more,\n      and making the wrong move hard to do by accident.\n  \n    Write it down or it does not exist\n    Everything ships with rendered documentation and a guide. Partly for the team. Mostly because\n      I will forget how it works within about six weeks."
+  },
+  {
+    "objectID": "about.html#what-i-actually-use",
+    "href": "about.html#what-i-actually-use",
+    "title": "About me",
+    "section": "What I actually use",
+    "text": "What I actually use\n\n  PythonSQLPower BI & DAXSAP Datasphere\n  DatabricksVBAStataQuarto\n\nI have also touched Azure, R, Matlab, LaTeX and Power Query at various points."
+  },
+  {
+    "objectID": "about.html#the-path-so-far",
+    "href": "about.html#the-path-so-far",
+    "title": "About me",
+    "section": "The path so far",
+    "text": "The path so far\n\n  2025 to 2026\n    Financial management & budgetary reporting\n    European Union agency, Amsterdam\n  2025\n    Financial analyst & business advisor\n    Advisory firm, Palermo and Milan\n  2024\n    Investment banking analyst\n    Baird, New York City\n  2024\n    MSc Finance and Banking\n    Tor Vergata, Rome, plus the ARPM quant programme in New York\n  2022 to 2023\n    Financial & data analyst\n    ING, Milan"
+  },
+  {
+    "objectID": "about.html#my-competitive-record",
+    "href": "about.html#my-competitive-record",
+    "title": "About me",
+    "section": "My competitive record",
+    "text": "My competitive record\nSince you clicked: I was the rank one builder in the world La Canea, entered into the Grepolis Hall of Fame. It is a browser strategy game from 2011. I know that is a genuinely ridiculous thing to still be pleased about this many years later.\nHowever, I am pleased about it ANYWAYS.\nI also play BTDB2, a monkey game about popping balloons, well enough to have taken a World Champion title and played the World Masters Tournament. In a world of admittedly modest size: just twenty-four players.\nNeither of these is useful in any way, shape or form. Both come from the same instinct: hone the thing until it is as good as I can get it, grind slowly up, and reach the peak.\n\n  \n    \n    The entry itself. Hover it if you want the colour back.\n  \n  \n    \n    Otherwise: long evening runs, crime novels, and museums. Most weekends look\n      roughly like this.\n  \n\n\n  …you are still here?\n  Alright. Here are my contacts.\n  \n    \n      \n      Emailriccardocammarata00@gmail.com\n    \n      \n      LinkedInin/riccardo-cammarata-00s\n    \n      \n      GitHubgithub.com/Ris8-it\n  \n\n  \n    Still nothing else down here. Well, almost nothing.\n    \n      hover me"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Riccardo Cammarata",
+    "section": "",
+    "text": "I work with messybuild tidy\n        financial reports.\n        \n          \n            \n              \n              \n            \n            \n            \n            \n            \n            \n            \n              \n              \n            \n            \n          \n        \n        …but that is not all I do.\n      \n\n      Every day I'm trying to be a better financial engineer. Mostly that means\n        finding the report someone still builds by hand every Monday, and making it stop needing them.\n\n      So far it's been mostly good problems, and fixing bugs that I\n        totally did not write.\n        git blame, unhelpfully, disagrees.\n\n      \n        \n          Currently living in:\n          Amsterdam\n      \n\n      \n        \n          1/5\n            Python\n            pandas, the parsers, and the deeply boring glue between them\n          2/5\n            SQL\n            models, star schemas, and a few joins I would write differently now\n          3/5\n            Power BI\n            DAX, and then explaining DAX to people who did not ask\n          4/5\n            SAP Datasphere\n            where the data actually lives, for better or worse\n          \n            \n              5/5\n              Attention to detail\n              I try my best to create things that are useful and professional.\n            \n          \n        \n        \n          check my skill cards!\n          \n        \n      \n    \n\n    \n      \n        \n        \n      \n      \n      \n    \n  \n\n  \n    \n      \n        —eye for details\n        \n      \n      \n        —knowledge and skill\n        \n      \n    \n\n    \n      \n        \n        \n        \n        \n        \n        \n      \n      \n        \n        \n        \n        \n        \n        \n      \n    \n\n    \n      \n        \n        \n        \n        \n      \n      0%\n      EFFORT, on all builds, always\n      yes, the maths is wrong.\n      * roundingrounded generously, in my own favour\n      hover to run the numbers\n    \n  \n\n\n\n  What I've been working ongrab the handle\n\n  \n    \n      \n      \n      \n      \n      beforeafter\n      ⇄\n    \n    \n      Revenue & expenditure reporting\n      There were twenty-odd of these. Each one got pulled out of SAP by hand and then filtered inside\n        somebody's own workbook, so Finance had one number and Procurement had a different one, and you'd\n        usually find that out halfway through a meeting. It's one governed model now. It refreshes\n        overnight and nobody exports anything.\n      20 reports → 1 model. Read it →\n    \n  \n\n  \n    \n      \n        \n        \n        \n      \n      Submission inbox\n        A macro somebody wrote in 2014 and then left. It handled 500 submissions a week, mostly.\n          Every so often one just didn't arrive and we would find out a month later.\n        2014 macro → something readable\n    \n    \n      \n        \n        \n        \n      \n      Invoice reconciliation\n        Five extracts that someone sat and matched by eye once a month. It took most of a day and\n          still missed things, which is what happens when you ask a person to be a computer.\n        5 extracts → 1 click\n    \n    \n      \n        \n        \n        \n      \n      Documentation that stays true\n        Word files with broken links and nobody's name on them. If a thing only runs while I am\n          around, I have not built a solution, I have built a hostage situation.\n        stale docs → rendered from source\n    \n    \n      \n        \n        \n        \n      \n      Did crypto regulation move the market?\n        A Fama and French model with a regulation dummy, run across the top five cryptoassets.\n          The EU answer and the US answer turned out to be very different.\n        my thesis, in one chart\n    \n    \n      \n        \n        \n        \n      \n      From scanned paper to a valuation\n        Somebody handed me a stack of scanned statements and asked what the business was worth.\n          I built the whole model from the paper up.\n        paper → a case for funding\n    \n    \n      \n        \n        \n        \n      \n      Everything else\n        The full list, including the thing that is still half built and not ready to be looked at.\n        all projects →\n    \n  \n\n\n\n  \n    \n      one last thing\n      There is a person attached to all this\n      He runs in the evenings, reads crime novels, and holds a competitive record he will\n        absolutely bring up unprompted.\n      \n        \n          \n          Emailriccardocammarata00@gmail.com\n        \n          \n          LinkedInin/riccardo-cammarata-00s\n        \n          \n          GitHubgithub.com/Ris8-it\n      \n    \n\n    \n      Find out more→"
+  },
+  {
     "objectID": "projects/crypto-regulation.html",
     "href": "projects/crypto-regulation.html",
     "title": "Crypto Regulation: Measuring the Market Response",
@@ -361,7 +200,7 @@
     "href": "projects/crypto-regulation.html#the-data",
     "title": "Crypto Regulation: Measuring the Market Response",
     "section": "The data",
-    "text": "The data\nI built the panel from Refinitiv Eikon and Datastream: the five largest cryptoassets by capitalisation, with daily price, return and volume from 2020 to 2025. I cleaned the series, aligned them to one calendar, computed log returns, and matched every asset-day to a hand-built timeline of regulatory events. The result is one tidy, model-ready table."
+    "text": "The data\nI built the panel from Refinitiv Eikon and Datastream: the five largest cryptoassets by capitalisation, with daily price, return and volume from 2020 to 2025. I cleaned the series, aligned them to one calendar, computed log returns, and matched every asset-day to a hand-built timeline of regulatory events. The result is one tidy, model-ready table.\n\n  build_dataset.py\n# 1. Pull the top five cryptoassets from Eikon / Datastream\nassets = [\"BTC\", \"ETH\", \"BNB\", \"XRP\", \"ADA\"]\npx = get_prices(assets, start=\"2020-01-01\", end=\"2025-12-31\")\n\n# 2. Clean: align the calendar, fill gaps, take log returns\npx = (px.resample(\"D\").last()\n        .ffill()\n        .pipe(drop_outliers))\nret = np.log(px).diff()\n\n# 3. Regulation dummy: 1 = measure announced, in force, or a case\ndf[\"reg_dummy\"] = df[\"date\"].map(reg_calendar).fillna(0)\ndf[\"region\"]    = df[\"asset\"].map(jurisdiction)\n\n# 4. Merge the Fama-French factors and inflation, ready to model\ndf = df.merge(ff_factors, on=\"date\").merge(cpi, on=\"date\")\ndf.to_parquet(\"panel_clean.parquet\")\n\n\n\n\nThree rows out of panel_clean.parquet: five assets, roughly 2,190 days, one row per asset-day.\n\n\ndate\nasset\nret\nmkt\ninfl\nreg\n\n\n\n\n2021-04-12\nBTC\n0.031\n0.018\n0.004\n0\n\n\n2023-06-20\nETH\n−0.012\n−0.009\n0.006\n1\n\n\n2024-12-30\nBNB\n0.008\n0.005\n0.002\n1"
   },
   {
     "objectID": "projects/crypto-regulation.html#the-five-assets-and-the-dummy",
@@ -410,13 +249,104 @@
     "href": "projects/crypto-regulation.html#the-bigger-picture",
     "title": "Crypto Regulation: Measuring the Market Response",
     "section": "The bigger picture",
-    "text": "The bigger picture\n\n  ★\n  \n    Capstone project\n    This was the culmination project for my Master's degree in Finance and Banking, built on real, cleaned datasets and large data clusters rather than toy examples. The version here keeps the core idea; the full study runs far longer and stays under wraps.\n  \n\nStack: Refinitiv Eikon, Datastream, Python, Fama-French factor model, regulation dummy, scenario simulation"
+    "text": "The bigger picture\n\n  ★\n  \n    Capstone project\n    This was the culmination project for my Master's degree in Finance and Banking, built on real, cleaned datasets and large data clusters rather than toy examples. The version here keeps the core idea; the full study runs far longer and stays under wraps."
   },
   {
-    "objectID": "projects/index.html",
-    "href": "projects/index.html",
-    "title": "Projects",
+    "objectID": "projects/crypto-regulation.html#before-and-after",
+    "href": "projects/crypto-regulation.html#before-and-after",
+    "title": "Crypto Regulation: Measuring the Market Response",
+    "section": "Before and after",
+    "text": "Before and after\n\n  AfterOne tidy panel, one factor model, one binary switch. The question becomes a coefficient you can test, argue with, and be wrong about in public.My touch: I built it so the data could prove me wrong, and for the United States it did exactly that. That result stayed in.\n  BeforeA debate settled by whoever spoke last. Everyone had a view on whether regulation helped or hurt crypto, and nobody had a number attached to it.\n  \n\nStack: Refinitiv Eikon, Datastream, Python, Fama-French factor model, regulation dummy, scenario simulation"
+  },
+  {
+    "objectID": "projects/email-pipeline.html",
+    "href": "projects/email-pipeline.html",
+    "title": "Email Pipeline & Submission Dashboard",
     "section": "",
-    "text": "Each project follows the same shape: the problem as it existed, what I built, and what changed. Numbers where I have them, screenshots where they help.\n\n  In progress\n  \n    AI agent fleet.\n    A small fleet of agents I am building with Claude Code to support day to day decisions: tracking prices and statuses, drafting and triaging email, and rebuilding tools faster than I could by hand. It lands here as a case study once the pieces run reliably together.\n  \n\n\n\n\n\n\n\n\n\n\n\n\nRevenue & Expenditure Pipeline\n\n\n\nSAP Datasphere\n\nSQL\n\nPower BI\n\nPython\n\n\n\nMore than 20 reports once pulled from SAP by hand, now one daily pipeline for the whole organisation.\n\n\n\n\n\n\n\n\n\nEmail Pipeline & Submission Dashboard\n\n\n\nPython\n\nRegex\n\nPower BI\n\nOutlook\n\n\n\nA legacy VBA macro replaced by a Python pipeline parsing 500 submissions a week.\n\n\n\n\n\n\n\n\n\nInvoice Reconciliation & Dashboard\n\n\n\nPython\n\nAutomation\n\nExcel\n\n\n\nFive SAP extracts, one click, one master file the whole team trusts.\n\n\n\n\n\n\n\n\n\nLiving Documentation System\n\n\n\nQuarto\n\nMarkdown\n\nHTML\n\nCSS\n\n\n\nWord files with broken links replaced by templated, rendered documentation.\n\n\n\n\n\n\n\n\n\nCrypto Regulation: Measuring the Market Response\n\n\n\nEconometrics\n\nEikon\n\nDatastream\n\nFama-French\n\n\n\nA Fama and French model with a regulation dummy, measuring how restrictive and expansive rules moved the top five cryptoassets across the EU and the US.\n\n\n\n\n\n\n\n\n\nFinancial Analysis: From Scanned Statements to a Clear Case\n\n\n\nFinancial Analysis\n\nValuation\n\nDCF\n\nExcel\n\n\n\nBuilding a full financial analysis from the ground up, turning scanned statements into a valuation that justified more funding and a stronger expansion.\n\n\n\n\n\nNo matching items"
+    "text": "Live"
+  },
+  {
+    "objectID": "projects/email-pipeline.html#the-problem",
+    "href": "projects/email-pipeline.html#the-problem",
+    "title": "Email Pipeline & Submission Dashboard",
+    "section": "The problem",
+    "text": "The problem\nWeekly submission statistics depended on a VBA macro built in 2014 that downloaded one email per second, ran once a week, and locked the computer while it worked. Parsing email titles into fields produced wrong and missing values, so every run was followed by manual edits. The volume: around 500 submissions per week, on top of an archive of roughly 120,000 emails.\n\n  BeforeBefore · the weekly statistics in a fragile Excel file\n  AfterAfter · the live submission dashboard"
+  },
+  {
+    "objectID": "projects/email-pipeline.html#the-new-script",
+    "href": "projects/email-pipeline.html#the-new-script",
+    "title": "Email Pipeline & Submission Dashboard",
+    "section": "The new script",
+    "text": "The new script\n\n  ★The core of the rebuild\n  A Python tool that does in 30 seconds what used to take an hour\n  A small application with a GUI: pick the Outlook folder, pick the mode, run. It finds the right emails, puts every date into the same format, and runs 57 regex patterns to pull clean fields out of titles that are never written the same way twice. The patterns run from the most specific to the most general, so the messy cases get caught first.\n\nHere is the heart of the parser, the ordered pattern list that replaced years of manual correction:\n\n  Part of the 57-pattern parser, ordered most specific first\n  The GUI: pick a folder, pick a mode, run\n\nThe script can run automatically on computer start or manually for double checks, so the data is daily by default instead of weekly by ritual. It writes a clean CSV rather than Excel, which handles the 120,000-email archive without strain."
+  },
+  {
+    "objectID": "projects/email-pipeline.html#behind-the-scenes",
+    "href": "projects/email-pipeline.html#behind-the-scenes",
+    "title": "Email Pipeline & Submission Dashboard",
+    "section": "Behind the scenes",
+    "text": "Behind the scenes\nA look at how the parser actually works. These snippets are simplified and anonymised, but the logic is the real thing.\n\n  email_master_downloader.py\n  \n    Ordered patterns\n    Date normalisation\n    Deduplication\n  \n  \n    \n      # Patterns run most specific first, so the messy\n# real titles are caught before the generic ones.\npatterns = [\n    re.compile(r'(\\d{4})\\s*-\\s*REF\\s+(\\d{1,4}/?\\d{0,4})', re.I),\n    re.compile(r'(\\d{4})\\s+REF\\s+(\\d{1,4}/?\\d{0,4})', re.I),\n    re.compile(r'-\\s*(\\d{4})\\s*-\\s*REF\\s+(\\d{1,4})', re.I),\n    re.compile(r'REF\\s+(\\d{1,4}/?\\d{0,4})', re.I),\n]\nfor rx in patterns:\n    m = rx.search(title)\n    if m:\n        return normalise(m.groups())\n      Why orderedPeople never write a subject line the same way twice. Sorting the patterns from most to least specific means a clean match wins before a loose one can grab the wrong fragment. Fifty-seven patterns cover the long tail without a single manual correction.\n    \n    \n      # Every date format people use, into one.\ndef normalise_date(raw):\n    for fmt in (\"%d/%m/%Y\", \"%d-%m-%Y\",\n                \"%d %b %Y\", \"%d.%m.%y\"):\n        try:\n            return datetime.strptime(raw, fmt)\n        except ValueError:\n            continue\n    return flag_for_review(raw)\n      No silent failuresA date that matches nothing is not dropped or guessed. It is flagged and surfaced in the dashboard, so the few genuine edge cases get a human glance instead of quietly corrupting a weekly total.\n    \n    \n      # Append only what is genuinely new.\nkey = [\"ref\", \"date\", \"type\"]\nmerged = pd.concat([master, incoming])\nmerged = merged.drop_duplicates(\n    subset=key, keep=\"last\")\nadded = len(merged) - len(master)\nlog(f\"appended {added} new rows\")\n      Idempotent runsRun it once or ten times, the archive stays correct. Deduplication on a composite key means a re-run never doubles a week, which is what made it safe to schedule on startup."
+  },
+  {
+    "objectID": "projects/email-pipeline.html#the-power-bi-rebuild",
+    "href": "projects/email-pipeline.html#the-power-bi-rebuild",
+    "title": "Email Pipeline & Submission Dashboard",
+    "section": "The Power BI rebuild",
+    "text": "The Power BI rebuild\nThe clean CSV feeds a rebuilt Power BI model, not a pile of pivot tables. The new structure uses organised folders and subfolders, dynamic measures written as DAX rather than copied cells, and a clean, deduplicated data model connected through SharePoint. It is a proper star schema: a central fact table of emails joined to dimension tables for date and category, so the dynamic graphs adapt to the latest weeks on their own.\n\n  Measures in organised folders, not scattered\n  Named measure groups and conformed tables\n  Star schema: fact table joined to dimensions"
+  },
+  {
+    "objectID": "projects/email-pipeline.html#outcome",
+    "href": "projects/email-pipeline.html#outcome",
+    "title": "Email Pipeline & Submission Dashboard",
+    "section": "Outcome",
+    "text": "Outcome\nAround 5 hours saved every week, plus the manual checks and corrections that no longer exist. The team now has consistent, clean data since 2019 and a dashboard that is always current. All documentation lives in QMD files rendered to HTML.\n\n  BeforeBefore · data highlighted and patched by hand\n  AfterAfter · a page from the live dashboard"
+  },
+  {
+    "objectID": "projects/email-pipeline.html#before-and-after",
+    "href": "projects/email-pipeline.html#before-and-after",
+    "title": "Email Pipeline & Submission Dashboard",
+    "section": "Before and after",
+    "text": "Before and after\n\n  AfterA background Python tool with 57 regex patterns, a clean CSV archive of 120,000 emails, and a live dashboard that needs no manual refresh.My touch: I built the parser around the messiest titles first instead of the clean ones, so it holds up against what people actually send.\n  BeforeAn old VBA macro from 2014 that crawled through Outlook at one email per second, ran once a week, froze the machine, and got half the fields wrong.\n  \n\nStack: Python (GUI, 57 regex patterns), CSV, SharePoint, Power BI semantic model, DAX, Quarto documentation"
+  },
+  {
+    "objectID": "projects/invoice-checker.html",
+    "href": "projects/invoice-checker.html",
+    "title": "Invoice Reconciliation & Dashboard",
+    "section": "",
+    "text": "Live and active"
+  },
+  {
+    "objectID": "projects/invoice-checker.html#the-problem",
+    "href": "projects/invoice-checker.html#the-problem",
+    "title": "Invoice Reconciliation & Dashboard",
+    "section": "The problem",
+    "text": "The problem\nChecking supplier invoices meant combining 5 separate SAP extracts against a reference table in a static shared database, where each person uploaded and downloaded the latest version. Across several teams this turned into chaos: constant reminders, emails back and forth, and no certainty about which file was current. Each cycle covered more than 200 invoices and disputes, some open for years, across many procedure types.\n\n  BeforeBefore · five extracts merged into a shared static file\n  AfterAfter · one validated master file"
+  },
+  {
+    "objectID": "projects/invoice-checker.html#the-new-script",
+    "href": "projects/invoice-checker.html#the-new-script",
+    "title": "Invoice Reconciliation & Dashboard",
+    "section": "The new script",
+    "text": "The new script\n\n  ★The tool that ended the email chains\n  Drop five files in a folder, run, get one source of truth\n  A fully automated script packaged as a standalone EXE, so the team runs it without installing Python. It validates the file formats, extracts the data, applies all matching, transformation, checking and deduplication rules, archives the input files with timestamps, writes a run log, and produces a master CSV holding the full archive. On top of that sits an Excel view where each check is marked in its own colour, with a summary table built in, because the people reading it live in Excel.\n\n\n  The standalone EXE: no Python needed\n  Part of the matching and deduplication logic\n  The folder you simply drop the files into"
+  },
+  {
+    "objectID": "projects/invoice-checker.html#the-data-model",
+    "href": "projects/invoice-checker.html#the-data-model",
+    "title": "Invoice Reconciliation & Dashboard",
+    "section": "The data model",
+    "text": "The data model\nBehind the Excel view sits a clean, deduplicated model: a fact table of invoices and disputes joined to dimension tables for supplier, procedure type and status. The same structured approach that makes the dashboards trustworthy.\n\n  Fact table joined to supplier, procedure and status dimensions"
+  },
+  {
+    "objectID": "projects/invoice-checker.html#outcome",
+    "href": "projects/invoice-checker.html#outcome",
+    "title": "Invoice Reconciliation & Dashboard",
+    "section": "Outcome",
+    "text": "Outcome\nOne file everyone can trust, where there used to be five files and an argument. Around 10 hours of weekly work saved, plus the removal of manual checks that regularly produced wrong results. The script processes all extracts simultaneously and writes thousands of rows to the master file in seconds.\n\n  BeforeBefore · the manual reconciliation it replaced\n  AfterAfter · the summary it builds on its own, with a colour for each status"
+  },
+  {
+    "objectID": "projects/invoice-checker.html#before-and-after",
+    "href": "projects/invoice-checker.html#before-and-after",
+    "title": "Invoice Reconciliation & Dashboard",
+    "section": "Before and after",
+    "text": "Before and after\n\n  AfterDrop the files in a folder, run the EXE, get one checked master file where each status has its own colour, with a full log of the run.My touch: I shipped it as an EXE so nobody had to install Python. Adoption was instant because the tool asked nothing of the people using it.\n  BeforeFive SAP extracts merged by hand against a shared static file, passed around by email, with no certainty which version was current.\n  \n\nStack: Python (packaged EXE), data matching and deduplication, CSV master file, Excel reporting layer"
   }
 ]

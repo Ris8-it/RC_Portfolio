@@ -1,17 +1,45 @@
-<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
-<defs><linearGradient id="cig" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1a1430"/><stop offset="1" stop-color="#0B1020"/></linearGradient></defs>
-<rect width="800" height="500" fill="url(#cig)"/>
-<g opacity=".4" stroke="#3a2e5e"><path d="M0 360 H800 M0 280 H800 M0 200 H800" stroke-width="1"/></g>
-<!-- three forecast fans -->
-<g fill="none" stroke-width="2.5">
-<path stroke="#4FD1C5" d="M60 340 L240 300 L420 250 L620 200 L760 175"/>
-<path stroke="#8B9BFF" d="M60 350 L240 320 L420 295 L620 275 L760 260" opacity=".8"/>
-<path stroke="#F0A8A8" d="M60 360 L240 345 L420 335 L620 330 L760 325" opacity=".7"/>
+<svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg"
+     font-family="Segoe UI, system-ui, -apple-system, Helvetica, sans-serif">
+<defs>
+  <linearGradient id="vbg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#141B2E"/><stop offset="1" stop-color="#0A0E17"/>
+  </linearGradient>
+  <linearGradient id="fan" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#34D399" stop-opacity=".16"/>
+    <stop offset="1" stop-color="#34D399" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+
+<rect width="800" height="460" fill="url(#vbg)"/>
+
+<text x="40" y="60" fill="#EAEEF9" font-size="30" font-weight="600" letter-spacing="-.8">Valuation model</text>
+<text x="40" y="90" fill="#A3ADC9" font-size="15">Comparable metrics with scenario forecasting</text>
+
+<g stroke="#1A2238" stroke-width="1">
+  <line x1="60" y1="360" x2="770" y2="360"/>
+  <line x1="60" y1="290" x2="770" y2="290"/>
+  <line x1="60" y1="220" x2="770" y2="220"/>
+  <line x1="60" y1="150" x2="770" y2="150"/>
 </g>
-<g font-size="11"><circle cx="760" cy="175" r="4" fill="#4FD1C5"/><text x="700" y="165" fill="#4FD1C5">best</text>
-<circle cx="760" cy="260" r="4" fill="#8B9BFF"/><text x="690" y="252" fill="#8B9BFF">middle</text>
-<circle cx="760" cy="325" r="4" fill="#F0A8A8"/><text x="710" y="345" fill="#F0A8A8">low</text></g>
-<text x="40" y="70" fill="#E8EAF2" font-size="32" font-weight="bold">Valuation model</text>
-<text x="40" y="106" fill="#8B9BFF" font-size="19">Comparable metrics with scenario forecasting</text>
-<text x="40" y="462" fill="#6b7394" font-size="13">low, mid and high scenarios across every target</text>
+
+<!-- the spread between best and low is the point of the picture -->
+<path d="M60 340 L240 300 L420 250 L620 200 L740 175
+         L740 325 L620 330 L420 335 L240 345 L60 360 Z" fill="url(#fan)"/>
+
+<g fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="#34D399" d="M60 340 L240 300 L420 250 L620 200 L740 175"/>
+  <path stroke="#5B8CFF" d="M60 350 L240 320 L420 295 L620 275 L740 260"/>
+  <path stroke="#FB7185" d="M60 360 L240 345 L420 335 L620 330 L740 325" opacity=".85"/>
+</g>
+
+<g font-size="13" font-weight="600">
+  <circle cx="740" cy="175" r="5" fill="#34D399" stroke="#0A0E17" stroke-width="2"/>
+  <text x="730" y="164" fill="#34D399" text-anchor="end">best</text>
+  <circle cx="740" cy="260" r="5" fill="#5B8CFF" stroke="#0A0E17" stroke-width="2"/>
+  <text x="730" y="250" fill="#5B8CFF" text-anchor="end">middle</text>
+  <circle cx="740" cy="325" r="5" fill="#FB7185" stroke="#0A0E17" stroke-width="2"/>
+  <text x="730" y="345" fill="#FB7185" text-anchor="end">low</text>
+</g>
+
+<text x="40" y="424" fill="#6E7899" font-size="13">Low, mid and high scenarios across every target, all built from the scanned statements</text>
 </svg>
