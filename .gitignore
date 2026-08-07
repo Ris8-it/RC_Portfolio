@@ -1,2 +1,15 @@
 /.quarto/
+/_site/
 **/*.quarto_ipynb
+_quarto_internal_scss_error.scss
+
+# local design checking, not part of the site
+/preview/
+/shots/
+
+# the pre-sanitisation copies of the screenshots. no page references them, and
+# the sanitised versions are the only ones that belong in a public repo.
+/images/_original/
+
+.DS_Store
+Thumbs.db

@@ -1,13 +1,26 @@
-project:
+﻿project:
   type: website
   output-dir: _site
+  render:
+    - "*.qmd"
+    - "projects/*.qmd"
+    # templates/ holds an internal documentation skeleton whose image paths are
+    # placeholders. It was being published as an orphan page with broken images.
+    - "!templates/**"
+  resources:
+    # quarto.js fetches listings.json on any page carrying `categories`, whether or
+    # not the site has a listing. The projects page is hand built now, so nothing
+    # generates the file and every case study logged a 404 for it. An empty array
+    # is what that code path expects to find when there is nothing to activate.
+    - listings.json
 
 website:
   title: "Riccardo Cammarata"
-  description: "Finance data engineer. Python tools that replace fragile manual workflows."
+  description: "Financial data engineering. I rebuild reporting that still runs on files pulled by hand."
   favicon: images/favicon.png
   navbar:
     pinned: true
+    logo: images/riccardo.jpg
     left:
       - href: index.qmd
         text: Home
@@ -23,7 +36,8 @@ website:
         href: https://www.linkedin.com/in/riccardo-cammarata-00s
         aria-label: LinkedIn
   page-footer:
-    center: "Riccardo Cammarata · Portfolio · Built with Quarto tools"
+    left: "Riccardo Cammarata · Amsterdam"
+    right: "riccardocammarata00@gmail.com"
 
 format:
   html:

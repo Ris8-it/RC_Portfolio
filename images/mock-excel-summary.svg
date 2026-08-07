@@ -1,38 +1,38 @@
-<svg viewBox="0 0 780 440" xmlns="http://www.w3.org/2000/svg" font-family="DM Sans, sans-serif" font-size="11">
-<rect width="780" height="440" rx="14" fill="#161C38"/>
-<rect width="780" height="40" rx="14" fill="#0E1328"/><rect y="26" width="780" height="14" fill="#0E1328"/>
-<text x="20" y="25" fill="#E8EAF2" font-size="13" font-weight="700">master_file.xlsx · summary</text>
-<text x="600" y="25" fill="#4FD1C5" font-family="JetBrains Mono" font-size="10">generated 06:14</text>
-<g fill="#9AA3B8" font-family="JetBrains Mono" font-size="10">
+<svg viewBox="0 0 780 440" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans, system-ui, sans-serif" font-size="11">
+<rect width="780" height="440" rx="0" fill="#1A1A1F"/>
+<rect width="780" height="40" rx="0" fill="#101013"/><rect y="26" width="780" height="14" fill="#101013"/>
+<text x="20" y="25" fill="#EDEDF0" font-size="13" font-weight="700">master_file.xlsx · summary</text>
+<text x="600" y="25" fill="#9A9AA6" font-family="IBM Plex Mono, monospace" font-size="10">generated 06:14</text>
+<g fill="#9A9AA6" font-family="IBM Plex Mono, monospace" font-size="10">
 <text x="30" y="70">REF</text><text x="140" y="70">SUPPLIER</text><text x="320" y="70">AMOUNT</text><text x="430" y="70">MATCH</text><text x="540" y="70">STATUS</text><text x="660" y="70">CHECK</text>
 </g>
-<line x1="20" y1="80" x2="760" y2="80" stroke="#2A3358"/>
-<g font-family="JetBrains Mono" font-size="10.5">
-<g fill="#E8EAF2">
+<line x1="20" y1="80" x2="760" y2="80" stroke="#383843"/>
+<g font-family="IBM Plex Mono, monospace" font-size="10.5">
+<g fill="#EDEDF0">
 <text x="30" y="105">INV-20418</text><text x="140" y="105">Supplier A</text><text x="320" y="105">€12,480.00</text><text x="430" y="105">5/5</text>
 <text x="30" y="135">INV-20419</text><text x="140" y="135">Supplier B</text><text x="320" y="135">€3,150.50</text><text x="430" y="135">5/5</text>
 <text x="30" y="165">INV-20420</text><text x="140" y="165">Supplier C</text><text x="320" y="165">€48,900.00</text><text x="430" y="165">4/5</text>
 <text x="30" y="195">INV-20421</text><text x="140" y="195">Supplier D</text><text x="320" y="195">€7,025.75</text><text x="430" y="195">5/5</text>
 <text x="30" y="225">DSP-00882</text><text x="140" y="225">Supplier C</text><text x="320" y="225">€2,310.00</text><text x="430" y="225">3/5</text>
 </g>
-<rect x="535" y="92" width="86" height="18" rx="9" fill="#4FD1C5" opacity=".18"/><text x="548" y="105" fill="#4FD1C5">matched</text>
-<rect x="535" y="122" width="86" height="18" rx="9" fill="#4FD1C5" opacity=".18"/><text x="548" y="135" fill="#4FD1C5">matched</text>
-<rect x="535" y="152" width="86" height="18" rx="9" fill="#FFD58A" opacity=".18"/><text x="548" y="165" fill="#FFD58A">review</text>
-<rect x="535" y="182" width="86" height="18" rx="9" fill="#4FD1C5" opacity=".18"/><text x="548" y="195" fill="#4FD1C5">matched</text>
-<rect x="535" y="212" width="86" height="18" rx="9" fill="#F0A8A8" opacity=".18"/><text x="548" y="225" fill="#F0A8A8">dispute</text>
-<g fill="#4FD1C5"><text x="665" y="105">✓</text><text x="665" y="135">✓</text><text x="665" y="195">✓</text></g>
-<g fill="#FFD58A"><text x="665" y="165">!</text></g><g fill="#F0A8A8"><text x="665" y="225">✗</text></g>
+<rect x="535" y="92" width="86" height="18" rx="0" fill="#9A9AA6" opacity=".18"/><text x="548" y="105" fill="#9A9AA6">matched</text>
+<rect x="535" y="122" width="86" height="18" rx="0" fill="#9A9AA6" opacity=".18"/><text x="548" y="135" fill="#9A9AA6">matched</text>
+<rect x="535" y="152" width="86" height="18" rx="0" fill="#F5A623" opacity=".18"/><text x="548" y="165" fill="#F5A623">review</text>
+<rect x="535" y="182" width="86" height="18" rx="0" fill="#9A9AA6" opacity=".18"/><text x="548" y="195" fill="#9A9AA6">matched</text>
+<rect x="535" y="212" width="86" height="18" rx="0" fill="#E5484D" opacity=".18"/><text x="548" y="225" fill="#E5484D">dispute</text>
+<g fill="#9A9AA6"><text x="665" y="105">✓</text><text x="665" y="135">✓</text><text x="665" y="195">✓</text></g>
+<g fill="#F5A623"><text x="665" y="165">!</text></g><g fill="#E5484D"><text x="665" y="225">✗</text></g>
 </g>
-<rect x="20" y="255" width="740" height="160" rx="10" fill="#0E1328" stroke="#2A3358"/>
-<text x="38" y="285" fill="#E8EAF2" font-size="12" font-weight="700">Run summary</text>
-<g font-family="JetBrains Mono" font-size="11">
-<text x="38" y="315" fill="#9AA3B8">rows processed</text><text x="250" y="315" fill="#E8EAF2">2,847</text>
-<text x="38" y="340" fill="#9AA3B8">matched</text><text x="250" y="340" fill="#4FD1C5">2,791</text>
-<text x="38" y="365" fill="#9AA3B8">flagged for review</text><text x="250" y="365" fill="#FFD58A">44</text>
-<text x="38" y="390" fill="#9AA3B8">open disputes</text><text x="250" y="390" fill="#F0A8A8">12</text>
-<text x="420" y="315" fill="#9AA3B8">duplicates removed</text><text x="660" y="315" fill="#E8EAF2">118</text>
-<text x="420" y="340" fill="#9AA3B8">files archived</text><text x="660" y="340" fill="#E8EAF2">5 · timestamped</text>
-<text x="420" y="365" fill="#9AA3B8">run time</text><text x="660" y="365" fill="#E8EAF2">41s</text>
-<text x="420" y="390" fill="#9AA3B8">log</text><text x="660" y="390" fill="#4FD1C5">written ✓</text>
+<rect x="20" y="255" width="740" height="160" rx="0" fill="#101013" stroke="#383843"/>
+<text x="38" y="285" fill="#EDEDF0" font-size="12" font-weight="700">Run summary</text>
+<g font-family="IBM Plex Mono, monospace" font-size="11">
+<text x="38" y="315" fill="#9A9AA6">rows processed</text><text x="250" y="315" fill="#EDEDF0">2,847</text>
+<text x="38" y="340" fill="#9A9AA6">matched</text><text x="250" y="340" fill="#9A9AA6">2,791</text>
+<text x="38" y="365" fill="#9A9AA6">flagged for review</text><text x="250" y="365" fill="#F5A623">44</text>
+<text x="38" y="390" fill="#9A9AA6">open disputes</text><text x="250" y="390" fill="#E5484D">12</text>
+<text x="420" y="315" fill="#9A9AA6">duplicates removed</text><text x="660" y="315" fill="#EDEDF0">118</text>
+<text x="420" y="340" fill="#9A9AA6">files archived</text><text x="660" y="340" fill="#EDEDF0">5 · timestamped</text>
+<text x="420" y="365" fill="#9A9AA6">run time</text><text x="660" y="365" fill="#EDEDF0">41s</text>
+<text x="420" y="390" fill="#9A9AA6">log</text><text x="660" y="390" fill="#9A9AA6">written ✓</text>
 </g>
 </svg>

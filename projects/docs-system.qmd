@@ -64,7 +64,7 @@ Interconnected, linkable documents that can be reproduced in the same format eve
 ## Before and after
 
 ```{=html}
-<div class="reveal-compare" role="button" tabindex="0" aria-label="Click to reveal the after state">
+<div class="reveal-compare" role="button" tabindex="0" aria-label="Before and after. Drag across, or press Enter, to switch between them.">
   <div class="rc-layer rc-after"><div class="rc-content"><h4>After</h4><p>One QMD template and one stylesheet rendering to interconnected HTML and PDF, with a live table of contents and cross references that never rot.</p><p class="touch">My touch: one YAML header produces both the web page and the formal PDF, so there is never a second copy to keep in sync.</p></div></div>
   <div class="rc-layer rc-before"><div class="rc-cells"></div><div class="rc-content"><h4>Before</h4><p>Word documents stuffed with pasted screenshots and links that broke over time, with versions quietly drifting apart from one team to the next.</p></div></div>
   <span class="rc-prompt"><span class="dot"></span></span>

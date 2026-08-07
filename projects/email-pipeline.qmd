@@ -122,7 +122,7 @@ The clean CSV feeds a rebuilt Power BI model, not a pile of pivot tables. The ne
 ## Before and after
 
 ```{=html}
-<div class="reveal-compare" role="button" tabindex="0" aria-label="Click to reveal the after state">
+<div class="reveal-compare" role="button" tabindex="0" aria-label="Before and after. Drag across, or press Enter, to switch between them.">
   <div class="rc-layer rc-after"><div class="rc-content"><h4>After</h4><p>A background Python tool with 57 regex patterns, a clean CSV archive of 120,000 emails, and a live dashboard that needs no manual refresh.</p><p class="touch">My touch: I built the parser around the messiest titles first instead of the clean ones, so it holds up against what people actually send.</p></div></div>
   <div class="rc-layer rc-before"><div class="rc-cells"></div><div class="rc-content"><h4>Before</h4><p>An old VBA macro from 2014 that crawled through Outlook at one email per second, ran once a week, froze the machine, and got half the fields wrong.</p></div></div>
   <span class="rc-prompt"><span class="dot"></span></span>

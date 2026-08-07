@@ -63,7 +63,7 @@ One file everyone can trust, where there used to be five files and an argument. 
 ## Before and after
 
 ```{=html}
-<div class="reveal-compare" role="button" tabindex="0" aria-label="Click to reveal the after state">
+<div class="reveal-compare" role="button" tabindex="0" aria-label="Before and after. Drag across, or press Enter, to switch between them.">
   <div class="rc-layer rc-after"><div class="rc-content"><h4>After</h4><p>Drop the files in a folder, run the EXE, get one checked master file where each status has its own colour, with a full log of the run.</p><p class="touch">My touch: I shipped it as an EXE so nobody had to install Python. Adoption was instant because the tool asked nothing of the people using it.</p></div></div>
   <div class="rc-layer rc-before"><div class="rc-cells"></div><div class="rc-content"><h4>Before</h4><p>Five SAP extracts merged by hand against a shared static file, passed around by email, with no certainty which version was current.</p></div></div>
   <span class="rc-prompt"><span class="dot"></span></span>

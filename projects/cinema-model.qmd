@@ -59,7 +59,7 @@ The point was never a clever model for its own sake. It was that a real decision
 ## Before and after
 
 ```{=html}
-<div class="reveal-compare" role="button" tabindex="0" aria-label="Click to reveal the after state">
+<div class="reveal-compare" role="button" tabindex="0" aria-label="Before and after. Drag across, or press Enter, to switch between them.">
   <div class="rc-layer rc-after"><div class="rc-content"><h4>After</h4><p>One structured financial analysis: clean statements, a DCF and comparables valuation, and a scenario range showing more than 120 thousand of additional cash flow from a connected, more efficient operation.</p><p class="touch">My touch: rebuilding the whole financial picture from scanned paper first, so the growth case rested on numbers the owner and the banks could both trust.</p></div></div>
   <div class="rc-layer rc-before"><div class="rc-cells"></div><div class="rc-content"><h4>Before</h4><p>Financial statements as scanned black and white pages and hand transcriptions, with turnover, EBITDA and earnings that were slow to work with and impossible to interrogate.</p></div></div>
   <span class="rc-prompt"><span class="dot"></span></span>

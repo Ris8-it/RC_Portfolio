@@ -1,28 +1,50 @@
-<svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
-<defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#161C38"/><stop offset="1" stop-color="#0B1020"/></linearGradient>
-<linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8B9BFF" stop-opacity=".35"/><stop offset="1" stop-color="#8B9BFF" stop-opacity="0"/></linearGradient></defs>
-<rect width="800" height="460" fill="url(#cg)" rx="14"/>
-<text x="40" y="52" fill="#E8EAF2" font-size="26" font-weight="bold">Crypto regulation and the market</text>
-<text x="40" y="78" fill="#8B9BFF" font-size="15">Top 5 cryptoassets, indexed price, 2020 to 2025</text>
-<!-- axes -->
-<line x1="70" y1="130" x2="70" y2="390" stroke="#3a4668" stroke-width="1.5"/>
-<line x1="70" y1="390" x2="760" y2="390" stroke="#3a4668" stroke-width="1.5"/>
-<text x="20" y="135" fill="#6b7394" font-size="10">index</text>
-<text x="30" y="260" fill="#6b7394" font-size="10" transform="rotate(-90 30 260)">price (2020=100)</text>
-<!-- gridlines + y ticks -->
-<g stroke="#222a44" stroke-width="1"><line x1="70" y1="320" x2="760" y2="320"/><line x1="70" y1="250" x2="760" y2="250"/><line x1="70" y1="180" x2="760" y2="180"/></g>
-<g fill="#6b7394" font-size="9"><text x="46" y="393">0</text><text x="40" y="323">200</text><text x="40" y="253">400</text><text x="40" y="183">600</text></g>
-<!-- x year ticks -->
-<g fill="#6b7394" font-size="10"><text x="66" y="406">2020</text><text x="196" y="406">2021</text><text x="330" y="406">2022</text><text x="460" y="406">2023</text><text x="590" y="406">2024</text><text x="712" y="406">2025</text></g>
-<!-- area under price -->
-<path d="M70 360 L200 200 L250 150 L330 320 L460 300 L590 250 L760 235 L760 390 L70 390 Z" fill="url(#fade)"/>
-<!-- price line: rise to 2021 peak then fall then settle -->
-<path d="M70 360 L200 200 L250 150 L330 320 L460 300 L590 250 L760 235" fill="none" stroke="#8B9BFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-<!-- peak marker -->
-<circle cx="250" cy="150" r="6" fill="#F0A8A8"/>
-<line x1="250" y1="150" x2="250" y2="390" stroke="#F0A8A8" stroke-width="1" stroke-dasharray="3 3" opacity=".6"/>
-<text x="258" y="146" fill="#F0A8A8" font-size="11">2021 peak (hype)</text>
-<!-- MiCA marker -->
-<line x1="590" y1="130" x2="590" y2="390" stroke="#4FD1C5" stroke-width="1" stroke-dasharray="4 4" opacity=".7"/>
-<text x="498" y="126" fill="#4FD1C5" font-size="11">EU framework (MiCA)</text>
+<svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg"
+     font-family="Segoe UI, system-ui, -apple-system, Helvetica, sans-serif">
+<defs>
+  <linearGradient id="cbg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#141B2E"/><stop offset="1" stop-color="#0A0E17"/>
+  </linearGradient>
+  <linearGradient id="cfill" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#5B8CFF" stop-opacity=".30"/>
+    <stop offset="1" stop-color="#5B8CFF" stop-opacity="0"/>
+  </linearGradient>
+</defs>
+
+<rect width="800" height="460" fill="url(#cbg)"/>
+
+<text x="40" y="54" fill="#EAEEF9" font-size="27" font-weight="600" letter-spacing="-.6">Crypto regulation and the market</text>
+<text x="40" y="80" fill="#A3ADC9" font-size="14">Top five cryptoassets, indexed price, 2020 to 2025</text>
+
+<!-- gridlines, kept faint: they are scaffolding, not content -->
+<g stroke="#232C45" stroke-width="1">
+  <line x1="70" y1="320" x2="760" y2="320"/>
+  <line x1="70" y1="250" x2="760" y2="250"/>
+  <line x1="70" y1="180" x2="760" y2="180"/>
+</g>
+<line x1="70" y1="130" x2="70" y2="390" stroke="#33406B" stroke-width="1.4"/>
+<line x1="70" y1="390" x2="760" y2="390" stroke="#33406B" stroke-width="1.4"/>
+
+<g fill="#6E7899" font-size="11" text-anchor="end">
+  <text x="60" y="394">0</text><text x="60" y="324">200</text>
+  <text x="60" y="254">400</text><text x="60" y="184">600</text>
+</g>
+<text x="30" y="270" fill="#6E7899" font-size="11" transform="rotate(-90 30 270)">price, 2020 = 100</text>
+<g fill="#6E7899" font-size="11" text-anchor="middle">
+  <text x="78" y="410">2020</text><text x="208" y="410">2021</text><text x="338" y="410">2022</text>
+  <text x="468" y="410">2023</text><text x="598" y="410">2024</text><text x="748" y="410">2025</text>
+</g>
+
+<path d="M70 360 L208 200 L258 150 L338 320 L468 300 L598 250 L760 235 L760 390 L70 390 Z" fill="url(#cfill)"/>
+<path d="M70 360 L208 200 L258 150 L338 320 L468 300 L598 250 L760 235"
+      fill="none" stroke="#5B8CFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+<!-- the 2021 peak -->
+<line x1="258" y1="150" x2="258" y2="390" stroke="#FB7185" stroke-width="1" stroke-dasharray="3 4" opacity=".55"/>
+<circle cx="258" cy="150" r="5.5" fill="#FB7185" stroke="#0A0E17" stroke-width="2"/>
+<text x="270" y="146" fill="#FB7185" font-size="12" font-weight="600">2021 peak</text>
+
+<!-- the event the whole study turns on -->
+<line x1="598" y1="132" x2="598" y2="390" stroke="#FBBF24" stroke-width="1.2" stroke-dasharray="5 4" opacity=".75"/>
+<rect x="504" y="112" width="188" height="24" rx="12" fill="#1B1706" stroke="#FBBF24" stroke-opacity=".5"/>
+<text x="598" y="128" fill="#FBBF24" font-size="12" font-weight="600" text-anchor="middle">EU framework (MiCA)</text>
 </svg>

@@ -23,7 +23,38 @@ After the 2020 to 2021 run-up, the European Union and the United States took cle
 I built the panel from Refinitiv Eikon and Datastream: the five largest cryptoassets by capitalisation, with daily price, return and volume from 2020 to 2025. I cleaned the series, aligned them to one calendar, computed log returns, and matched every asset-day to a hand-built timeline of regulatory events. The result is one tidy, model-ready table.
 
 ```{=html}
-<img src="../images/crypto-dataset.png" alt="Python script that builds and cleans the dataset">
+<div class="codeblock">
+  <div class="codeblock-head">build_dataset.py</div>
+<pre><code><span class="cm"># 1. Pull the top five cryptoassets from Eikon / Datastream</span>
+assets = [<span class="st">"BTC"</span>, <span class="st">"ETH"</span>, <span class="st">"BNB"</span>, <span class="st">"XRP"</span>, <span class="st">"ADA"</span>]
+px = get_prices(assets, start=<span class="st">"2020-01-01"</span>, end=<span class="st">"2025-12-31"</span>)
+
+<span class="cm"># 2. Clean: align the calendar, fill gaps, take log returns</span>
+px = (px.resample(<span class="st">"D"</span>).last()
+        .ffill()
+        .pipe(drop_outliers))
+ret = np.log(px).diff()
+
+<span class="cm"># 3. Regulation dummy: 1 = measure announced, in force, or a case</span>
+df[<span class="st">"reg_dummy"</span>] = df[<span class="st">"date"</span>].map(reg_calendar).fillna(<span class="nu">0</span>)
+df[<span class="st">"region"</span>]    = df[<span class="st">"asset"</span>].map(jurisdiction)
+
+<span class="cm"># 4. Merge the Fama-French factors and inflation, ready to model</span>
+df = df.merge(ff_factors, on=<span class="st">"date"</span>).merge(cpi, on=<span class="st">"date"</span>)
+df.to_parquet(<span class="st">"panel_clean.parquet"</span>)</code></pre>
+</div>
+
+<table class="data-table">
+  <caption>Three rows out of <span class="tnum">panel_clean.parquet</span>: five assets, roughly 2,190 days, one row per asset-day.</caption>
+  <thead>
+    <tr><th>date</th><th>asset</th><th>ret</th><th>mkt</th><th>infl</th><th>reg</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>2021-04-12</td><td>BTC</td><td>0.031</td><td>0.018</td><td>0.004</td><td>0</td></tr>
+    <tr><td>2023-06-20</td><td>ETH</td><td>&minus;0.012</td><td>&minus;0.009</td><td>0.006</td><td>1</td></tr>
+    <tr><td>2024-12-30</td><td>BNB</td><td>0.008</td><td>0.005</td><td>0.002</td><td>1</td></tr>
+  </tbody>
+</table>
 ```
 
 ## The five assets and the dummy
@@ -103,6 +134,16 @@ I wanted a structure where the data could prove me wrong, and for the US it esse
     <h4>Capstone project</h4>
     <p>This was the culmination project for my Master's degree in Finance and Banking, built on real, cleaned datasets and large data clusters rather than toy examples. The version here keeps the core idea; the full study runs far longer and stays under wraps.</p>
   </div>
+</div>
+```
+
+## Before and after
+
+```{=html}
+<div class="reveal-compare" role="button" tabindex="0" aria-label="Before and after. Drag across, or press Enter, to switch between them.">
+  <div class="rc-layer rc-after"><div class="rc-content"><h4>After</h4><p>One tidy panel, one factor model, one binary switch. The question becomes a coefficient you can test, argue with, and be wrong about in public.</p><p class="touch">My touch: I built it so the data could prove me wrong, and for the United States it did exactly that. That result stayed in.</p></div></div>
+  <div class="rc-layer rc-before"><div class="rc-cells"></div><div class="rc-content"><h4>Before</h4><p>A debate settled by whoever spoke last. Everyone had a view on whether regulation helped or hurt crypto, and nobody had a number attached to it.</p></div></div>
+  <span class="rc-prompt"><span class="dot"></span></span>
 </div>
 ```
 
