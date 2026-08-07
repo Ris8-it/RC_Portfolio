@@ -573,6 +573,13 @@ a.chip:hover{background:rgba(91,140,255,.22);border-color:var(--blue);color:#BFD
 .c:hover .reveal{opacity:1;transform:translate(-50%,0)}
 .c .reveal::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);
   border:6px solid transparent;border-top-color:var(--text)}
+/* The first pill sits against the panel's left edge and carries the longest of
+   the three strings, so a bubble centred on it reached past the edge and .closing
+   clipped 39px off the front of the address. Anchor that one to the pill's left
+   instead of its middle; it is the only one with anywhere to go. */
+.contact .c:first-child .reveal{left:0;transform:translate(0,6px)}
+.contact .c:first-child:hover .reveal{transform:translate(0,0)}
+.contact .c:first-child .reveal::after{left:3.1rem}
 
 /* ============ case study pages ============ */
 #quarto-document-content>p,#quarto-document-content>ul,#quarto-document-content>ol{

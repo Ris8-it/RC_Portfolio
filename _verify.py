@@ -141,6 +141,22 @@ with sync_playwright() as p:
       return bad;}""")
     chk("all project images crop to fill", not fit, str(fit[:3]))
 
+    # Every contact tooltip has to survive the panel's overflow:hidden. The first
+    # pill sits on the left edge and carries the longest string, so a bubble
+    # centred on it used to lose 39px off the front of the address.
+    cut = []
+    for cls in ("mail", "li", "gh"):
+        pg.locator(".c." + cls).hover()
+        pg.wait_for_timeout(420)
+        vis = pg.evaluate("""(c)=>{
+          const t=document.querySelector('.c.'+c+' .reveal').getBoundingClientRect();
+          const b=document.querySelector('.closing').getBoundingClientRect();
+          return Math.round(100*(Math.min(t.right,b.right)-Math.max(t.left,b.left))/t.width);}""",
+          cls)
+        if vis < 100:
+            cut.append(f"{cls}={vis}%")
+    chk("no contact tooltip is clipped by the panel", not cut, str(cut))
+
     # the closing panel: rounded, and no dead column in the middle of it
     close = pg.evaluate("""()=>{const c=document.querySelector('.closing');
       if(!c) return null;
